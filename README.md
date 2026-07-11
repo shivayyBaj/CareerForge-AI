@@ -2,7 +2,7 @@
 
 # CareerForge AI — Career & Startup Suite
 
-**Elevate your future with CareerForge AI. Craft professional ATS-optimized resumes, receive real-time voice interview coaching, practice DSA problems, generate cover letters, and build complete startup blueprints — all powered by advanced AI agent workflows.**
+**Elevate your future with CareerForge AI. Craft professional ATS-optimized resumes, practice mock interviews with a humanized AI interviewer, sharpen DSA skills with an in-browser code editor, generate cover letters, and build complete startup blueprints — all powered by advanced AI agent workflows.**
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat&logo=vite)](https://vitejs.dev/)
@@ -12,7 +12,7 @@
 [![Clerk](https://img.shields.io/badge/Auth-Clerk-6C47FF?style=flat)](https://clerk.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker)](https://www.docker.com/)
 
-[📸 View Dashboard](#) • [⚙️ Setup & Installation](#-getting-started) • [✨ Key Features](#-features) • [📁 Structure](#-project-structure) • [🐳 Docker](#-docker-deployment)
+[⚙️ Setup & Installation](#-getting-started) • [✨ Key Features](#-features) • [📁 Structure](#-project-structure) • [🐳 Docker](#-docker-deployment)
 
 </div>
 
@@ -20,7 +20,7 @@
 
 ## 📖 Overview
 
-**CareerForge AI** is a premium, full-featured career advancement and entrepreneurial launching pad. Combining a gorgeous dark gold user interface with a robust FastAPI backend orchestration layer, CareerForge AI helps students and job seekers build industry-grade resumes, practice interviews with voice recognition, sharpen DSA skills with an in-browser code editor, generate professional cover letters, and turn raw startup ideas into investor-ready pitch decks.
+**CareerForge AI** is a premium, full-featured career advancement and entrepreneurial launching pad. Combining a gorgeous dark gold user interface with a robust FastAPI backend orchestration layer, CareerForge AI helps students and job seekers build industry-grade resumes, practice interviews with a humanized AI interviewer avatar (with lip-sync!), sharpen DSA skills with a real in-browser code runner, generate professional cover letters, and turn raw startup ideas into investor-ready pitch decks.
 
 ---
 
@@ -33,18 +33,20 @@
 * 📤 **PDF Export**: Print-to-PDF ready using native CSS `@page` printing standards.
 * 💾 **Auto-Save & Persisted State**: Resume data persisted locally using a structured CRUD service layer.
 
-### 🤖 2. AI Placement Coach
+### 🤖 2. AI Mock Interview
 * 📊 **ATS Analysis**: Instantly score your resume against any target job title with detailed strengths, weaknesses, and custom roadmap steps.
-* 🎙️ **Voice-Enabled Mock Interview**: Chat back-and-forth with an AI Interviewer using built-in speech-to-text recognition.
-* 🗣️ **Audio Synthesis**: The interviewer speaks out loud using browser speech synthesis for a fully interactive experience.
-* 📈 **Interview Scorecard**: Receive a detailed AI-powered scorecard after completing your mock interview — with overall score, grade, verdict (Hire/No Hire), and category breakdowns (communication, technical, problem-solving, culture fit).
+* 🧑‍💼 **Humanized AI Interviewer Avatar**: A realistic face avatar with animated lip-sync — powered by Web Speech API viseme tracking — gives you the feel of a real interviewer sitting in front of you.
+* 🎙️ **Voice-Enabled Interview**: Speak your answers using built-in speech-to-text. The AI interviewer responds using a natural-sounding, human-like voice synthesis with tone variation.
+* 📈 **Interview Scorecard**: Receive a detailed AI-powered scorecard after the interview — with overall score, grade, verdict (Hire/No Hire), and category breakdowns (communication, technical, problem-solving, culture fit).
 
 ### 💻 3. DSA Practice Arena
 * 📚 **Curated Problem Set**: Practice handpicked DSA problems spanning Arrays, Strings, Trees, Graphs, Dynamic Programming, and more.
 * 🖥️ **In-Browser Code Editor**: Write and run code in Python, JavaScript, Java, or C++ directly in the browser with syntax highlighting.
 * ✅ **Test Case Runner**: Run your solution against provided test cases and see pass/fail results instantly.
+* 🌳 **Tree & Linked List Support**: Test cases with `TreeNode` and `ListNode` inputs are now correctly serialized and injected into all four language runtimes — no more runtime errors on tree or linked list problems.
 * 🔍 **AI Code Review**: Get AI-powered feedback on correctness, bugs, time/space complexity, and a corrected solution if needed.
 * 💡 **AI Solution Generator**: Stuck? Request a complete, fully-explained optimal solution with approach, key insights, and a step-by-step walkthrough.
+* ⚠️ **Helpful Runtime Errors**: If a language compiler (Node.js, Java, g++) is not installed on your system, a clear message explains what to install instead of a cryptic error.
 
 ### 📝 4. AI Cover Letter Generator
 * 📋 **Context-Aware Generation**: Paste your resume and target job description to generate a tailored, professional cover letter in seconds.
@@ -71,6 +73,7 @@
 | **AI Models** | Meta Llama-3.3-70b-versatile & Llama-3.1-8b-instant (via Groq API) |
 | **Authentication** | Clerk Auth |
 | **Styling & UI** | Tailwind CSS 3, Radix UI Primitives, Lucide Icons, Framer Motion |
+| **Avatar & Lip-Sync** | Custom HTML5 Canvas + Web Speech API SpeechSynthesisUtterance boundary events |
 | **PDF Rendering** | pdfjs-dist, react-to-pdf |
 | **Code Execution** | Native language runtimes (Python, Node.js, Java, g++) via subprocess |
 | **Containerization** | Docker, Docker Compose |
@@ -84,7 +87,10 @@
 * [Python](https://www.python.org/) (3.11 or higher)
 * A [GroqCloud API Key](https://console.groq.com/)
 * A [Clerk Account](https://clerk.com/)
+* *(Optional)* Java JDK 11+, g++ (for Java and C++ code execution in DSA Arena)
 * *(Optional)* [Docker & Docker Compose](https://www.docker.com/) for containerized deployment
+
+> **Note**: Python and JavaScript code execution work out of the box since both runtimes are required to run the app itself. Java and C++ require their respective compilers to be installed and available in your system PATH.
 
 ---
 
@@ -113,10 +119,12 @@
    SUPABASE_KEY=your_supabase_key (optional)
    TAVILY_API_KEY=your_tavily_api_key (optional)
    ```
-5. Start the FastAPI server:
+5. Start the FastAPI server from inside the `backend/` directory:
    ```bash
    python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload
    ```
+
+> ⚠️ **Important**: Make sure you run the uvicorn command from inside the `backend/` directory, not the project root.
 
 ---
 
@@ -132,7 +140,7 @@
    ```
 3. Create a `.env` file in the `frontend/` directory:
    ```env
-   # Grok / Groq API Key
+   # Groq API Key
    VITE_GROK_API_KEY=your_groq_api_key
 
    # Clerk Auth Publishable Key
@@ -184,34 +192,40 @@ Run the entire stack with a single command using Docker Compose:
 
 ```
 CareerForge-AI/
-├── backend/                      # FastAPI Backend
-│   ├── agents/                   # Multi-Agent workflows
-│   ├── routers/                  # API route handlers
-│   │   ├── placement_coach.py    # ATS analysis, mock interview, DSA, code execution
-│   │   ├── startup_builder.py    # Startup blueprint generation
-│   │   └── cover_letter.py       # AI cover letter generation
-│   ├── database/                 # Database utilities & DSA problem set
-│   ├── main.py                   # FastAPI app entrypoint
-│   ├── requirements.txt          # Python dependencies
-│   └── Dockerfile.backend        # Backend Docker image
-├── frontend/                     # React Frontend
-│   ├── public/                   # Static frontend assets
-│   ├── service/                  # API client & LocalStorage layers
-│   ├── src/                      # React Source Code
-│   │   ├── components/           # UI elements & custom layout components
-│   │   ├── context/              # Context Providers (Resume details state)
-│   │   ├── dashboard/            # Resume dashboard and step-by-step forms
-│   │   ├── home/                 # App landing page
-│   │   ├── placement-coach/      # Career coach dashboard and interactive chat
-│   │   ├── startup-builder/      # Startup blueprint generator UI
-│   │   ├── cover-letter/         # AI Cover Letter generator UI
-│   │   └── my-resume/            # Saved resume export layouts
-│   ├── .env                      # Local frontend variables
-│   ├── package.json              # NPM dependencies & scripts
-│   ├── tailwind.config.js        # Styling system tokens
-│   └── Dockerfile.frontend       # Frontend Docker image
-├── docker-compose.yml            # Docker Compose orchestration
-└── README.md                     # Project documentation
+├── backend/                          # FastAPI Backend
+│   ├── agents/                       # Multi-Agent workflows
+│   ├── routers/                      # API route handlers
+│   │   ├── placement_coach.py        # ATS analysis, mock interview, DSA, code execution
+│   │   ├── startup_builder.py        # Startup blueprint generation
+│   │   └── cover_letter.py           # AI cover letter generation
+│   ├── database/                     # Database utilities & DSA problem set
+│   ├── main.py                       # FastAPI app entrypoint
+│   ├── requirements.txt              # Python dependencies
+│   └── Dockerfile.backend            # Backend Docker image
+├── frontend/                         # React Frontend
+│   ├── public/                       # Static frontend assets
+│   ├── service/                      # API client & LocalStorage layers
+│   ├── src/                          # React Source Code
+│   │   ├── components/               # UI elements & custom layout components
+│   │   ├── context/                  # Context Providers (Resume details state)
+│   │   ├── dashboard/                # Resume dashboard and step-by-step forms
+│   │   ├── home/                     # App landing page
+│   │   ├── mock-interview/           # Humanized AI interviewer with avatar & lip-sync
+│   │   │   ├── index.jsx             # Full interview session logic & voice control
+│   │   │   └── InterviewerAvatar.jsx # Canvas-based animated face with lip-sync
+│   │   ├── placement-coach/          # Career coach dashboard and interactive chat
+│   │   │   ├── codeRunner.js         # Multi-language test harness generator
+│   │   │   ├── dsaQuestions.js       # Full DSA question bank with test cases
+│   │   │   └── components/           # DSA Practice Arena UI components
+│   │   ├── startup-builder/          # Startup blueprint generator UI
+│   │   ├── cover-letter/             # AI Cover Letter generator UI
+│   │   └── my-resume/                # Saved resume export layouts
+│   ├── .env                          # Local frontend variables
+│   ├── package.json                  # NPM dependencies & scripts
+│   ├── tailwind.config.js            # Styling system tokens
+│   └── Dockerfile.frontend           # Frontend Docker image
+├── docker-compose.yml                # Docker Compose orchestration
+└── README.md                         # Project documentation
 ```
 
 ---
