@@ -27,7 +27,7 @@ function SkillsPreview({ resumeInfo }) {
             key={index}
             className='flex items-center justify-between'
           >
-            <h2 className={`text-xs ${isBlackFont ? 'text-black font-semibold' : ''}`}>{skill?.name}</h2>
+            <h2 className={`text-xs ${isBlackFont ? 'text-white font-semibold' : ''}`}>{skill?.name}</h2>
 
             <div className='h-2 bg-gray-200 w-[120px] rounded'>
               <div

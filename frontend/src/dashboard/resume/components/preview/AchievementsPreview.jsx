@@ -24,7 +24,7 @@ function AchievementsPreview({ resumeInfo }) {
       />
       <ul className="ml-4 list-disc space-y-1">
         {items.map((item, index) => (
-          <li key={index} className={`text-xs ${isBlackFont ? 'text-black' : 'text-gray-700'}`}>
+          <li key={index} className={`text-xs ${isBlackFont ? 'text-white' : 'text-gray-700'}`}>
             {item}
           </li>
         ))}

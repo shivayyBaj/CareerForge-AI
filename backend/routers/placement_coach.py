@@ -196,7 +196,8 @@ Rules:
 - Give brief feedback on the candidate's last answer before asking the next question.
 - Keep responses concise (2-4 sentences max).
 - Vary your questions: technical skills, behavioral (STAR method), situational, and culture-fit.
-- Do NOT repeat questions you've already asked."""
+- Do NOT repeat questions you've already asked.
+- CRITICAL: If the candidate replies with random gibberish, irrelevant text, or complete nonsense, professionally call them out on it. Remind them this is a mock interview, do NOT provide positive feedback for nonsense, and ask them to answer the previous question seriously."""
 
     messages = [SystemMessage(content=system_prompt)]
     for msg in req.history:
@@ -559,6 +560,7 @@ Analyze the candidate's performance throughout the interview. Respond ONLY with 
 Rules:
 - Be objective and evidence-based, referencing specific answers from the transcript.
 - Strengths and improvements must contain exactly 3 items each.
+- CRITICAL: If the candidate gave responses that were mostly random gibberish, nonsense, or completely irrelevant, their `overallScore` and `communication` score should be severely penalized (e.g., F grade, No Hire).
 - Do not include any text outside the JSON block."""
 
     response = llm.invoke([HumanMessage(content=prompt)])

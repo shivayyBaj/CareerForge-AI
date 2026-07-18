@@ -22,10 +22,10 @@ function EducationalPreview({resumeInfo}) {
                     color:titleColor
                 }}
             >{education.universityName}</h2>
-            <h2 className={`text-xs flex justify-between ${isBlackFont ? 'text-black font-semibold' : ''}`}>{education?.degree} in {education?.major}
+            <h2 className={`text-xs flex justify-between ${isBlackFont ? 'text-white font-semibold' : ''}`}>{education?.degree} in {education?.major}
             <span>{education?.startDate} - {education?.endDate}</span>
             </h2>
-            <p className={`text-xs my-2 ${isBlackFont ? 'text-black' : 'text-gray-700'}`}>
+            <p className={`text-xs my-2 ${isBlackFont ? 'text-white' : 'text-gray-700'}`}>
                 {education?.description}
             </p>
         </div>

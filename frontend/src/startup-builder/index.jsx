@@ -123,24 +123,24 @@ function StartupBuilder() {
     return text.split('\n').map((line, idx) => {
       const trimmed = line.trim();
       if (trimmed.startsWith('###')) {
-        return <h4 key={idx} className="text-base font-bold text-amber-400 mt-6 mb-2 tracking-wide font-serif">{trimmed.replace(/###/g, '').trim()}</h4>;
+        return <h4 key={idx} className="text-base font-bold text-blue-600 mt-6 mb-2 tracking-wide font-serif">{trimmed.replace(/###/g, '').trim()}</h4>;
       }
       if (trimmed.startsWith('##')) {
-        return <h3 key={idx} className="text-lg font-bold text-white mt-8 mb-4 border-b border-white/5 pb-2 font-serif">{trimmed.replace(/##/g, '').trim()}</h3>;
+        return <h3 key={idx} className="text-lg font-bold text-slate-900 mt-8 mb-4 border-b border-slate-200 pb-2 font-serif">{trimmed.replace(/##/g, '').trim()}</h3>;
       }
       if (trimmed.startsWith('#')) {
-        return <h2 key={idx} className="text-xl font-extrabold text-amber-500 mt-10 mb-6 font-serif">{trimmed.replace(/#/g, '').trim()}</h2>;
+        return <h2 key={idx} className="text-xl font-extrabold text-blue-600 mt-10 mb-6 font-serif">{trimmed.replace(/#/g, '').trim()}</h2>;
       }
       if (trimmed.startsWith('-') || trimmed.startsWith('*')) {
         return (
-          <li key={idx} className="text-xs md:text-sm text-white/70 ml-5 list-disc mb-1.5 leading-relaxed">
+          <li key={idx} className="text-xs md:text-sm text-slate-500 ml-5 list-disc mb-1.5 leading-relaxed">
             {trimmed.substring(1).trim()}
           </li>
         );
       }
       if (/^\d+\./.test(trimmed)) {
         return (
-          <li key={idx} className="text-xs md:text-sm text-white/70 ml-5 list-decimal mb-1.5 leading-relaxed">
+          <li key={idx} className="text-xs md:text-sm text-slate-500 ml-5 list-decimal mb-1.5 leading-relaxed">
             {trimmed.replace(/^\d+\./, '').trim()}
           </li>
         );
@@ -148,16 +148,16 @@ function StartupBuilder() {
       if (trimmed === '') {
         return <div key={idx} className="h-2" />;
       }
-      return <p key={idx} className="text-xs md:text-sm text-white/70 leading-relaxed mb-3">{trimmed}</p>;
+      return <p key={idx} className="text-xs md:text-sm text-slate-500 leading-relaxed mb-3">{trimmed}</p>;
     });
   };
 
   return (
-    <div className="flex bg-[#030303] text-white min-h-screen w-full relative overflow-hidden">
+    <div className="flex bg-white text-slate-900 min-h-screen w-full relative overflow-hidden">
       
       {/* Background decorations */}
       <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {/* Custom confirm dialog */}
       <ConfirmDialog
@@ -170,10 +170,10 @@ function StartupBuilder() {
       />
 
       {/* ── History Sidebar ── */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-black/90 border-r border-white/5 flex flex-col transform transition-transform duration-300 backdrop-blur-xl ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
-        <div className="p-4 border-b border-white/5 flex items-center justify-between">
+      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white/90 border-r border-slate-200 flex flex-col transform transition-transform duration-300 backdrop-blur-xl ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="p-4 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold tracking-wide font-serif text-sm">
-            <History className="w-4 h-4 text-amber-500" /> Startup History
+            <History className="w-4 h-4 text-blue-600" /> Startup History
           </div>
           <div className="flex items-center gap-2">
             {history.length > 0 && (
@@ -181,15 +181,15 @@ function StartupBuilder() {
                 <Trash2 className="w-3 h-3" /> Clear All
               </button>
             )}
-            <button onClick={() => setShowHistory(false)} className="p-1 hover:bg-white/5 rounded-lg border border-white/5 transition-colors">
-              <X className="w-4 h-4 text-white/50" />
+            <button onClick={() => setShowHistory(false)} className="p-1 hover:bg-slate-50 rounded-lg border border-slate-200 transition-colors">
+              <X className="w-4 h-4 text-slate-500" />
             </button>
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto p-2 space-y-2">
           {history.length === 0 ? (
-            <div className="p-6 text-center text-white/40 text-xs mt-10">
+            <div className="p-6 text-center text-slate-500 text-xs mt-10">
               <History className="w-8 h-8 mx-auto mb-3 opacity-20" />
               No startup builds yet.<br />Describe an idea and deploy your crew.
             </div>
@@ -198,12 +198,12 @@ function StartupBuilder() {
               <div
                 key={session.id}
                 onClick={() => loadSession(session)}
-                className="p-3.5 rounded-xl border border-white/5 hover:border-amber-500/20 bg-white/[0.01] hover:bg-white/[0.03] cursor-pointer group transition-colors"
+                className="p-3.5 rounded-xl border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-slate-50 hover:bg-slate-100 cursor-pointer group transition-colors"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-xs text-white group-hover:text-amber-400 transition-colors line-clamp-2 leading-relaxed">{session.ideaPreview}{session.idea.length > 80 ? '...' : ''}</p>
-                    <p className="text-[10px] text-white/30 mt-1">{session.timestamp}</p>
+                    <p className="font-semibold text-xs text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-relaxed">{session.ideaPreview}{session.idea.length > 80 ? '...' : ''}</p>
+                    <p className="text-[10px] text-slate-500 mt-1">{session.timestamp}</p>
                     <div className="flex items-center gap-1 mt-2">
                       <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                       <span className="text-[10px] text-emerald-400 uppercase tracking-widest font-bold">Blueprint ready</span>
@@ -212,7 +212,7 @@ function StartupBuilder() {
                   <div className="flex items-center gap-1 flex-shrink-0">
                     <button 
                       onClick={(e) => deleteSession(session.id, e)} 
-                      className="p-1 text-white/30 hover:text-rose-400 rounded-md hover:bg-white/5 transition-all"
+                      className="p-1 text-slate-500 hover:text-rose-400 rounded-md hover:bg-slate-50 transition-all"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
@@ -223,7 +223,7 @@ function StartupBuilder() {
           )}
         </div>
       </div>
-      {showHistory && <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={() => setShowHistory(false)} />}
+      {showHistory && <div className="fixed inset-0 z-40 bg-white/60 backdrop-blur-sm" onClick={() => setShowHistory(false)} />}
 
       {/* ── Main Content ── */}
       <div className="flex-1 p-6 lg:p-12 max-w-7xl mx-auto w-full">
@@ -231,43 +231,43 @@ function StartupBuilder() {
         <div className="relative mb-12 text-center animate-slide-up">
           <button 
             onClick={() => navigate(-1)} 
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors group border border-white/5 bg-white/[0.02] px-3 py-1.5 rounded-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
           </button>
-          <div className="flex justify-center items-center gap-1.5 text-amber-500 text-xs font-semibold uppercase tracking-wider mb-2">
+          <div className="flex justify-center items-center gap-1.5 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" /> Agent Blueprint Workspace
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-white">Multi-Agent Startup Builder</h1>
-          <p className="text-sm text-white/50 max-w-xl mx-auto leading-relaxed">Describe your idea to launch a specialized crew of AI business strategy agents to build your next venture blueprint.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-slate-900">Multi-Agent Startup Builder</h1>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">Describe your idea to launch a specialized crew of AI business strategy agents to build your next venture blueprint.</p>
           <button
             onClick={() => setShowHistory(true)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-white/60 hover:text-amber-400 border border-white/5 hover:border-amber-500/30 bg-white/[0.02] hover:bg-amber-500/5 px-3 py-1.5 rounded-lg transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
           >
             <History className="w-3.5 h-3.5" />
-            History {history.length > 0 && <span className="bg-amber-500/20 text-amber-400 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
+            History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
           </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Panel */}
           <div className="lg:col-span-1 flex flex-col gap-6 animate-fade-in">
-            <div className="relative rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
+            <div className="relative rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-bold font-serif flex items-center gap-2 text-white">
-                  <Rocket className="text-amber-500 w-4 h-4"/> Business Concept
+                <h2 className="text-lg font-bold font-serif flex items-center gap-2 text-slate-900">
+                  <Rocket className="text-blue-600 w-4 h-4"/> Business Concept
                 </h2>
                 {(results.research || idea) && (
                   <button 
                     onClick={startNew} 
-                    className="text-[10px] font-bold uppercase tracking-wider text-white/50 hover:text-amber-400 border border-white/10 hover:border-amber-500/30 px-2 py-1 rounded bg-white/[0.02] transition-colors"
+                    className="text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 px-2 py-1 rounded bg-slate-50 hover:bg-slate-100 transition-colors"
                   >
                     + New Concept
                   </button>
                 )}
               </div>
               <textarea
-                className="w-full bg-[#090909] border border-white/5 rounded-xl p-4 min-h-[220px] resize-none focus:border-amber-500/30 outline-none text-xs md:text-sm text-white placeholder:text-white/20 mb-6 leading-relaxed"
+                className="w-full bg-white border border-slate-200 rounded-xl p-4 min-h-[220px] resize-none focus:border-blue-100 outline-none text-xs md:text-sm text-slate-900 placeholder:text-slate-500 mb-6 leading-relaxed"
                 placeholder="Describe your startup idea. E.g., 'A local neighborhood tool-sharing app with automated calendar and damage insurance, targetting urban professionals.'"
                 value={idea}
                 onChange={(e) => setIdea(e.target.value)}
@@ -276,7 +276,7 @@ function StartupBuilder() {
               <button
                 onClick={startAgents}
                 disabled={isBuilding || !idea.trim()}
-                className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/10 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-40 disabled:hover:scale-100 flex items-center justify-center gap-2 text-sm"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-blue-100 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-40 disabled:hover:scale-100 flex items-center justify-center gap-2 text-sm"
               >
                 {isBuilding ? <Loader2 className="w-4 h-4 animate-spin"/> : <Play className="w-4 h-4"/>}
                 {isBuilding ? "Deploying Agents..." : "Deploy Agent Team"}
@@ -284,45 +284,45 @@ function StartupBuilder() {
             </div>
 
             {/* Agent Status */}
-            <div className="rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.01] to-transparent p-6 shadow-xl flex-1">
-              <h3 className="text-sm font-bold tracking-wider text-white/80 border-b border-white/5 pb-3 mb-4 font-serif">Crew Deployment Status</h3>
+            <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.01] to-transparent p-6 shadow-xl flex-1">
+              <h3 className="text-sm font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-3 mb-4 font-serif">Crew Deployment Status</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding ? 'bg-amber-500 animate-pulse' : (results.pitchDeck ? 'bg-emerald-400' : 'bg-white/10')}`}></div>
-                    <span className="text-xs font-semibold text-white/70">Chief Visionary Officer</span>
+                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding ? 'bg-blue-600 animate-pulse' : (results.pitchDeck ? 'bg-emerald-400' : 'bg-slate-50')}`}></div>
+                    <span className="text-xs font-semibold text-slate-500">Chief Visionary Officer</span>
                   </div>
-                  <span className="text-[10px] text-white/40 font-mono">CVO-Agent</span>
+                  <span className="text-[10px] text-slate-500 font-mono">CVO-Agent</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding && results.research === null ? 'bg-amber-500 animate-pulse' : (results.research ? 'bg-emerald-400' : 'bg-white/10')}`}></div>
-                    <span className="text-xs font-semibold text-white/70">Market Research Analyst</span>
+                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding && results.research === null ? 'bg-blue-600 animate-pulse' : (results.research ? 'bg-emerald-400' : 'bg-slate-50')}`}></div>
+                    <span className="text-xs font-semibold text-slate-500">Market Research Analyst</span>
                   </div>
-                  <span className="text-[10px] text-white/40 font-mono">MRA-Agent</span>
+                  <span className="text-[10px] text-slate-500 font-mono">MRA-Agent</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding && results.research !== null && results.businessModel === null ? 'bg-amber-500 animate-pulse' : (results.businessModel ? 'bg-emerald-400' : 'bg-white/10')}`}></div>
-                    <span className="text-xs font-semibold text-white/70">Business Strategist</span>
+                    <div className={`w-2.5 h-2.5 rounded-full ${isBuilding && results.research !== null && results.businessModel === null ? 'bg-blue-600 animate-pulse' : (results.businessModel ? 'bg-emerald-400' : 'bg-slate-50')}`}></div>
+                    <span className="text-xs font-semibold text-slate-500">Business Strategist</span>
                   </div>
-                  <span className="text-[10px] text-white/40 font-mono">BS-Agent</span>
+                  <span className="text-[10px] text-slate-500 font-mono">BS-Agent</span>
                 </div>
               </div>
 
               {/* Recent history quick access */}
               {history.length > 0 && !isBuilding && (
-                <div className="mt-8 pt-4 border-t border-white/5">
-                  <p className="text-[10px] uppercase font-bold tracking-widest text-white/30 mb-3">Recent Blueprints</p>
+                <div className="mt-8 pt-4 border-t border-slate-200">
+                  <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-3">Recent Blueprints</p>
                   <div className="space-y-2">
                     {history.slice(0, 3).map(session => (
                       <button
                         key={session.id}
                         onClick={() => loadSession(session)}
-                        className="w-full text-left p-2.5 rounded-xl border border-transparent hover:border-white/5 hover:bg-white/[0.02] transition-all duration-300 group"
+                        className="w-full text-left p-2.5 rounded-xl border border-transparent hover:border-slate-200 hover:bg-slate-50 hover:bg-slate-100 transition-all duration-300 group"
                       >
-                        <p className="text-xs font-semibold text-white/60 group-hover:text-amber-400 transition-colors line-clamp-1 leading-relaxed">{session.ideaPreview}</p>
-                        <p className="text-[10px] text-white/30">{session.timestamp}</p>
+                        <p className="text-xs font-semibold text-slate-500 group-hover:text-blue-600 transition-colors line-clamp-1 leading-relaxed">{session.ideaPreview}</p>
+                        <p className="text-[10px] text-slate-500">{session.timestamp}</p>
                       </button>
                     ))}
                   </div>
@@ -332,12 +332,12 @@ function StartupBuilder() {
           </div>
 
           {/* Right Panel — Tabs */}
-          <div className="lg:col-span-2 rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden animate-slide-up">
-            <div className="border-b border-white/5 flex bg-[#060606]/80 backdrop-blur-md overflow-x-auto select-none">
+          <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden animate-slide-up">
+            <div className="border-b border-slate-200 flex bg-white/80 backdrop-blur-md overflow-x-auto select-none">
               <button 
                 onClick={() => setActiveTab('logs')} 
                 className={`px-5 py-4 font-bold text-xs tracking-wider uppercase flex items-center gap-2 whitespace-nowrap transition-all border-b-2 ${
-                  activeTab === 'logs' ? 'text-amber-400 border-amber-500 bg-white/[0.02]' : 'text-white/40 hover:text-white/70 border-transparent'
+                  activeTab === 'logs' ? 'text-blue-600 border-blue-200 bg-slate-50 hover:bg-slate-100' : 'text-slate-500 hover:text-slate-500 border-transparent'
                 }`}
               >
                 <Terminal className="w-3.5 h-3.5"/> Console Logs
@@ -346,7 +346,7 @@ function StartupBuilder() {
                 onClick={() => setActiveTab('research')} 
                 disabled={!results.research} 
                 className={`px-5 py-4 font-bold text-xs tracking-wider uppercase flex items-center gap-2 whitespace-nowrap transition-all border-b-2 disabled:opacity-30 ${
-                  activeTab === 'research' ? 'text-amber-400 border-amber-500 bg-white/[0.02]' : 'text-white/40 hover:text-white/70 border-transparent'
+                  activeTab === 'research' ? 'text-blue-600 border-blue-200 bg-slate-50 hover:bg-slate-100' : 'text-slate-500 hover:text-slate-500 border-transparent'
                 }`}
               >
                 <BarChart3 className="w-3.5 h-3.5"/> Market Analysis {results.research && <CheckCircle2 className="w-3 h-3 text-emerald-400"/>}
@@ -355,7 +355,7 @@ function StartupBuilder() {
                 onClick={() => setActiveTab('model')} 
                 disabled={!results.businessModel} 
                 className={`px-5 py-4 font-bold text-xs tracking-wider uppercase flex items-center gap-2 whitespace-nowrap transition-all border-b-2 disabled:opacity-30 ${
-                  activeTab === 'model' ? 'text-amber-400 border-amber-500 bg-white/[0.02]' : 'text-white/40 hover:text-white/70 border-transparent'
+                  activeTab === 'model' ? 'text-blue-600 border-blue-200 bg-slate-50 hover:bg-slate-100' : 'text-slate-500 hover:text-slate-500 border-transparent'
                 }`}
               >
                 <FileText className="w-3.5 h-3.5"/> Business Strategy {results.businessModel && <CheckCircle2 className="w-3 h-3 text-emerald-400"/>}
@@ -364,14 +364,14 @@ function StartupBuilder() {
                 onClick={() => setActiveTab('pitch')} 
                 disabled={!results.pitchDeck} 
                 className={`px-5 py-4 font-bold text-xs tracking-wider uppercase flex items-center gap-2 whitespace-nowrap transition-all border-b-2 disabled:opacity-30 ${
-                  activeTab === 'pitch' ? 'text-amber-400 border-amber-500 bg-white/[0.02]' : 'text-white/40 hover:text-white/70 border-transparent'
+                  activeTab === 'pitch' ? 'text-blue-600 border-blue-200 bg-slate-50 hover:bg-slate-100' : 'text-slate-500 hover:text-slate-500 border-transparent'
                 }`}
               >
                 <Presentation className="w-3.5 h-3.5"/> Pitch Proposal {results.pitchDeck && <CheckCircle2 className="w-3 h-3 text-emerald-400"/>}
               </button>
             </div>
 
-            <div className="flex-1 p-6 md:p-8 overflow-y-auto bg-[#040404]/30">
+            <div className="flex-1 p-6 md:p-8 overflow-y-auto bg-white/30">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -382,19 +382,19 @@ function StartupBuilder() {
                   className="min-h-full"
                 >
                   {activeTab === 'logs' && (
-                    <div className="bg-[#090909] border border-white/5 text-emerald-400 font-mono text-xs md:text-sm p-5 rounded-2xl min-h-full shadow-inner leading-relaxed">
-                      <div className="mb-4 text-white/30"># Crew Agent terminal initialized. Awaiting commands...</div>
+                    <div className="bg-white border border-slate-200 text-emerald-400 font-mono text-xs md:text-sm p-5 rounded-2xl min-h-full shadow-inner leading-relaxed">
+                      <div className="mb-4 text-slate-500"># Crew Agent terminal initialized. Awaiting commands...</div>
                       {logs.map((log, idx) => (
                         <div key={idx} className="mb-2.5">
-                          <span className="text-white/20">[{log.time}]</span>{' '}
+                          <span className="text-slate-500">[{log.time}]</span>{' '}
                           <span className={log.msg.includes('ERROR') ? 'text-rose-400' : log.msg.includes('SUCCESS') ? 'text-emerald-400' : 'text-emerald-400/90'}>
                             {log.msg}
                           </span>
                         </div>
                       ))}
                       {isBuilding && (
-                        <div className="mt-4 flex items-center gap-2 text-amber-400 font-semibold animate-pulse">
-                          <span className="w-1.5 h-4 bg-amber-500 inline-block animate-pulse"></span> Deploying neural crew...
+                        <div className="mt-4 flex items-center gap-2 text-blue-600 font-semibold animate-pulse">
+                          <span className="w-1.5 h-4 bg-blue-600 inline-block animate-pulse"></span> Deploying neural crew...
                         </div>
                       )}
                       <div ref={logEndRef} />

@@ -20,11 +20,16 @@
 
 ## 📖 Overview
 
-**CareerForge AI** is a premium, full-featured career advancement and entrepreneurial launching pad. Combining a gorgeous dark gold user interface with a robust FastAPI backend orchestration layer, CareerForge AI helps students and job seekers build industry-grade resumes, practice interviews with a humanized AI interviewer avatar (with lip-sync!), sharpen DSA skills with a real in-browser code runner, generate professional cover letters, and turn raw startup ideas into investor-ready pitch decks.
+**CareerForge AI** is a premium, full-featured career advancement and entrepreneurial launching pad. Combining a modern, pristine white-and-blue SaaS user interface with a robust FastAPI backend orchestration layer, CareerForge AI helps students and job seekers build industry-grade resumes, practice interviews with a humanized AI interviewer avatar (with lip-sync!), sharpen DSA skills with a real in-browser code runner, generate professional cover letters, and turn raw startup ideas into investor-ready pitch decks. All tools are seamlessly integrated into a unified dashboard with sidebar navigation.
 
 ---
 
 ## ✨ Features
+
+### 🌟 Unified SaaS Dashboard
+* 🖥️ **Centralized Hub**: A fully integrated sidebar navigation layout connecting Resume Builder, Cover Letter, Mock Interview, DSA Practice, and Startup Builder into a single cohesive web application.
+* 🎨 **Pristine Aesthetics**: Modern white-and-blue SaaS design system ensuring a bright, clean, and intuitive user experience across all modules.
+
 
 ### 📄 1. ATS Resume Builder
 * 🎨 **Theme Customization**: 12 custom accent color presets + a "Use Black Font" toggle for recruiter readability.
@@ -33,10 +38,11 @@
 * 📤 **PDF Export**: Print-to-PDF ready using native CSS `@page` printing standards.
 * 💾 **Auto-Save & Persisted State**: Resume data persisted locally using a structured CRUD service layer.
 
-### 🤖 2. AI Mock Interview
+### 🤖 2. AI Placement Coach (Mock Interview)
 * 📊 **ATS Analysis**: Instantly score your resume against any target job title with detailed strengths, weaknesses, and custom roadmap steps.
 * 🧑‍💼 **Humanized AI Interviewer Avatar**: A realistic face avatar with animated lip-sync — powered by Web Speech API viseme tracking — gives you the feel of a real interviewer sitting in front of you.
 * 🎙️ **Voice-Enabled Interview**: Speak your answers using built-in speech-to-text. The AI interviewer responds using a natural-sounding, human-like voice synthesis with tone variation.
+* 🛑 **Safe Exit with Confirmation**: Pressing the back button or ending the interview prompts a confirmation dialog. The voice immediately stops when you confirm.
 * 📈 **Interview Scorecard**: Receive a detailed AI-powered scorecard after the interview — with overall score, grade, verdict (Hire/No Hire), and category breakdowns (communication, technical, problem-solving, culture fit).
 
 ### 💻 3. DSA Practice Arena

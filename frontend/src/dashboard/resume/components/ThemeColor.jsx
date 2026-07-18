@@ -61,7 +61,7 @@ function ThemeColor() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="sm" className="flex gap-2 border-gold/30">
+        <Button variant="outline" size="sm" className="flex gap-2 border-slate-200">
           <LayoutGrid className="h-4 w-4" /> Theme
         </Button>
       </PopoverTrigger>

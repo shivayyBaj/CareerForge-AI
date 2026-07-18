@@ -46,30 +46,30 @@ function AddResume() {
     return (
         <div>
             <div 
-                className='relative group flex flex-col items-center justify-center h-[280px] rounded-2xl border border-dashed border-white/10 bg-white/[0.01] hover:bg-white/[0.03] hover:border-amber-500/40 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 overflow-hidden'
+                className='relative group flex flex-col items-center justify-center h-[280px] rounded-2xl border border-dashed border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-50 hover:bg-slate-100 hover:border-blue-100 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 overflow-hidden'
                 onClick={() => setOpenDialog(true)}
             >
-                <div className="absolute inset-0 bg-gradient-to-b from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 group-hover:scale-110 group-hover:border-amber-500/30 group-hover:bg-amber-500/10 transition-all duration-300 mb-4">
-                    <Plus className="text-white/60 group-hover:text-amber-400 w-6 h-6 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-50 border border-slate-200 group-hover:scale-110 group-hover:border-blue-100 group-hover:bg-blue-100 transition-all duration-300 mb-4">
+                    <Plus className="text-slate-500 group-hover:text-blue-600 w-6 h-6 transition-colors" />
                 </div>
-                <p className="text-sm font-semibold tracking-wide text-white/50 group-hover:text-white transition-colors">Create Resume</p>
+                <p className="text-sm font-semibold tracking-wide text-slate-500 group-hover:text-slate-900 transition-colors">Create Resume</p>
             </div>
 
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-                <DialogContent className="border border-white/10 bg-black/90 backdrop-blur-xl text-white rounded-2xl max-w-md p-6">
+                <DialogContent className="border border-slate-200 bg-white backdrop-blur-xl text-slate-900 rounded-2xl max-w-md p-6">
                     <DialogHeader className="space-y-3">
-                        <DialogTitle className="text-2xl font-bold font-serif text-white flex items-center gap-2">
+                        <DialogTitle className="text-2xl font-bold font-serif text-slate-900 flex items-center gap-2">
                             Create New Resume
                         </DialogTitle>
-                        <DialogDescription className="text-sm text-white/50 leading-relaxed">
+                        <DialogDescription className="text-sm text-slate-500 leading-relaxed">
                             Give a professional title for your new resume to categorize your roles.
                         </DialogDescription>
                     </DialogHeader>
                     
                     <div className="my-4">
                         <Input 
-                            className="bg-white/5 border-white/10 focus-visible:ring-amber-500/50 focus-visible:border-amber-500 text-white rounded-xl placeholder:text-white/20 h-11" 
+                            className="bg-slate-50 border-slate-200 focus-visible:ring-blue-100 focus-visible:border-blue-200 text-slate-900 rounded-xl placeholder:text-slate-500 h-11" 
                             placeholder="Ex. Senior Full Stack Engineer"
                             value={resumeTitle}
                             onChange={(e) => setResumeTitle(e.target.value)}
@@ -80,14 +80,14 @@ function AddResume() {
                         <Button 
                             onClick={() => setOpenDialog(false)} 
                             variant="ghost"
-                            className="hover:bg-white/5 text-white/70 hover:text-white rounded-xl px-5"
+                            className="hover:bg-slate-50 text-slate-500 hover:text-slate-900 rounded-xl px-5"
                         >
                             Cancel
                         </Button>
                         <Button 
                             disabled={!resumeTitle.trim() || loading}
                             onClick={onCreate}
-                            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-semibold rounded-xl px-6 transition-all duration-300 disabled:opacity-40"
+                            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold rounded-xl px-6 transition-all duration-300 disabled:opacity-40"
                         >
                             {loading ? (
                                 <Loader2 className='animate-spin w-4 h-4' />

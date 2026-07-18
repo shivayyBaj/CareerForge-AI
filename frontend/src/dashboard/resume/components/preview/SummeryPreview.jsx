@@ -17,7 +17,7 @@ function SummeryPreview({ resumeInfo }) {
         className="my-2 border-[1.5px]"
         style={{ borderColor: resumeInfo?.themeColor }}
       />
-      <p className={`text-xs leading-relaxed ${isBlackFont ? 'text-black' : 'text-gray-700'}`}>{resumeInfo?.summery}</p>
+      <p className={`text-xs leading-relaxed ${isBlackFont ? 'text-white' : 'text-gray-700'}`}>{resumeInfo?.summery}</p>
     </div>
   )
 }

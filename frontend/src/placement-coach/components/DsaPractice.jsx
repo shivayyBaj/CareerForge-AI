@@ -94,7 +94,7 @@ function renderHighlightedCode(code, language) {
 
     const highlightedCode = words.map((word, wordIdx) => {
       if (keywords.has(word)) {
-        return <span key={wordIdx} className="text-amber-400 font-bold">{word}</span>;
+        return <span key={wordIdx} className="text-blue-600 font-bold">{word}</span>;
       }
       if (/^\d+$/.test(word)) {
         return <span key={wordIdx} className="text-violet-400">{word}</span>;
@@ -106,7 +106,7 @@ function renderHighlightedCode(code, language) {
       <div key={lineIdx} className="min-h-[1.5rem] whitespace-pre">
         {highlightedCode}
         {commentPart && (
-          <span className="text-emerald-500/80 font-normal italic">{commentPart}</span>
+          <span className="text-slate-400 font-normal italic">{commentPart}</span>
         )}
       </div>
     );
@@ -133,6 +133,8 @@ function DsaPractice({ jobTitle = '' }) {
   const [expandedTopics, setExpandedTopics] = useState(new Set([DSA_QUESTIONS[0]?.topic || 'Arrays & Hashing']));
   const terminalRef = useRef(null);
   const fileInputRef = useRef(null);
+  const highlightRef = useRef(null);
+  const lineNumbersRef = useRef(null);
 
   const question = DSA_QUESTIONS.find((q) => q.id === selectedId) || DSA_QUESTIONS[0];
   const savedCode = useRef(loadSavedCode());
@@ -320,35 +322,35 @@ function DsaPractice({ jobTitle = '' }) {
   const currentLang = LANGUAGES.find((l) => l.id === language);
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto xl:h-[calc(100vh-160px)] min-h-0 animate-slide-up text-white select-none pb-6 xl:pb-0">
+    <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto xl:h-[calc(100vh-160px)] min-h-0 animate-slide-up text-slate-900 select-none pb-6 xl:pb-0">
       
       {/* ── Question List ── */}
-      <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
+      <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
         
-        <div className="p-4 border-b border-white/5 bg-white/[0.01]">
+        <div className="p-4 border-b border-slate-200 bg-slate-50 hover:bg-slate-100">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-white/50 flex items-center gap-1.5">
-              <Trophy className="w-3.5 h-3.5 text-amber-500" /> NeetCode 150 Progress
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+              <Trophy className="w-3.5 h-3.5 text-blue-600" /> NeetCode 150 Progress
             </span>
-            <span className="text-xs font-mono text-amber-400 font-bold">{solvedCount}/{totalQuestions} ({solvedPercentage}%)</span>
+            <span className="text-xs font-mono text-blue-600 font-bold">{solvedCount}/{totalQuestions} ({solvedPercentage}%)</span>
           </div>
-          <div className="w-full bg-white/5 h-2 rounded-full overflow-hidden border border-white/5">
+          <div className="w-full bg-slate-50 h-2 rounded-full overflow-hidden border border-slate-200">
             <div 
-              className="h-full bg-gradient-to-r from-amber-500 to-amber-600 transition-all duration-500"
+              className="h-full bg-gradient-to-r from-blue-600 to-blue-700 transition-all duration-500"
               style={{ width: `${solvedPercentage}%` }}
             />
           </div>
         </div>
 
-        <div className="p-3 border-b border-white/5 space-y-2.5">
+        <div className="p-3 border-b border-slate-200 space-y-2.5">
           <div className="relative">
-            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/30" />
+            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" />
             <input
               type="text"
               placeholder="Search problems, topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#090909] border border-white/5 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder:text-white/20 focus:border-amber-500/30 outline-none transition-colors"
+              className="w-full bg-white border border-slate-200 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-900 placeholder:text-slate-500 focus:border-blue-100 outline-none transition-colors"
             />
           </div>
           
@@ -359,8 +361,8 @@ function DsaPractice({ jobTitle = '' }) {
                 onClick={() => setDifficultyFilter(d)}
                 className={`text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-lg border transition-all ${
                   difficultyFilter === d
-                    ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
-                    : 'border-white/5 text-white/40 hover:border-white/10 hover:text-white'
+                    ? 'bg-blue-100 text-blue-600 border-blue-100'
+                    : 'border-slate-200 text-slate-500 hover:border-slate-200 hover:text-slate-900'
                 }`}
               >
                 {d}
@@ -377,18 +379,18 @@ function DsaPractice({ jobTitle = '' }) {
             const topicSolvedCount = list.filter(q => solvedIds.includes(q.id)).length;
             
             return (
-              <div key={topic} className="border border-white/5 rounded-xl bg-white/[0.01] overflow-hidden">
+              <div key={topic} className="border border-slate-200 rounded-xl bg-slate-50 hover:bg-slate-100 overflow-hidden">
                 <button
                   onClick={() => toggleTopicExpand(topic)}
-                  className="w-full flex items-center justify-between p-3 text-left hover:bg-white/[0.02] transition-colors"
+                  className="w-full flex items-center justify-between p-3 text-left hover:bg-slate-50 hover:bg-slate-100 transition-colors"
                 >
                   <div className="min-w-0 pr-2">
-                    <p className="text-xs font-bold font-serif text-white/90 truncate">{topic}</p>
-                    <span className="text-[10px] text-white/40 font-semibold mt-0.5 inline-block">
+                    <p className="text-xs font-bold font-serif text-slate-500 truncate">{topic}</p>
+                    <span className="text-[10px] text-slate-500 font-semibold mt-0.5 inline-block">
                       {topicSolvedCount}/{list.length} Solved
                     </span>
                   </div>
-                  <div className="flex items-center gap-1.5 flex-shrink-0 text-white/40">
+                  <div className="flex items-center gap-1.5 flex-shrink-0 text-slate-500">
                     {isExpanded ? <ChevronDown className="w-3.5 h-3.5" /> : <ChevronRight className="w-3.5 h-3.5" />}
                   </div>
                 </button>
@@ -400,7 +402,7 @@ function DsaPractice({ jobTitle = '' }) {
                       animate={{ height: 'auto' }}
                       exit={{ height: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="overflow-hidden bg-[#050505]/40 border-t border-white/5"
+                      className="overflow-hidden bg-white/40 border-t border-slate-200"
                     >
                       {list.map((q) => {
                         const isSolved = solvedIds.includes(q.id);
@@ -408,8 +410,8 @@ function DsaPractice({ jobTitle = '' }) {
                           <div
                             key={q.id}
                             onClick={() => setSelectedId(q.id)}
-                            className={`w-full flex items-center justify-between px-3 py-2.5 border-b border-white/5 last:border-0 cursor-pointer transition-colors ${
-                              selectedId === q.id ? 'bg-amber-500/10 border-l-2 border-l-amber-500' : 'hover:bg-white/[0.01]'
+                            className={`w-full flex items-center justify-between px-3 py-2.5 border-b border-slate-200 last:border-0 cursor-pointer transition-colors ${
+                              selectedId === q.id ? 'bg-blue-100 border-l-2 border-l-amber-500' : 'hover:bg-slate-50 hover:bg-slate-100'
                             }`}
                           >
                             <div className="flex items-center gap-2 min-w-0 pr-2">
@@ -417,14 +419,14 @@ function DsaPractice({ jobTitle = '' }) {
                                 onClick={(e) => toggleSolved(q.id, e)}
                                 className={`flex-shrink-0 w-4 h-4 rounded border flex items-center justify-center transition-all ${
                                   isSolved 
-                                    ? 'bg-amber-500 border-amber-500 text-black' 
-                                    : 'border-white/20 hover:border-amber-500/40 text-transparent'
+                                    ? 'bg-blue-600 border-blue-200 text-white' 
+                                    : 'border-slate-200 hover:border-blue-100 text-transparent'
                                 }`}
                               >
                                 <Check className="w-3 h-3 stroke-[3px]" />
                               </button>
                               <span className={`text-xs font-semibold truncate leading-tight ${
-                                isSolved ? 'text-white/40 line-through' : 'text-white/80'
+                                isSolved ? 'text-slate-500 line-through' : 'text-slate-500'
                               }`}>
                                 {q.title}
                               </span>
@@ -447,36 +449,36 @@ function DsaPractice({ jobTitle = '' }) {
       </div>
 
       {/* ── Problem Statement ── */}
-      <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
-        <div className="p-4 border-b border-white/5 bg-white/[0.01]">
+      <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
+        <div className="p-4 border-b border-slate-200 bg-slate-50 hover:bg-slate-100">
           <div className="flex items-center justify-between mb-1.5">
             <h2 className="text-base font-bold font-serif">{question?.title}</h2>
             <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${DIFFICULTY_COLORS[question?.difficulty]}`}>
               {question?.difficulty}
             </span>
           </div>
-          <p className="text-xs text-white/30 uppercase tracking-widest font-bold font-mono">{question?.topic}</p>
+          <p className="text-xs text-slate-500 uppercase tracking-widest font-bold font-mono">{question?.topic}</p>
         </div>
         <div className="flex-1 overflow-y-auto p-4 space-y-5 text-xs md:text-sm">
-          <p className="text-white/60 whitespace-pre-line leading-relaxed">{question?.description}</p>
+          <p className="text-slate-500 whitespace-pre-line leading-relaxed">{question?.description}</p>
 
           <div className="space-y-3">
-            <h4 className="font-bold text-amber-400 font-serif text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <h4 className="font-bold text-blue-600 font-serif text-xs uppercase tracking-wider flex items-center gap-1.5">
               <Lightbulb className="w-3.5 h-3.5" /> Examples
             </h4>
             {question?.examples.map((ex, i) => (
-              <div key={i} className="bg-[#090909] border border-white/5 rounded-xl p-3.5 font-mono text-[11px] leading-relaxed text-white/70">
-                <p><span className="text-white/30 font-bold">Input:</span> {ex.input}</p>
-                <p><span className="text-white/30 font-bold">Output:</span> {formatValue(ex.output, language)}</p>
-                {ex.explanation && <p className="text-white/40 mt-1.5"><span className="text-white/20 font-bold">Explanation:</span> {ex.explanation}</p>}
+              <div key={i} className="bg-white border border-slate-200 rounded-xl p-3.5 font-mono text-[11px] leading-relaxed text-slate-500">
+                <p><span className="text-slate-500 font-bold">Input:</span> {ex.input}</p>
+                <p><span className="text-slate-500 font-bold">Output:</span> {formatValue(ex.output, language)}</p>
+                {ex.explanation && <p className="text-slate-500 mt-1.5"><span className="text-slate-500 font-bold">Explanation:</span> {ex.explanation}</p>}
               </div>
             ))}
           </div>
 
           {question?.constraints && question?.constraints.length > 0 && (
             <div className="space-y-2">
-              <h4 className="font-bold text-amber-400 font-serif text-xs uppercase tracking-wider">Constraints</h4>
-              <ul className="text-xs text-white/40 space-y-1 list-disc list-inside">
+              <h4 className="font-bold text-blue-600 font-serif text-xs uppercase tracking-wider">Constraints</h4>
+              <ul className="text-xs text-slate-500 space-y-1 list-disc list-inside">
                 {question.constraints.map((c, i) => <li key={i}>{c}</li>)}
               </ul>
             </div>
@@ -488,22 +490,22 @@ function DsaPractice({ jobTitle = '' }) {
       <div className="xl:col-span-6 flex flex-col gap-4 min-h-[700px] xl:min-h-0 xl:h-full">
         
         {/* Toolbar */}
-        <div className="rounded-2xl border border-white/5 bg-gradient-to-r from-white/[0.02] to-transparent px-4 py-2.5 flex items-center justify-between gap-3 flex-wrap shadow-xl">
+        <div className="rounded-2xl border border-slate-200 bg-gradient-to-r from-white/[0.02] to-transparent px-4 py-2.5 flex items-center justify-between gap-3 flex-wrap shadow-xl">
           <div className="relative">
             <button
               onClick={() => setShowLangMenu(!showLangMenu)}
-              className="flex items-center gap-2 text-xs uppercase font-bold tracking-wider border border-white/5 hover:border-white/20 bg-white/5 px-3 py-1.5 rounded-xl transition-all"
+              className="flex items-center gap-2 text-xs uppercase font-bold tracking-wider border border-slate-200 hover:border-slate-200 bg-slate-50 px-3 py-1.5 rounded-xl transition-all"
             >
               {currentLang?.label} <ChevronDown className="w-3 h-3" />
             </button>
             {showLangMenu && (
-              <div className="absolute top-full left-0 mt-1.5 bg-black/95 border border-white/10 rounded-xl shadow-2xl z-20 min-w-[130px] p-1 overflow-hidden">
+              <div className="absolute top-full left-0 mt-1.5 bg-white/95 border border-slate-200 rounded-xl shadow-2xl z-20 min-w-[130px] p-1 overflow-hidden">
                 {LANGUAGES.map((lang) => (
                   <button
                     key={lang.id}
                     onClick={() => { setLanguage(lang.id); setShowLangMenu(false); }}
-                    className={`w-full text-left px-3 py-2 text-xs font-semibold rounded-lg hover:bg-white/5 transition-all ${
-                      language === lang.id ? 'text-amber-400 bg-amber-500/5' : 'text-white/60'
+                    className={`w-full text-left px-3 py-2 text-xs font-semibold rounded-lg hover:bg-slate-50 transition-all ${
+                      language === lang.id ? 'text-blue-600 bg-blue-100' : 'text-slate-500'
                     }`}
                   >
                     {lang.label}
@@ -524,7 +526,7 @@ function DsaPractice({ jobTitle = '' }) {
 
             <button
               onClick={handleReset}
-              className="p-2 border border-white/5 hover:border-white/10 bg-white/5 rounded-xl text-white/50 hover:text-white transition-all"
+              className="p-2 border border-slate-200 hover:border-slate-200 bg-slate-50 rounded-xl text-slate-500 hover:text-slate-900 transition-all"
               title="Reset starter template"
             >
               <RotateCcw className="w-4 h-4" />
@@ -532,7 +534,7 @@ function DsaPractice({ jobTitle = '' }) {
             <button
               onClick={handleRun}
               disabled={running}
-              className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50"
+              className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-slate-900 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50"
             >
               {running ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5 fill-current" />}
               Run
@@ -543,7 +545,7 @@ function DsaPractice({ jobTitle = '' }) {
               onClick={handleGetSolution}
               disabled={solutionLoading}
               title="View AI-generated solution with explanation"
-              className="flex items-center gap-2 bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-500 hover:to-violet-600 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 border border-violet-500/20"
+              className="flex items-center gap-2 bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-500 hover:to-violet-600 text-slate-900 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all disabled:opacity-50 border border-violet-500/20"
             >
               {solutionLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <BookOpen className="w-3.5 h-3.5" />}
               Solution
@@ -552,47 +554,69 @@ function DsaPractice({ jobTitle = '' }) {
         </div>
 
         {/* Code Editor */}
-        <div className="rounded-2xl border border-white/5 bg-[#0b0c13] flex-1 min-h-[220px] flex flex-col overflow-hidden shadow-xl" onDragOver={handleDragOver} onDrop={handleDrop}>
-          <div className="px-4 py-2 bg-[#090a0f] border-b border-white/5 flex items-center justify-between text-[10px] text-white/30 font-mono">
+        <div className="rounded-2xl border border-slate-200 bg-white flex-1 min-h-[220px] flex flex-col overflow-hidden shadow-xl" onDragOver={handleDragOver} onDrop={handleDrop}>
+          <div className="px-4 py-2 bg-white border-b border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
             <span className="flex items-center gap-1.5 uppercase font-bold"><Code2 className="w-3.5 h-3.5" /> solution.{language === 'python' ? 'py' : language === 'javascript' ? 'js' : language === 'java' ? 'java' : 'cpp'}</span>
             <span>Tab size: 2 spaces</span>
           </div>
           
           <div className="flex-1 flex overflow-hidden font-mono text-[13px] leading-relaxed relative">
             
-            <div className="w-10 bg-[#07080c] select-none text-right pr-2 text-white/10 pt-4 border-r border-white/5 font-bold">
+            <div 
+              ref={lineNumbersRef}
+              className="w-10 bg-white select-none text-right pr-2 text-slate-500 pt-4 border-r border-slate-200 font-bold overflow-hidden"
+            >
               {lineNumbers.map((ln) => (
                 <div key={ln}>{ln}</div>
               ))}
             </div>
 
-            <textarea
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Tab') {
-                  e.preventDefault();
-                  const start = e.target.selectionStart;
-                  const end = e.target.selectionEnd;
-                  setCode(code.substring(0, start) + '  ' + code.substring(end));
-                  requestAnimationFrame(() => {
-                    e.target.selectionStart = e.target.selectionEnd = start + 2;
-                  });
-                }
-              }}
-              spellCheck={false}
-              className="flex-1 bg-transparent text-amber-100 p-4 resize-none outline-none overflow-y-auto leading-relaxed border-0 focus:ring-0"
-              style={{ tabSize: 2 }}
-            />
+            <div className="flex-1 relative bg-white">
+              <div 
+                ref={highlightRef}
+                className="absolute inset-0 p-4 text-slate-800 overflow-hidden pointer-events-none whitespace-pre"
+                aria-hidden="true"
+              >
+                {renderHighlightedCode(code, language)}
+              </div>
+              <textarea
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                onScroll={(e) => {
+                  if (highlightRef.current) {
+                    highlightRef.current.scrollTop = e.target.scrollTop;
+                    highlightRef.current.scrollLeft = e.target.scrollLeft;
+                  }
+                  if (lineNumbersRef.current) {
+                    lineNumbersRef.current.scrollTop = e.target.scrollTop;
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const start = e.target.selectionStart;
+                    const end = e.target.selectionEnd;
+                    setCode(code.substring(0, start) + '  ' + code.substring(end));
+                    requestAnimationFrame(() => {
+                      e.target.selectionStart = e.target.selectionEnd = start + 2;
+                    });
+                  }
+                }}
+                spellCheck={false}
+                wrap="off"
+                className="absolute inset-0 w-full h-full bg-transparent text-transparent caret-slate-900 p-4 resize-none outline-none overflow-auto leading-relaxed border-0 focus:ring-0 whitespace-pre"
+                style={{ tabSize: 2 }}
+              />
+            </div>
           </div>
         </div>
 
         {/* Bottom Panels Container */}
         <div className={`flex flex-col xl:flex-row gap-4 shrink-0 ${showSolutionPanel ? 'xl:max-h-[350px]' : ''}`}>
           {/* LeetCode-Style Testcase Terminal */}
-          <div className="rounded-2xl border border-white/5 bg-[#090909] flex flex-col overflow-hidden shadow-xl flex-1" style={{ minHeight: '180px' }}>
-          <div className="px-4 py-2 border-b border-white/5 flex items-center justify-between text-[10px] font-mono bg-[#07080d]">
-            <span className="flex items-center gap-1.5 uppercase font-bold text-white/30">
+          <div className="rounded-2xl border border-slate-200 bg-white flex flex-col overflow-hidden shadow-xl flex-1" style={{ minHeight: '180px' }}>
+          <div className="px-4 py-2 border-b border-slate-200 flex items-center justify-between text-[10px] font-mono bg-white">
+            <span className="flex items-center gap-1.5 uppercase font-bold text-slate-500">
               <Terminal className="w-3.5 h-3.5 text-emerald-400" /> Test Results
             </span>
             {testResults && (
@@ -609,7 +633,7 @@ function DsaPractice({ jobTitle = '' }) {
           {structuredResults.length > 0 ? (
             <div className="flex flex-col flex-1 overflow-hidden">
               {/* Tab bar */}
-              <div className="flex items-center gap-1 px-3 pt-2 border-b border-white/5 overflow-x-auto scrollbar-none">
+              <div className="flex items-center gap-1 px-3 pt-2 border-b border-slate-200 overflow-x-auto scrollbar-none">
                 {structuredResults.map((r, i) => (
                   <button
                     key={i}
@@ -619,7 +643,7 @@ function DsaPractice({ jobTitle = '' }) {
                         ? r.status === 'PASS'
                           ? 'border-emerald-500 text-emerald-400 bg-emerald-500/5'
                           : 'border-rose-500 text-rose-400 bg-rose-500/5'
-                        : 'border-transparent text-white/30 hover:text-white/50'
+                        : 'border-transparent text-slate-500 hover:text-slate-500'
                     }`}
                   >
                     {r.status === 'PASS'
@@ -636,12 +660,12 @@ function DsaPractice({ jobTitle = '' }) {
                 if (!r) return null;
                 return (
                   <div className="flex-1 overflow-y-auto p-3 grid grid-cols-3 gap-2 font-mono text-[11px]">
-                    <div className="rounded-xl bg-white/[0.02] border border-white/5 p-2.5 space-y-1">
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-white/25">Input</p>
-                      <p className="text-white/60 break-all">{formatValue(r.input, language)}</p>
+                    <div className="rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 space-y-1">
+                      <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">Input</p>
+                      <p className="text-slate-500 break-all">{formatValue(r.input, language)}</p>
                     </div>
-                    <div className="rounded-xl bg-white/[0.02] border border-white/5 p-2.5 space-y-1">
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-white/25">Expected</p>
+                    <div className="rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 space-y-1">
+                      <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">Expected</p>
                       <p className="text-sky-300 break-all">{formatValue(r.expected, language)}</p>
                     </div>
                     <div className={`rounded-xl p-2.5 space-y-1 border ${
@@ -649,7 +673,7 @@ function DsaPractice({ jobTitle = '' }) {
                         ? 'bg-emerald-500/5 border-emerald-500/20'
                         : 'bg-rose-500/5 border-rose-500/20'
                     }`}>
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-white/25">Output</p>
+                      <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">Output</p>
                       <p className={`break-all ${r.status === 'PASS' ? 'text-emerald-400' : 'text-rose-400'}`}>
                         {formatValue(r.actual, language)}
                       </p>
@@ -662,7 +686,7 @@ function DsaPractice({ jobTitle = '' }) {
             /* Fallback: raw terminal output (compile errors etc) */
             <pre
               ref={terminalRef}
-              className="flex-1 overflow-y-auto p-4 text-[11px] text-emerald-400 bg-black leading-relaxed font-mono whitespace-pre-wrap select-text"
+              className="flex-1 overflow-y-auto p-4 text-[11px] text-emerald-400 bg-white leading-relaxed font-mono whitespace-pre-wrap select-text"
             >
               {terminalOutput || 'Sandbox shell online. Write a solution and click "Run" to evaluate test cases.'}
             </pre>
@@ -687,7 +711,7 @@ function DsaPractice({ jobTitle = '' }) {
                     <BookOpen className="w-4 h-4 text-violet-400" />
                   </div>
                   <div>
-                    <h4 className="font-serif font-bold text-sm text-white">AI Solution</h4>
+                    <h4 className="font-serif font-bold text-sm text-slate-900">AI Solution</h4>
                     <p className="text-[10px] text-violet-300/60 font-semibold uppercase tracking-wider">{question?.title} · {language}</p>
                   </div>
                 </div>
@@ -695,16 +719,16 @@ function DsaPractice({ jobTitle = '' }) {
                   {aiSolution?.solutionCode && (
                     <button
                       onClick={applyAiSolution}
-                      className="flex items-center gap-1.5 text-xs bg-violet-500 hover:bg-violet-400 text-white font-bold px-3 py-1.5 rounded-xl transition-all"
+                      className="flex items-center gap-1.5 text-xs bg-violet-500 hover:bg-violet-400 text-slate-900 font-bold px-3 py-1.5 rounded-xl transition-all"
                     >
                       <Zap className="w-3.5 h-3.5" /> Apply to Editor
                     </button>
                   )}
                   <button
                     onClick={() => setShowSolutionPanel(false)}
-                    className="p-1.5 hover:bg-white/5 border border-white/5 rounded-xl transition-colors"
+                    className="p-1.5 hover:bg-slate-50 border border-slate-200 rounded-xl transition-colors"
                   >
-                    <X className="w-3.5 h-3.5 text-white/40" />
+                    <X className="w-3.5 h-3.5 text-slate-500" />
                   </button>
                 </div>
               </div>
@@ -716,17 +740,17 @@ function DsaPractice({ jobTitle = '' }) {
                     <div className="w-10 h-10 rounded-full border border-violet-500/20 bg-violet-500/5 flex items-center justify-center">
                       <Loader2 className="w-5 h-5 text-violet-400 animate-spin" />
                     </div>
-                    <p className="text-xs text-white/40 font-semibold uppercase tracking-wider">Generating optimal solution...</p>
-                    <p className="text-[10px] text-white/20">This may take a few seconds</p>
+                    <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Generating optimal solution...</p>
+                    <p className="text-[10px] text-slate-500">This may take a few seconds</p>
                   </div>
                 ) : aiSolution ? (
                   <>
                     {/* Code Review Section */}
                     {aiSolution.codeReview && (
-                      <div className="bg-[#090909] border border-white/5 rounded-xl p-4 space-y-4 mb-4">
+                      <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-4 mb-4">
                         <div className="flex items-center justify-between">
-                          <p className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 text-white">
-                            <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Code Review
+                          <p className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 text-slate-900">
+                            <Sparkles className="w-3.5 h-3.5 text-blue-600" /> Code Review
                           </p>
                           {aiSolution.codeReview.isCorrect ? (
                             <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400 bg-emerald-400/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">Correct & Efficient</span>
@@ -735,12 +759,12 @@ function DsaPractice({ jobTitle = '' }) {
                           )}
                         </div>
                         
-                        <p className="text-xs text-white/70 leading-relaxed">{aiSolution.codeReview.feedback}</p>
+                        <p className="text-xs text-slate-500 leading-relaxed">{aiSolution.codeReview.feedback}</p>
                         
                         {aiSolution.codeReview.errors?.length > 0 && (
                           <div className="space-y-1.5">
                             <p className="text-xs font-bold text-rose-400">Errors Identified:</p>
-                            <ul className="text-xs text-white/50 space-y-1 list-disc list-inside">
+                            <ul className="text-xs text-slate-500 space-y-1 list-disc list-inside">
                               {aiSolution.codeReview.errors.map((e, i) => <li key={i}>{e}</li>)}
                             </ul>
                           </div>
@@ -748,25 +772,10 @@ function DsaPractice({ jobTitle = '' }) {
                         
                         {aiSolution.codeReview.hints?.length > 0 && (
                           <div className="space-y-1">
-                            <p className="text-xs font-bold text-amber-400">Hints:</p>
-                            <ul className="text-xs text-white/50 space-y-0.5 list-disc list-inside">
+                            <p className="text-xs font-bold text-blue-600">Hints:</p>
+                            <ul className="text-xs text-slate-500 space-y-0.5 list-disc list-inside">
                               {aiSolution.codeReview.hints.map((h, i) => <li key={i}>{h}</li>)}
                             </ul>
-                          </div>
-                        )}
-
-                        {aiSolution.codeReview.correctedCode && (
-                          <div className="space-y-1.5 mt-2">
-                            <p className="text-xs font-bold text-emerald-400">Fixed Version of Your Code:</p>
-                            <div className="text-[12px] bg-[#0b0c13] border border-white/5 text-amber-100 p-3 rounded-xl overflow-x-auto font-mono shadow-inner">
-                              {renderHighlightedCode(aiSolution.codeReview.correctedCode, language)}
-                            </div>
-                            <button
-                              onClick={() => setCode(aiSolution.codeReview.correctedCode)}
-                              className="mt-2 text-[10px] bg-amber-500/90 hover:bg-amber-400 text-black font-bold px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1.5"
-                            >
-                              <Zap className="w-3 h-3" /> Apply Fix to Editor
-                            </button>
                           </div>
                         )}
                       </div>
@@ -775,16 +784,16 @@ function DsaPractice({ jobTitle = '' }) {
                     {/* Complexity badges */}
                     <div className="flex flex-wrap gap-2">
                       {aiSolution.timeComplexity && (
-                        <div className="flex items-center gap-1.5 bg-[#090909] border border-white/5 px-3 py-1.5 rounded-xl">
+                        <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl">
                           <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                          <span className="text-[11px] font-bold text-white/50 uppercase tracking-wider">Time:</span>
+                          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Time:</span>
                           <span className="text-[11px] font-mono font-bold text-emerald-400">{aiSolution.timeComplexity}</span>
                         </div>
                       )}
                       {aiSolution.spaceComplexity && (
-                        <div className="flex items-center gap-1.5 bg-[#090909] border border-white/5 px-3 py-1.5 rounded-xl">
+                        <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl">
                           <MemoryStick className="w-3.5 h-3.5 text-sky-400" />
-                          <span className="text-[11px] font-bold text-white/50 uppercase tracking-wider">Space:</span>
+                          <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Space:</span>
                           <span className="text-[11px] font-mono font-bold text-sky-400">{aiSolution.spaceComplexity}</span>
                         </div>
                       )}
@@ -792,24 +801,24 @@ function DsaPractice({ jobTitle = '' }) {
 
                     {/* Approach */}
                     {aiSolution.approach && (
-                      <div className="bg-[#090909] border border-white/5 rounded-xl p-4 space-y-2">
+                      <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2">
                         <p className="text-xs font-bold text-violet-400 uppercase tracking-wider flex items-center gap-1.5">
                           <Lightbulb className="w-3.5 h-3.5" /> Approach & Strategy
                         </p>
-                        <p className="text-xs text-white/60 leading-relaxed whitespace-pre-line">{aiSolution.approach}</p>
+                        <p className="text-xs text-slate-500 leading-relaxed whitespace-pre-line">{aiSolution.approach}</p>
                       </div>
                     )}
 
                     {/* Key Insights */}
                     {aiSolution.keyInsights?.length > 0 && (
                       <div className="space-y-2">
-                        <p className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <p className="text-xs font-bold text-blue-600 uppercase tracking-wider flex items-center gap-1.5">
                           <Zap className="w-3.5 h-3.5" /> Key Insights
                         </p>
                         <ul className="space-y-1.5">
                           {aiSolution.keyInsights.map((insight, i) => (
-                            <li key={i} className="flex items-start gap-2 text-xs text-white/60 leading-relaxed">
-                              <span className="w-4 h-4 rounded bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-[9px] font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
+                            <li key={i} className="flex items-start gap-2 text-xs text-slate-500 leading-relaxed">
+                              <span className="w-4 h-4 rounded bg-blue-100 border border-blue-100 text-blue-600 flex items-center justify-center text-[9px] font-bold flex-shrink-0 mt-0.5">{i + 1}</span>
                               {insight}
                             </li>
                           ))}
@@ -824,12 +833,12 @@ function DsaPractice({ jobTitle = '' }) {
                           <Code2 className="w-3.5 h-3.5" /> Solution Code
                         </p>
                         <div className="relative group">
-                          <div className="text-[12px] bg-[#0b0c13] border border-white/5 text-amber-100 p-4 rounded-xl overflow-x-auto font-mono leading-relaxed shadow-inner">
+                          <div className="text-[12px] bg-slate-50 border border-slate-200 text-slate-800 p-4 rounded-xl overflow-x-auto font-mono leading-relaxed shadow-inner">
                             {renderHighlightedCode(aiSolution.solutionCode, language)}
                           </div>
                           <button
                             onClick={applyAiSolution}
-                            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 text-[10px] bg-violet-500/90 hover:bg-violet-400 text-white font-bold px-2.5 py-1 rounded-lg"
+                            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 text-[10px] bg-violet-500/90 hover:bg-violet-400 text-slate-900 font-bold px-2.5 py-1 rounded-lg"
                           >
                             <Zap className="w-3 h-3" /> Apply
                           </button>
@@ -839,11 +848,11 @@ function DsaPractice({ jobTitle = '' }) {
 
                     {/* Step-by-step walkthrough */}
                     {aiSolution.walkthrough && (
-                      <div className="bg-[#090909] border border-white/5 rounded-xl p-4 space-y-2">
+                      <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2">
                         <p className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
                           <BookOpen className="w-3.5 h-3.5" /> Step-by-Step Walkthrough
                         </p>
-                        <p className="text-xs text-white/50 leading-relaxed whitespace-pre-line">{aiSolution.walkthrough}</p>
+                        <p className="text-xs text-slate-500 leading-relaxed whitespace-pre-line">{aiSolution.walkthrough}</p>
                       </div>
                     )}
                   </>

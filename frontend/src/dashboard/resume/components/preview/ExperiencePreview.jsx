@@ -21,12 +21,12 @@ function ExperiencePreview({resumeInfo}) {
                  style={{
                     color:titleColor
                 }}>{experience?.title}</h2>
-                <h2 className={`text-xs flex justify-between ${isBlackFont ? 'text-black font-semibold' : ''}`}>{experience?.companyName}, 
+                <h2 className={`text-xs flex justify-between ${isBlackFont ? 'text-white font-semibold' : ''}`}>{experience?.companyName}, 
                 {experience?.city}, 
                 {experience?.state}
                 <span>{experience?.startDate} To {experience?.currentlyWorking?'Present':experience.endDate} </span>
                 </h2>
-                <div className={`text-xs my-2 ${isBlackFont ? 'text-black' : ''}`} dangerouslySetInnerHTML={{__html:experience?.workSummery}} />
+                <div className={`text-xs my-2 ${isBlackFont ? 'text-white' : ''}`} dangerouslySetInnerHTML={{__html:experience?.workSummery}} />
             </div>
         ))}
     </div>

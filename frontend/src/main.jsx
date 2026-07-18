@@ -15,16 +15,35 @@ import MockInterview from './mock-interview/index.jsx'
 import DsaPracticePage from './dsa-practice/index.jsx'
 import StartupBuilder from './startup-builder/index.jsx'
 import CoverLetterGenerator from './cover-letter/index.jsx'
+import Documentation from './documentation/index.jsx'
+import About from './pages/About.jsx'
+import FAQ from './pages/FAQ.jsx'
+import Contact from './pages/Contact.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    errorElement: <NotFound />
+  },
+  {
+    path: '/about',
+    element: <About />
+  },
+  {
+    path: '/faq',
+    element: <FAQ />
+  },
+  {
+    path: '/contact',
+    element: <Contact />
   },
   {
     element: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/dashboard',
@@ -49,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/cover-letter',
         element: <CoverLetterGenerator />
+      },
+      {
+        path: '/dashboard/documentation',
+        element: <Documentation />
       }
     ]
   },

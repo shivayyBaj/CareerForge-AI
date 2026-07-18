@@ -167,14 +167,14 @@ try {
           {aiGeneratedSummeryList.map((item, index) => (
             <div
               key={index}
-              className='p-5 shadow-lg my-4 rounded-lg cursor-pointer'
+              className='p-5 shadow-lg my-4 rounded-lg cursor-pointer border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all bg-white'
               onClick={() => updateSummery(item?.summary || '')}
             >
               <h2 className='font-bold my-1 text-primary'>
                 Level: {item?.experience_level}
               </h2>
 
-              <p>{item?.summary}</p>
+              <p className='text-slate-700 text-sm leading-relaxed'>{item?.summary}</p>
             </div>
           ))}
         </div>

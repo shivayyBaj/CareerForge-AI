@@ -17,7 +17,7 @@ function ContactItem({ value, label, isBlackFont }) {
   const isUrl = value.startsWith('http') || value.includes('.com') || value.includes('.io')
 
   return (
-    <span className={`inline-flex items-center gap-1 text-[10px] ${isBlackFont ? 'text-black' : 'text-gray-700'}`}>
+    <span className={`inline-flex items-center gap-1 text-[10px] ${isBlackFont ? 'text-white' : 'text-gray-700'}`}>
       {isUrl ? (
         <a href={value.startsWith('http') ? value : `https://${value}`} className="hover:underline">
           {label || formatLinkLabel(value)}
@@ -52,7 +52,7 @@ function PersonalDetailPreview({ resumeInfo }) {
       </h2>
 
       {resumeInfo?.jobTitle && (
-        <p className={`mt-1 text-center text-sm font-medium ${isBlackFont ? 'text-black' : 'text-gray-700'}`}>
+        <p className={`mt-1 text-center text-sm font-medium ${isBlackFont ? 'text-white' : 'text-gray-700'}`}>
           {resumeInfo?.jobTitle}
         </p>
       )}

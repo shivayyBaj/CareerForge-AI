@@ -6,10 +6,11 @@ import {
   Users,
   Target,
   Trophy,
-  Sparkles,
   ArrowRight,
   FileSignature,
-  Code2
+  Code2,
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -19,65 +20,57 @@ const features = [
   {
     icon: FileText,
     title: 'AI Resume Builder',
-    description:
-      'Generate professional, ATS-optimized resumes tailored to your target role with our premium, auto-formatting builder.',
+    description: 'Generate professional, ATS-optimized resumes tailored to your target role with our premium builder.',
     link: '/dashboard',
     buttonText: 'Build Resume',
-    badge: 'Standard ATS'
+    colSpan: 'col-span-1',
+    bgClass: 'bg-blue-50/50',
+    iconColor: 'text-blue-600',
+    iconBg: 'bg-blue-100'
   },
   {
     icon: Target,
     title: 'Mock Interview',
-    description:
-      'Upload your resume for an instant ATS check, receive a custom roadmap, and practice with our interactive Voice AI interviewer.',
+    description: 'Upload your resume for an instant check and practice with an interactive Voice AI interviewer.',
     link: '/dashboard/mock-interview',
     buttonText: 'Start Interview',
-    badge: 'Voice AI'
+    colSpan: 'col-span-1',
+    bgClass: 'bg-indigo-50/50',
+    iconColor: 'text-indigo-600',
+    iconBg: 'bg-indigo-100'
   },
   {
     icon: Code2,
-    title: 'DSA Practice Arena',
-    description:
-      'Practice 150+ Data Structures & Algorithms problems inside an integrated sandboxed compiler with AI Code Review.',
+    title: 'DSA Practice',
+    description: 'Practice 150+ DSA problems in a sandboxed compiler.',
     link: '/dashboard/dsa-practice',
     buttonText: 'Start Coding',
-    badge: '150+ Problems'
+    colSpan: 'col-span-1',
+    bgClass: 'bg-emerald-50/50',
+    iconColor: 'text-emerald-600',
+    iconBg: 'bg-emerald-100'
   },
   {
     icon: Rocket,
     title: 'Startup Builder',
-    description:
-      'Have an idea? Deploy an autonomous multi-agent AI team to conduct market research, build a business model, and pitch deck.',
+    description: 'Deploy an autonomous AI team to conduct market research and build a pitch deck.',
     link: '/dashboard/startup-builder',
     buttonText: 'Launch Startup',
-    badge: 'Autonomous Agents'
+    colSpan: 'col-span-1',
+    bgClass: 'bg-violet-50/50',
+    iconColor: 'text-violet-600',
+    iconBg: 'bg-violet-100'
   },
   {
     icon: FileSignature,
-    title: 'AI Cover Letter',
-    description:
-      'Generate tailored cover letters from your saved resume — matched to any company, role, and job description in seconds.',
+    title: 'Cover Letter',
+    description: 'Generate tailored cover letters from your saved resume matched to any company role.',
     link: '/dashboard/cover-letter',
     buttonText: 'Write Letter',
-    badge: 'Job-Ready'
-  }
-]
-
-const benefits = [
-  {
-    icon: BrainCircuit,
-    title: 'Next-Gen AI Models',
-    description: 'Powered by advanced LLMs like Llama 3 for intelligent, human-like coaching and strategy generation.'
-  },
-  {
-    icon: Users,
-    title: 'Multi-Agent Teams',
-    description: 'Watch AI agents collaborate in real-time to build comprehensive business strategies from scratch.'
-  },
-  {
-    icon: Trophy,
-    title: 'Premium Experience',
-    description: 'A beautiful, intuitive interface designed to give you the ultimate edge in your career and ventures.'
+    colSpan: 'col-span-1',
+    bgClass: 'bg-sky-50/50',
+    iconColor: 'text-sky-600',
+    iconBg: 'bg-sky-100'
   }
 ]
 
@@ -85,168 +78,124 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+    transition: { staggerChildren: 0.1 }
   }
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring', stiffness: 80, damping: 14 }
+    transition: { type: 'spring', stiffness: 100, damping: 15 }
   }
 }
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#030303] text-white selection:bg-amber-500 selection:text-black overflow-hidden relative">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 overflow-hidden">
       <Header />
 
-      {/* Decorative Blur Orbs */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-amber-500/10 to-orange-500/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
-      <div className="absolute top-[40%] right-[-10%] w-[400px] h-[400px] bg-amber-600/5 blur-[150px] rounded-full -z-10 pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-amber-500/5 blur-[160px] rounded-full -z-10 pointer-events-none" />
+      {/* Background gradients */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-400/20 to-indigo-400/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute top-[40%] right-[-10%] w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="relative px-6 py-24 md:py-36 lg:px-12 flex flex-col items-center">
+      <section className="relative px-6 py-24 md:py-32 lg:px-12 flex flex-col items-center">
         <motion.div 
-          className="mx-auto max-w-5xl text-center"
+          className="mx-auto max-w-4xl text-center"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <motion.div 
-            variants={itemVariants} 
-            className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 mb-8 hover:bg-amber-500/25 transition-all duration-300 backdrop-blur-md cursor-pointer hover:border-amber-500/50"
-          >
-            <span className="text-xs font-semibold tracking-wider text-amber-400 flex items-center gap-1.5 uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> The Ultimate Student Career & Startup Suite
-            </span>
-          </motion.div>
 
           <motion.h1 
             variants={itemVariants} 
-            className="mb-8 text-5xl font-extrabold leading-tight tracking-tight md:text-7xl lg:text-8xl font-serif text-white"
+            className="mb-6 text-5xl font-extrabold leading-tight tracking-tight md:text-7xl text-slate-900"
           >
-            Forge Your Career<br />
-            With <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-600 bg-clip-text text-transparent drop-shadow-sm">Intelligence</span>
+            Accelerate your career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">confidence</span>.
           </motion.h1>
 
           <motion.p 
             variants={itemVariants} 
-            className="mx-auto mb-12 max-w-3xl text-base md:text-lg text-white/60 leading-relaxed font-sans"
+            className="mx-auto mb-10 max-w-2xl text-lg text-slate-600 leading-relaxed"
           >
-            Create premium resumes, solve 150+ DSA problems inside an integrated sandboxed compiler, practice with our interactive Voice AI coach, and spawn multi-agent startup teams.
+            The all-in-one platform for modern job seekers. Create standout resumes, ace your interviews with AI mock sessions, and sharpen your coding skills.
           </motion.p>
 
           <motion.div 
             variants={itemVariants} 
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
               to="/dashboard"
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-4 text-sm font-bold text-black shadow-lg shadow-amber-500/10 transition-all duration-300 hover:scale-[1.03] hover:shadow-amber-500/20 active:scale-[0.98]"
+              className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all hover:bg-blue-700 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Get Started Free
+              Get Started for Free
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
-
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Pillars Section */}
-      <section className="px-6 py-20 lg:px-12 relative border-t border-white/5 bg-[#080808]/50 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl">
+      {/* Features Section (Bento Box) */}
+      <section className="px-6 py-20 lg:px-12 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything you need to succeed</h2>
+            <p className="text-slate-500 text-lg">Powerful tools designed to give you the ultimate edge.</p>
+          </div>
+
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
           >
             {features.map((feature, idx) => (
               <motion.div 
                 key={idx} 
                 variants={itemVariants} 
-                className="relative rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.03] to-transparent p-8 flex flex-col justify-between hover:border-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/5 transition-all duration-500 group overflow-hidden"
+                className={`relative rounded-3xl border border-slate-200 p-8 flex flex-col justify-between transition-shadow hover:shadow-xl hover:shadow-slate-200/50 ${feature.colSpan} ${feature.bgClass}`}
               >
-                {/* Light glow on hover */}
-                <div className="absolute -inset-px bg-gradient-to-b from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
-
                 <div>
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="h-12 w-12 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-300">
-                      <feature.icon className="h-5 w-5 text-amber-400" />
-                    </div>
-                    <span className="text-[10px] tracking-wider font-semibold text-amber-500/70 uppercase border border-amber-500/20 px-2 py-0.5 rounded-full bg-amber-500/5">
-                      {feature.badge}
-                    </span>
+                  <div className={`h-12 w-12 rounded-2xl flex items-center justify-center mb-6 shadow-sm ${feature.iconBg}`}>
+                    <feature.icon className={`h-6 w-6 ${feature.iconColor}`} />
                   </div>
-                  <h3 className="mb-3 text-xl font-serif font-bold text-white group-hover:text-amber-400 transition-colors">{feature.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed mb-8">
+                  <h3 className="mb-3 text-2xl font-bold text-slate-900">{feature.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed mb-8 max-w-md">
                     {feature.description}
                   </p>
                 </div>
                 
-                <Link 
-                  to={feature.link} 
-                  className="inline-flex w-full items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-xs font-semibold text-white transition-all duration-300 hover:bg-amber-500 hover:text-black hover:border-amber-500 hover:scale-[1.02]"
-                >
-                  {feature.buttonText}
-                </Link>
+                <div className="mt-auto flex justify-end">
+                  <Link 
+                    to={feature.link} 
+                    className="inline-flex items-center justify-center rounded-xl bg-white border border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-700 transition-all hover:bg-slate-50 hover:text-slate-900 shadow-sm"
+                  >
+                    {feature.buttonText}
+                    <ArrowRight className="w-3 h-3 ml-2" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="px-6 py-24 lg:px-12">
-        <motion.div 
-          className="mx-auto max-w-5xl text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <motion.h2 variants={itemVariants} className="mb-4 text-3xl font-bold md:text-5xl font-serif">
-            Designed for the Future
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-white/50 text-sm md:text-base mb-20 max-w-2xl mx-auto">
-            Experience next-generation multi-agent architecture combined with state-of-the-art tools.
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-            {benefits.map((benefit, idx) => (
-              <motion.div 
-                key={idx} 
-                variants={itemVariants} 
-                className="flex flex-col items-center text-center p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/10 transition-all duration-300"
-              >
-                <motion.div 
-                  whileHover={{ rotate: 15, scale: 1.1 }} 
-                  transition={{ duration: 0.3 }}
-                  className="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20 mb-6"
-                >
-                  <benefit.icon className="h-6 w-6 text-amber-400" />
-                </motion.div>
-                <h4 className="text-lg font-bold text-white mb-3">{benefit.title}</h4>
-                <p className="text-xs text-white/50 leading-relaxed">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
       {/* Footer */}
-      <footer className="border-t border-white/5 py-12 px-6 text-center text-xs text-white/30">
-        <p>© 2026 CareerForge AI. Built for future innovators.</p>
+      <footer className="border-t border-slate-200 bg-white py-12 px-6 text-center">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center">
+            <Sparkles className="w-3 h-3 text-white" />
+          </div>
+          <span className="font-bold text-slate-900">CareerForge</span>
+        </div>
+        <p className="text-sm text-slate-500">© 2026 CareerForge. All rights reserved.</p>
       </footer>
     </div>
   )
 }
 
 export default Home
-

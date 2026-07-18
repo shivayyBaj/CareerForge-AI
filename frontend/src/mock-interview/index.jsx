@@ -387,9 +387,9 @@ function MockInterview() {
     switch (verdict) {
       case 'Strong Hire': return { color: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/20', icon: <CheckCircle className="w-4 h-4" /> };
       case 'Hire': return { color: 'text-sky-400', bg: 'bg-sky-500/10 border-sky-500/20', icon: <CheckCircle className="w-4 h-4" /> };
-      case 'No Hire': return { color: 'text-amber-400', bg: 'bg-amber-500/10 border-amber-500/20', icon: <XCircle className="w-4 h-4" /> };
+      case 'No Hire': return { color: 'text-blue-600', bg: 'bg-blue-100 border-blue-100', icon: <XCircle className="w-4 h-4" /> };
       case 'Strong No Hire': return { color: 'text-rose-400', bg: 'bg-rose-500/10 border-rose-500/20', icon: <XCircle className="w-4 h-4" /> };
-      default: return { color: 'text-white/40', bg: 'bg-white/5 border-white/10', icon: <AlertCircle className="w-4 h-4" /> };
+      default: return { color: 'text-slate-500', bg: 'bg-slate-50 border-slate-200', icon: <AlertCircle className="w-4 h-4" /> };
     }
   };
 
@@ -397,15 +397,15 @@ function MockInterview() {
     switch (grade) {
       case 'A': return 'text-emerald-400';
       case 'B': return 'text-sky-400';
-      case 'C': return 'text-amber-400';
+      case 'C': return 'text-blue-600';
       case 'D': return 'text-orange-400';
       case 'F': return 'text-rose-400';
-      default: return 'text-white';
+      default: return 'text-slate-900';
     }
   };
 
   return (
-    <div className="flex bg-background min-h-full w-full">
+    <div className="flex bg-white text-slate-900 min-h-full w-full">
       <ConfirmDialog
         open={confirmOpen}
         title="Clear Interview History"
@@ -433,10 +433,10 @@ function MockInterview() {
       />
 
       {/* History Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-card border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
-            <History className="w-4 h-4 text-gold" /> Interview History
+            <History className="w-4 h-4 text-blue-600" /> Interview History
           </div>
           <div className="flex items-center gap-2">
             {history.length > 0 && (
@@ -479,7 +479,7 @@ function MockInterview() {
           )}
         </div>
       </div>
-      {showHistory && <div className="fixed inset-0 z-40 bg-black/40" onClick={() => setShowHistory(false)} />}
+      {showHistory && <div className="fixed inset-0 z-40 bg-white/40" onClick={() => setShowHistory(false)} />}
 
       {/* Main Content */}
       <div className="flex-1 p-6 lg:p-12 max-w-7xl mx-auto w-full">
@@ -487,57 +487,57 @@ function MockInterview() {
         <div className="relative mb-12 text-center animate-slide-up">
           <button
             onClick={handleBackClick}
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors group border border-white/5 bg-white/[0.02] px-3 py-1.5 rounded-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
           </button>
-          <div className="flex justify-center items-center gap-1.5 text-amber-500 text-xs font-semibold uppercase tracking-wider mb-2">
+          <div className="flex justify-center items-center gap-1.5 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" /> AI Career Tools
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-white">Mock Interview</h1>
-          <p className="text-sm text-white/50 max-w-xl mx-auto leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-slate-900">Mock Interview</h1>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
             Upload your resume, get an instant ATS score, and practice with a real-time Voice AI interviewer powered by Llama 3.
           </p>
           <button
             onClick={() => setShowHistory(true)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-white/60 hover:text-amber-400 border border-white/5 hover:border-amber-500/30 bg-white/[0.02] hover:bg-amber-500/5 px-3 py-1.5 rounded-lg transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
           >
             <History className="w-3.5 h-3.5" />
-            History {history.length > 0 && <span className="bg-amber-500/20 text-amber-400 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
+            History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
           </button>
         </div>
 
         {!analysis ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
-            <div className="rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent p-6 flex flex-col gap-6 shadow-xl">
-              <h2 className="text-lg font-bold font-serif flex items-center gap-2"><FileText className="text-amber-500 w-4 h-4" /> Profile Information</h2>
+            <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 flex flex-col gap-6 shadow-xl">
+              <h2 className="text-lg font-bold font-serif flex items-center gap-2"><FileText className="text-blue-600 w-4 h-4" /> Profile Information</h2>
               <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2 block">Target Job Title</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block">Target Job Title</label>
                 <input
                   type="text"
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
-                  className="w-full bg-[#090909] border border-white/5 rounded-xl px-4 py-2.5 text-xs md:text-sm text-white focus:border-amber-500/30 outline-none transition-colors placeholder:text-white/20"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-xs md:text-sm text-slate-900 focus:border-blue-100 outline-none transition-colors placeholder:text-slate-500"
                   placeholder="e.g. Senior Frontend Developer"
                 />
               </div>
               <div className="flex-1 flex flex-col">
-                <label className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2 block">Resume Text Content</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block">Resume Text Content</label>
                 <textarea
                   value={resumeText}
                   onChange={(e) => setResumeText(e.target.value)}
-                  className="w-full flex-1 min-h-[220px] bg-[#090909] border border-white/5 rounded-xl p-4 focus:border-amber-500/30 outline-none resize-none font-mono text-xs md:text-sm text-white leading-relaxed placeholder:text-white/20"
+                  className="w-full flex-1 min-h-[220px] bg-white border border-slate-200 rounded-xl p-4 focus:border-blue-100 outline-none resize-none font-mono text-xs md:text-sm text-slate-900 leading-relaxed placeholder:text-slate-500"
                   placeholder="Paste raw text contents of your resume here..."
                 />
               </div>
               <div className="flex items-center justify-between gap-4 pt-2">
                 <div className="relative">
                   <input type="file" accept=".txt,.json,.md,.pdf" onChange={handleFileUpload} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
-                  <button className="bg-white/5 text-white border border-white/10 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-white/10 transition-colors pointer-events-none">
+                  <button className="bg-slate-50 text-slate-900 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-slate-50 transition-colors pointer-events-none">
                     <Upload className="w-3.5 h-3.5 inline-block mr-1.5 -mt-0.5" /> Upload PDF
                   </button>
                 </div>
-                <p className="text-[10px] text-white/30 font-semibold">Supported: .pdf, .txt, .md</p>
+                <p className="text-[10px] text-slate-500 font-semibold">Supported: .pdf, .txt, .md</p>
               </div>
             </div>
 
@@ -545,29 +545,29 @@ function MockInterview() {
               <button
                 onClick={analyzeResume}
                 disabled={loading || !resumeText || !jobTitle}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold px-8 py-4 rounded-xl shadow-lg shadow-amber-500/10 hover:scale-105 transition-all disabled:opacity-40 disabled:hover:scale-100 flex items-center gap-2.5 text-sm uppercase tracking-wider"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-100 hover:scale-105 transition-all disabled:opacity-40 disabled:hover:scale-100 flex items-center gap-2.5 text-sm uppercase tracking-wider"
               >
-                {loading ? <Loader2 className="w-5 h-5 animate-spin text-black" /> : <Target className="w-5 h-5 text-black" />}
+                {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : <Target className="w-5 h-5 text-white" />}
                 {loading ? 'Analyzing profile...' : 'Generate Analysis & Start'}
               </button>
 
               {history.length > 0 && (
                 <div className="w-full max-w-sm">
-                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest mb-3 text-center">— Recent Sessions —</p>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-3 text-center">— Recent Sessions —</p>
                   <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                     {history.slice(0, 5).map(session => (
                       <button
                         key={session.id}
                         onClick={() => loadSession(session)}
-                        className="w-full rounded-xl border border-white/5 bg-white/[0.01] hover:border-amber-500/20 hover:bg-white/[0.03] p-3 flex items-center justify-between transition-colors text-left group"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-blue-100 hover:bg-slate-50 hover:bg-slate-100 p-3 flex items-center justify-between transition-colors text-left group"
                       >
                         <div className="min-w-0 pr-2">
-                          <p className="text-xs font-bold text-white group-hover:text-amber-400 transition-colors truncate">{session.jobTitle}</p>
-                          <p className="text-[10px] text-white/30 mt-0.5">{session.timestamp}</p>
+                          <p className="text-xs font-bold text-slate-900 group-hover:text-blue-600 transition-colors truncate">{session.jobTitle}</p>
+                          <p className="text-[10px] text-slate-500 mt-0.5">{session.timestamp}</p>
                         </div>
                         <div className="flex items-center gap-2 flex-shrink-0">
                           <span className={`text-[10px] font-bold ${scoreColor(session.atsScore)}`}>{session.atsScore}% ATS</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-white/30 group-hover:text-amber-400 transition-colors" />
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-600 transition-colors" />
                         </div>
                       </button>
                     ))}
@@ -580,49 +580,49 @@ function MockInterview() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-slide-up">
             <div className="lg:col-span-1 flex flex-col gap-6">
               {/* ATS Score Card */}
-              <div className="rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
+              <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-sm font-bold tracking-wider text-white/80 uppercase">ATS Evaluation</h3>
-                  <button onClick={startNew} className="text-[10px] font-bold uppercase tracking-wider text-white/40 hover:text-amber-400 border border-white/5 px-2 py-0.5 rounded bg-white/[0.02] transition-colors">+ Reset</button>
+                  <h3 className="text-sm font-bold tracking-wider text-slate-500 uppercase">ATS Evaluation</h3>
+                  <button onClick={startNew} className="text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-blue-600 border border-slate-200 px-2 py-0.5 rounded bg-slate-50 hover:bg-slate-100 transition-colors">+ Reset</button>
                 </div>
                 <div className="flex items-center gap-6 mb-6">
-                  <div className="relative w-20 h-20 flex items-center justify-center rounded-full border border-white/5 bg-black/50">
+                  <div className="relative w-20 h-20 flex items-center justify-center rounded-full border border-slate-200 bg-white/50">
                     <svg className="absolute inset-0 w-full h-full transform -rotate-90">
-                      <circle cx="40" cy="40" r="36" stroke="currentColor" strokeWidth="3" fill="transparent" className="text-white/5" />
-                      <circle cx="40" cy="40" r="36" stroke="currentColor" strokeWidth="3" fill="transparent" className="text-amber-500" strokeDasharray={`${analysis.atsScore * 2.26} 226`} />
+                      <circle cx="40" cy="40" r="36" stroke="currentColor" strokeWidth="3" fill="transparent" className="text-slate-500" />
+                      <circle cx="40" cy="40" r="36" stroke="currentColor" strokeWidth="3" fill="transparent" className="text-blue-600" strokeDasharray={`${analysis.atsScore * 2.26} 226`} />
                     </svg>
                     <span className="text-xl font-bold font-mono">{analysis.atsScore}</span>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] text-white/40 uppercase tracking-wider">Target Position</p>
-                    <p className="font-semibold text-amber-400 truncate leading-relaxed">{jobTitle}</p>
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider">Target Position</p>
+                    <p className="font-semibold text-blue-600 truncate leading-relaxed">{jobTitle}</p>
                   </div>
                 </div>
                 <div className="mb-4">
                   <h4 className="text-xs font-bold text-emerald-400 mb-2 uppercase tracking-wide">Key Strengths</h4>
-                  <ul className="text-xs space-y-1.5 text-white/60 list-disc list-inside">
+                  <ul className="text-xs space-y-1.5 text-slate-500 list-disc list-inside">
                     {analysis.strengths?.map((s, i) => <li key={i} className="leading-relaxed">{s}</li>)}
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-rose-400 mb-2 uppercase tracking-wide">Areas to Improve</h4>
-                  <ul className="text-xs space-y-1.5 text-white/60 list-disc list-inside">
+                  <ul className="text-xs space-y-1.5 text-slate-500 list-disc list-inside">
                     {analysis.weaknesses?.map((w, i) => <li key={i} className="leading-relaxed">{w}</li>)}
                   </ul>
                 </div>
               </div>
 
               {/* Roadmap */}
-              <div className="rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl flex-1">
-                <h3 className="text-sm font-bold tracking-wider text-white/80 border-b border-white/5 pb-3 mb-5 uppercase">Action Roadmap</h3>
+              <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl flex-1">
+                <h3 className="text-sm font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-3 mb-5 uppercase">Action Roadmap</h3>
                 <div className="space-y-4">
                   {analysis.roadmap?.map((step, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="flex flex-col items-center flex-shrink-0">
-                        <div className="w-5 h-5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-[10px] font-bold">{i + 1}</div>
-                        {i !== analysis.roadmap.length - 1 && <div className="w-px h-full bg-white/5 mt-1.5"></div>}
+                        <div className="w-5 h-5 rounded-full bg-blue-100 border border-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold">{i + 1}</div>
+                        {i !== analysis.roadmap.length - 1 && <div className="w-px h-full bg-slate-50 mt-1.5"></div>}
                       </div>
-                      <p className="text-xs text-white/70 leading-relaxed pt-0.5 pb-2">{step}</p>
+                      <p className="text-xs text-slate-500 leading-relaxed pt-0.5 pb-2">{step}</p>
                     </div>
                   ))}
                 </div>
@@ -630,22 +630,22 @@ function MockInterview() {
             </div>
 
             {/* Chat Panel OR Scorecard */}
-            <div className="lg:col-span-2 rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden">
+            <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden">
               {scorecard ? (
                 <div className="flex flex-col h-full overflow-hidden">
-                  <div className="p-4 border-b border-white/5 bg-[#070707] flex items-center justify-between">
+                  <div className="p-4 border-b border-slate-200 bg-white flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                        <Trophy className="w-4 h-4 text-amber-500" />
+                      <div className="w-9 h-9 rounded-xl bg-blue-100 border border-blue-100 flex items-center justify-center">
+                        <Trophy className="w-4 h-4 text-blue-600" />
                       </div>
                       <div>
                         <h3 className="font-bold text-sm tracking-wide">Interview Scorecard</h3>
-                        <p className="text-[10px] text-amber-400/60 uppercase tracking-wider font-semibold">{jobTitle}</p>
+                        <p className="text-[10px] text-blue-100 uppercase tracking-wider font-semibold">{jobTitle}</p>
                       </div>
                     </div>
                     <button
                       onClick={() => setScorecard(null)}
-                      className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider border border-white/5 text-white/40 hover:text-amber-400 hover:border-amber-500/30 px-3 py-1.5 rounded-xl transition-all bg-white/[0.02]"
+                      className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider border border-slate-200 text-slate-500 hover:text-blue-600 hover:border-blue-100 px-3 py-1.5 rounded-xl transition-all bg-slate-50 hover:bg-slate-100"
                     >
                       <RefreshCw className="w-3 h-3" /> Continue Interview
                     </button>
@@ -655,17 +655,17 @@ function MockInterview() {
                     <div className="flex items-start gap-4">
                       <div className="relative flex-shrink-0 w-24 h-24">
                         <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 96 96">
-                          <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="5" fill="transparent" className="text-white/5" />
+                          <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="5" fill="transparent" className="text-slate-500" />
                           <circle
                             cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="5" fill="transparent"
-                            className={scorecard.overallScore >= 75 ? 'text-emerald-500' : scorecard.overallScore >= 50 ? 'text-amber-500' : 'text-rose-500'}
+                            className={scorecard.overallScore >= 75 ? 'text-emerald-500' : scorecard.overallScore >= 50 ? 'text-blue-600' : 'text-rose-500'}
                             strokeDasharray={`${(scorecard.overallScore / 100) * 251.2} 251.2`}
                             strokeLinecap="round"
                           />
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
                           <span className="text-2xl font-extrabold font-mono leading-none">{scorecard.overallScore}</span>
-                          <span className="text-[9px] text-white/30 uppercase tracking-wider font-bold">Score</span>
+                          <span className="text-[9px] text-slate-500 uppercase tracking-wider font-bold">Score</span>
                         </div>
                       </div>
                       <div className="flex-1 space-y-2 pt-1">
@@ -677,13 +677,13 @@ function MockInterview() {
                             </span>
                           ); })()}
                         </div>
-                        <p className="text-xs text-white/50 leading-relaxed">{scorecard.summary}</p>
+                        <p className="text-xs text-slate-500 leading-relaxed">{scorecard.summary}</p>
                       </div>
                     </div>
 
                     {scorecard.categoryScores && (
-                      <div className="rounded-xl border border-white/5 bg-white/[0.01] p-4 space-y-3">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-white/30 flex items-center gap-1.5">
+                      <div className="rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 p-4 space-y-3">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
                           <BarChart3 className="w-3 h-3" /> Category Breakdown
                         </p>
                         {[
@@ -693,14 +693,14 @@ function MockInterview() {
                           { key: 'cultureFit', label: 'Culture Fit' },
                         ].map(({ key, label }) => {
                           const val = scorecard.categoryScores[key] || 0;
-                          const barColor = val >= 75 ? 'from-emerald-500 to-emerald-600' : val >= 50 ? 'from-amber-500 to-amber-600' : 'from-rose-500 to-rose-600';
+                          const barColor = val >= 75 ? 'from-emerald-500 to-emerald-600' : val >= 50 ? 'from-blue-600 to-blue-700' : 'from-rose-500 to-rose-600';
                           return (
                             <div key={key}>
                               <div className="flex justify-between text-[10px] font-semibold mb-1">
-                                <span className="text-white/50">{label}</span>
-                                <span className={val >= 75 ? 'text-emerald-400' : val >= 50 ? 'text-amber-400' : 'text-rose-400'}>{val}</span>
+                                <span className="text-slate-500">{label}</span>
+                                <span className={val >= 75 ? 'text-emerald-400' : val >= 50 ? 'text-blue-600' : 'text-rose-400'}>{val}</span>
                               </div>
-                              <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                              <div className="h-1.5 bg-slate-50 rounded-full overflow-hidden">
                                 <div className={`h-full bg-gradient-to-r ${barColor} rounded-full transition-all duration-700`} style={{ width: `${val}%` }} />
                               </div>
                             </div>
@@ -717,7 +717,7 @@ function MockInterview() {
                         {scorecard.strengths.map((s, i) => (
                           <div key={i} className="rounded-xl border border-emerald-500/10 bg-emerald-500/[0.03] p-3.5">
                             <p className="text-xs font-bold text-emerald-300 mb-1">{s.title}</p>
-                            <p className="text-[11px] text-white/50 leading-relaxed">{s.detail}</p>
+                            <p className="text-[11px] text-slate-500 leading-relaxed">{s.detail}</p>
                           </div>
                         ))}
                       </div>
@@ -725,13 +725,13 @@ function MockInterview() {
 
                     {scorecard.improvements?.length > 0 && (
                       <div className="space-y-2">
-                        <p className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-blue-600 flex items-center gap-1.5">
                           <TrendingDown className="w-3.5 h-3.5" /> Areas to Improve
                         </p>
                         {scorecard.improvements.map((s, i) => (
-                          <div key={i} className="rounded-xl border border-amber-500/10 bg-amber-500/[0.03] p-3.5">
+                          <div key={i} className="rounded-xl border border-blue-100 bg-blue-600/[0.03] p-3.5">
                             <p className="text-xs font-bold text-amber-300 mb-1">{s.title}</p>
-                            <p className="text-[11px] text-white/50 leading-relaxed">{s.detail}</p>
+                            <p className="text-[11px] text-slate-500 leading-relaxed">{s.detail}</p>
                           </div>
                         ))}
                       </div>
@@ -739,7 +739,7 @@ function MockInterview() {
 
                     <button
                       onClick={startNew}
-                      className="w-full mt-2 flex items-center justify-center gap-2 border border-white/5 text-white/40 hover:text-white hover:border-white/10 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-white/[0.01] hover:bg-white/[0.03]"
+                      className="w-full mt-2 flex items-center justify-center gap-2 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-200 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all bg-slate-50 hover:bg-slate-100 hover:bg-slate-50 hover:bg-slate-100"
                     >
                       <Star className="w-3.5 h-3.5" /> Start New Interview
                     </button>
@@ -748,16 +748,16 @@ function MockInterview() {
               ) : (
                 <div className="flex flex-col md:flex-row h-full overflow-hidden">
                   {/* Left Column: Virtual Interviewer View */}
-                  <div className="w-full md:w-[38%] border-b md:border-b-0 md:border-r border-white/5 flex flex-col bg-[#050507]">
-                    <div className="p-4 border-b border-white/5 flex justify-between items-center bg-[#070707] flex-shrink-0">
+                  <div className="w-full md:w-[38%] border-b md:border-b-0 md:border-r border-slate-200 flex flex-col bg-white">
+                    <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-white flex-shrink-0">
                       <div>
-                        <h3 className="font-bold text-xs uppercase tracking-widest text-amber-500">Virtual Interviewer</h3>
-                        <p className="text-[10px] text-white/40 mt-0.5">Live Avatar Feed</p>
+                        <h3 className="font-bold text-xs uppercase tracking-widest text-blue-600">Virtual Interviewer</h3>
+                        <p className="text-[10px] text-slate-500 mt-0.5">Live Avatar Feed</p>
                       </div>
                       <button
                         onClick={() => setShowVoiceSettings(!showVoiceSettings)}
-                        className={`p-2 border border-white/5 hover:border-white/10 rounded-xl transition-all ${
-                          showVoiceSettings ? 'text-amber-400 bg-amber-500/10 border-amber-500/20' : 'text-white/50 hover:text-white bg-white/[0.02]'
+                        className={`p-2 border border-slate-200 hover:border-slate-200 rounded-xl transition-all ${
+                          showVoiceSettings ? 'text-blue-600 bg-blue-100 border-blue-100' : 'text-slate-500 hover:text-slate-900 bg-slate-50 hover:bg-slate-100'
                         }`}
                         title="Voice & Avatar Settings"
                       >
@@ -765,14 +765,14 @@ function MockInterview() {
                       </button>
                     </div>
 
-                    <div className="flex-1 flex flex-col relative overflow-hidden bg-gradient-to-b from-[#050507] to-black">
+                    <div className="flex-1 flex flex-col relative overflow-hidden bg-gradient-to-b from-white to-white">
                       {showVoiceSettings && (
-                        <div className="absolute inset-0 bg-[#050507]/95 backdrop-blur-md p-5 z-20 flex flex-col gap-4 overflow-y-auto animate-fade-in">
-                          <div className="flex justify-between items-center pb-2 border-b border-white/5">
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-white/80">Voice Customization</h4>
+                        <div className="absolute inset-0 bg-white/95 backdrop-blur-md p-5 z-20 flex flex-col gap-4 overflow-y-auto animate-fade-in">
+                          <div className="flex justify-between items-center pb-2 border-b border-slate-200">
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">Voice Customization</h4>
                             <button 
                               onClick={() => setShowVoiceSettings(false)} 
-                              className="text-[10px] font-bold text-white/40 hover:text-white uppercase tracking-wider bg-white/5 px-2 py-1 rounded"
+                              className="text-[10px] font-bold text-slate-500 hover:text-slate-900 uppercase tracking-wider bg-slate-50 px-2 py-1 rounded"
                             >
                               Close
                             </button>
@@ -780,14 +780,14 @@ function MockInterview() {
 
                           <div className="space-y-4 pt-2">
                             <div>
-                              <label className="text-[10px] font-bold uppercase tracking-wider text-white/40 mb-1.5 block">Voice Accent / Speaker</label>
+                              <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 block">Voice Accent / Speaker</label>
                               <select
                                 value={selectedVoiceName}
                                 onChange={(e) => {
                                   setSelectedVoiceName(e.target.value);
                                   localStorage.setItem('interviewer_voice', e.target.value);
                                 }}
-                                className="w-full bg-[#0a0a0c] border border-white/5 rounded-lg px-3 py-2 text-xs text-white focus:border-amber-500/30 outline-none"
+                                className="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-900 focus:border-blue-100 outline-none"
                               >
                                 {voicesList.filter(v => v.lang.startsWith('en')).map((v, i) => (
                                   <option key={i} value={v.name}>{v.name} ({v.lang})</option>
@@ -799,7 +799,7 @@ function MockInterview() {
                             </div>
 
                             <div>
-                              <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-white/40 mb-1.5">
+                              <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                                 <span>Speech Speed ({voiceRate}x)</span>
                               </div>
                               <input
@@ -818,7 +818,7 @@ function MockInterview() {
                             </div>
 
                             <div>
-                              <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-white/40 mb-1.5">
+                              <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                                 <span>Voice Pitch ({voicePitch})</span>
                               </div>
                               <input
@@ -839,7 +839,7 @@ function MockInterview() {
 
                           <button
                             onClick={() => speakText("Hello! This is a test of my new voice configuration. Does this sound human-like and natural to you?")}
-                            className="w-full mt-4 flex items-center justify-center gap-2 bg-amber-500 text-black hover:bg-amber-400 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors"
+                            className="w-full mt-4 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-amber-400 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors"
                           >
                             <Volume2 className="w-4 h-4" /> Test Voice Output
                           </button>
@@ -857,11 +857,11 @@ function MockInterview() {
 
                       {/* Speaking Subtitle Bubble */}
                       {isSpeaking && messages.length > 0 && (
-                        <div className="absolute bottom-4 left-4 right-4 bg-black/80 border border-white/5 rounded-xl p-3.5 backdrop-blur-md z-10 animate-fade-in shadow-xl max-h-24 overflow-y-auto">
-                          <p className="text-[9px] uppercase font-bold text-amber-500 tracking-widest mb-1 flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" /> Speaking
+                        <div className="absolute bottom-4 left-4 right-4 bg-white/80 border border-slate-200 rounded-xl p-3.5 backdrop-blur-md z-10 animate-fade-in shadow-xl max-h-24 overflow-y-auto">
+                          <p className="text-[9px] uppercase font-bold text-blue-600 tracking-widest mb-1 flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" /> Speaking
                           </p>
-                          <p className="text-xs text-white/80 leading-relaxed italic">
+                          <p className="text-xs text-slate-500 leading-relaxed italic">
                             {(() => {
                               const lastMsg = messages[messages.length - 1];
                               return lastMsg && lastMsg.role === 'ai' ? lastMsg.content : '';
@@ -873,10 +873,10 @@ function MockInterview() {
                   </div>
 
                   {/* Right Column: Chat transcript & actions */}
-                  <div className="flex-1 flex flex-col h-full bg-[#030304] overflow-hidden">
-                    <div className="p-4 border-b border-white/5 flex justify-between items-center bg-[#070707] flex-shrink-0">
+                  <div className="flex-1 flex flex-col h-full bg-white overflow-hidden">
+                    <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-white flex-shrink-0">
                       <div>
-                        <h3 className="font-bold text-xs uppercase tracking-widest text-white/70">Interview Transcript</h3>
+                        <h3 className="font-bold text-xs uppercase tracking-widest text-slate-500">Interview Transcript</h3>
                         <p className="text-[10px] text-emerald-400 flex items-center gap-1 mt-0.5 font-semibold uppercase tracking-wider">
                           <span className="w-1 h-1 rounded-full bg-emerald-400 inline-block animate-pulse"></span> Audio Feed Active
                         </p>
@@ -895,35 +895,35 @@ function MockInterview() {
                       </div>
                     </div>
 
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#040404]/30 select-text">
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white/30 select-text">
                       {messages.map((msg, idx) => (
                         <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                           <div className={`rounded-2xl px-4 py-3 max-w-[80%] text-xs md:text-sm shadow-md leading-relaxed ${
                             msg.role === 'user'
-                              ? 'bg-amber-500 text-black font-semibold rounded-tr-sm ml-auto'
-                              : 'bg-[#090909] text-white/80 border border-white/5 rounded-tl-sm'
+                              ? 'bg-blue-600 text-white font-semibold rounded-tr-sm ml-auto'
+                              : 'bg-white text-slate-500 border border-slate-200 rounded-tl-sm'
                           }`}>{msg.content}</div>
                         </div>
                       ))}
                       {chatLoading && (
                         <div className="flex justify-start">
-                          <div className="bg-[#090909] border border-white/5 rounded-2xl rounded-tl-sm px-4 py-3 text-white/50 flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce"></span>
-                            <span className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></span>
-                            <span className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+                          <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 text-slate-500 flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 bg-slate-50 rounded-full animate-bounce"></span>
+                            <span className="w-1.5 h-1.5 bg-slate-50 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></span>
+                            <span className="w-1.5 h-1.5 bg-slate-50 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
                           </div>
                         </div>
                       )}
                       <div ref={chatEndRef} />
                     </div>
 
-                    <div className="p-4 border-t border-white/5 bg-[#070707] flex gap-3 items-end flex-shrink-0">
+                    <div className="p-4 border-t border-slate-200 bg-white flex gap-3 items-end flex-shrink-0">
                       <button
                         onClick={toggleRecording}
                         className={`p-3 rounded-xl flex-shrink-0 transition-all border ${
                           isRecording
                             ? 'bg-rose-500/20 text-rose-500 border-rose-500/30 animate-pulse'
-                            : 'bg-white/5 text-white/50 border-white/5 hover:bg-white/10 hover:text-white'
+                            : 'bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-50 hover:text-slate-900'
                         }`}
                         title={isRecording ? 'Stop Recording' : 'Start Voice Answer'}
                       >
@@ -934,12 +934,12 @@ function MockInterview() {
                         onChange={(e) => setCurrentInput(e.target.value)}
                         onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } }}
                         placeholder="Type your response or click the microphone to speak..."
-                        className="flex-1 bg-[#090909] border border-white/5 rounded-xl p-3.5 max-h-32 min-h-[50px] resize-none focus:border-amber-500/30 outline-none text-xs md:text-sm text-white leading-relaxed placeholder:text-white/20"
+                        className="flex-1 bg-white border border-slate-200 rounded-xl p-3.5 max-h-32 min-h-[50px] resize-none focus:border-blue-100 outline-none text-xs md:text-sm text-slate-900 leading-relaxed placeholder:text-slate-500"
                       />
                       <button
                         onClick={sendMessage}
                         disabled={!currentInput.trim() || chatLoading}
-                        className="p-3 bg-amber-500 text-black rounded-xl flex-shrink-0 hover:scale-105 transition-transform disabled:opacity-40 disabled:hover:scale-100"
+                        className="p-3 bg-blue-600 text-white rounded-xl flex-shrink-0 hover:scale-105 transition-transform disabled:opacity-40 disabled:hover:scale-100"
                       >
                         <Send className="w-4 h-4" />
                       </button>

@@ -191,7 +191,7 @@ function CoverLetterGenerator() {
   };
 
   return (
-    <div className="flex bg-background min-h-full w-full">
+    <div className="flex bg-white text-slate-900 min-h-screen w-full">
       <ConfirmDialog
         open={confirmOpen}
         title="Clear Cover Letter History"
@@ -202,10 +202,10 @@ function CoverLetterGenerator() {
       />
 
       {/* History Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-card border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
-            <History className="w-4 h-4 text-gold" /> Letter History
+            <History className="w-4 h-4 text-blue-600" /> Letter History
           </div>
           <div className="flex items-center gap-2">
             {history.length > 0 && (
@@ -246,7 +246,7 @@ function CoverLetterGenerator() {
           )}
         </div>
       </div>
-      {showHistory && <div className="fixed inset-0 z-40 bg-black/40" onClick={() => setShowHistory(false)} />}
+      {showHistory && <div className="fixed inset-0 z-40 bg-white/40" onClick={() => setShowHistory(false)} />}
 
       {/* Main */}
       <div className="flex-1 p-6 lg:p-10 max-w-7xl mx-auto w-full">
@@ -262,10 +262,10 @@ function CoverLetterGenerator() {
           </div>
           <button
             onClick={() => setShowHistory(true)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-sm text-muted-foreground hover:text-gold transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-sm text-muted-foreground hover:text-blue-600 transition-colors"
           >
             <History className="w-4 h-4" />
-            History {history.length > 0 && <span className="bg-gold/20 text-gold text-xs px-1.5 py-0.5 rounded-full">{history.length}</span>}
+            History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-xs px-1.5 py-0.5 rounded-full font-bold">{history.length}</span>}
           </button>
         </div>
 
@@ -273,7 +273,7 @@ function CoverLetterGenerator() {
           {/* Input Panel */}
           <div className="premium-card p-6 space-y-5">
             <h2 className="text-lg font-semibold flex items-center gap-2">
-              <Briefcase className="w-5 h-5 text-gold" /> Job Details
+              <Briefcase className="w-5 h-5 text-blue-600" /> Job Details
             </h2>
 
             <div>
@@ -281,7 +281,8 @@ function CoverLetterGenerator() {
               <select
                 value={selectedResumeId}
                 onChange={(e) => setSelectedResumeId(e.target.value)}
-                className="w-full bg-secondary border border-border rounded-md px-3 py-2 focus:border-gold outline-none text-sm"
+                className="w-full bg-white border border-slate-200 rounded-md px-3 py-2 focus:border-blue-300 outline-none text-sm"
+                style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
               >
                 {resumes.length === 0 && <option value="">No resumes — create one first</option>}
                 {resumes.map((r) => (
@@ -300,7 +301,8 @@ function CoverLetterGenerator() {
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                   placeholder="e.g. Google"
-                  className="w-full bg-secondary border border-border rounded-md px-3 py-2 focus:border-gold outline-none text-sm"
+                  className="w-full bg-white border border-slate-200 rounded-md px-3 py-2 focus:border-blue-300 outline-none text-sm text-slate-900 placeholder:text-slate-400"
+                  style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
                 />
               </div>
               <div>
@@ -310,7 +312,8 @@ function CoverLetterGenerator() {
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
                   placeholder="e.g. Software Engineer"
-                  className="w-full bg-secondary border border-border rounded-md px-3 py-2 focus:border-gold outline-none text-sm"
+                  className="w-full bg-white border border-slate-200 rounded-md px-3 py-2 focus:border-blue-300 outline-none text-sm text-slate-900 placeholder:text-slate-400"
+                  style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
                 />
               </div>
             </div>
@@ -322,7 +325,8 @@ function CoverLetterGenerator() {
                 value={hiringManager}
                 onChange={(e) => setHiringManager(e.target.value)}
                 placeholder="e.g. Jane Smith"
-                className="w-full bg-secondary border border-border rounded-md px-3 py-2 focus:border-gold outline-none text-sm"
+                className="w-full bg-white border border-slate-200 rounded-md px-3 py-2 focus:border-blue-300 outline-none text-sm text-slate-900 placeholder:text-slate-400"
+                style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
               />
             </div>
 
@@ -332,7 +336,8 @@ function CoverLetterGenerator() {
                 value={jobDescription}
                 onChange={(e) => setJobDescription(e.target.value)}
                 placeholder="Paste the job posting here for a more tailored letter..."
-                className="w-full min-h-[120px] bg-secondary border border-border rounded-md p-3 focus:border-gold outline-none resize-none text-sm"
+                className="w-full min-h-[120px] bg-white border border-slate-200 rounded-md p-3 focus:border-blue-300 outline-none resize-none text-sm text-slate-900 placeholder:text-slate-400"
+                style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
               />
             </div>
 
@@ -345,8 +350,8 @@ function CoverLetterGenerator() {
                     onClick={() => setTone(t.id)}
                     className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                       tone === t.id
-                        ? 'bg-gold/20 text-gold border-gold/40'
-                        : 'border-border text-muted-foreground hover:border-gold/30'
+                        ? 'bg-blue-100 text-blue-600 border-blue-300'
+                        : 'border-slate-200 text-slate-500 hover:border-blue-300'
                     }`}
                   >
                     {t.label}
@@ -358,18 +363,18 @@ function CoverLetterGenerator() {
             <button
               onClick={handleGenerate}
               disabled={loading || !selectedResumeId}
-              className="w-full bg-gold text-primary-foreground font-semibold py-3 rounded-xl shadow-lg shadow-gold/20 hover:scale-[1.02] transition-all disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-100 hover:scale-[1.02] transition-all disabled:opacity-40 disabled:hover:scale-100 flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
             >
-              {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Sparkles className="w-5 h-5" />}
+              {loading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : <Sparkles className="w-5 h-5 text-white" />}
               {loading ? 'Generating...' : 'Generate Cover Letter'}
             </button>
           </div>
 
           {/* Output Panel */}
           <div className="premium-card flex flex-col overflow-hidden min-h-[500px]">
-            <div className="p-4 border-b border-border flex items-center justify-between bg-card/50">
+            <div className="p-4 border-b border-border flex items-center justify-between bg-white/50">
               <h2 className="font-semibold flex items-center gap-2">
-                <FileSignature className="w-5 h-5 text-gold" /> Your Cover Letter
+                <FileSignature className="w-5 h-5 text-blue-600" /> Your Cover Letter
               </h2>
               {letter && (
                 <div className="flex items-center gap-2">
@@ -390,12 +395,12 @@ function CoverLetterGenerator() {
               value={letter}
               onChange={(e) => setLetter(e.target.value)}
               placeholder="Your AI-generated cover letter will appear here. You can edit it directly."
-              className="flex-1 w-full bg-[#faf9f7] text-gray-900 font-serif text-sm p-6 resize-none outline-none leading-relaxed min-h-[300px]"
+              className="flex-1 w-full bg-white text-gray-900 font-serif text-sm p-6 resize-none outline-none leading-relaxed min-h-[300px]"
             />
 
             {highlights.length > 0 && (
               <div className="p-4 border-t border-border bg-secondary/30">
-                <p className="text-xs font-semibold text-gold mb-2">Key highlights used:</p>
+                <p className="text-xs font-semibold text-blue-600 mb-2">Key highlights used:</p>
                 <ul className="text-xs text-muted-foreground space-y-1 list-disc list-inside">
                   {highlights.map((h, i) => <li key={i}>{h}</li>)}
                 </ul>
@@ -410,14 +415,15 @@ function CoverLetterGenerator() {
                   onChange={(e) => setImproveInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleImprove()}
                   placeholder='Ask AI to improve: "Make it shorter" or "Add more technical detail"...'
-                  className="flex-1 bg-secondary border border-border rounded-lg px-3 py-2 text-sm focus:border-gold outline-none"
+                  className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm focus:border-blue-300 outline-none text-slate-900 placeholder:text-slate-400"
+                  style={{ color: '#0f172a', backgroundColor: '#ffffff' }}
                 />
                 <button
                   onClick={handleImprove}
                   disabled={improving || !improveInput.trim()}
-                  className="flex items-center gap-1.5 bg-secondary border border-border px-4 py-2 rounded-lg text-sm hover:border-gold/50 transition-colors disabled:opacity-50"
+                  className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors disabled:opacity-50"
                 >
-                  {improving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4 text-gold" />}
+                  {improving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
                   Improve
                 </button>
               </div>
