@@ -22,18 +22,18 @@ const CreateNewResume = async (data) => {
     ...data.data,
   };
 
-  const documentId = Date.now().toString(); 
+  const documentId = Date.now().toString();
   const userEmail = data.data.userEmail || "";
   const userName = data.data.userName || "";
 
   const { data: insertedData, error } = await supabase
     .from('user_resumes')
     .insert([
-      { 
-        document_id: documentId, 
+      {
+        document_id: documentId,
         user_email: userEmail,
         user_name: userName,
-        resume_data: resumeData 
+        resume_data: resumeData
       }
     ])
     .select();
@@ -42,7 +42,7 @@ const CreateNewResume = async (data) => {
     console.error("Error creating resume:", error);
     throw error;
   }
-  
+
   const createdResume = {
     ...resumeData,
     id: insertedData[0].id,
@@ -80,14 +80,16 @@ const GetUserResumes = async (userEmail) => {
   };
 };
 
-const GetResumeById = async (id) => {
+// Always use document_id (text column) — never filter on id (uuid column) with a timestamp string
+const GetResumeById = async (documentId) => {
   const { data, error } = await supabase
     .from('user_resumes')
     .select('*')
-    .or(`id.eq.${id},document_id.eq.${id}`)
+    .eq('document_id', String(documentId))
     .single();
 
   if (error) {
+    console.error("Error fetching resume:", error);
     return {
       data: {
         data: {
@@ -112,23 +114,21 @@ const GetResumeById = async (id) => {
     };
   }
 
-  const formattedResume = {
-    id: data.id,
-    documentId: data.document_id,
-    ...data.resume_data
-  };
-
   return {
     data: {
-      data: formattedResume,
+      data: {
+        id: data.id,
+        documentId: data.document_id,
+        ...data.resume_data
+      },
     },
   };
 };
 
-const UpdateResumeDetail = async (id, data) => {
-  const existing = await GetResumeById(id);
+const UpdateResumeDetail = async (documentId, data) => {
+  const existing = await GetResumeById(documentId);
   const currentData = existing?.data?.data || {};
-  
+
   const { id: _id, documentId: _docId, ...resumeDataToSave } = {
     ...currentData,
     ...data.data
@@ -136,11 +136,8 @@ const UpdateResumeDetail = async (id, data) => {
 
   const { data: updatedData, error } = await supabase
     .from('user_resumes')
-    .update({ 
-        resume_data: resumeDataToSave, 
-        updated_at: new Date().toISOString() 
-    })
-    .or(`id.eq.${id},document_id.eq.${id}`)
+    .update({ resume_data: resumeDataToSave })
+    .eq('document_id', String(documentId))
     .select()
     .single();
 
@@ -149,35 +146,29 @@ const UpdateResumeDetail = async (id, data) => {
     return { data: { data: null } };
   }
 
-  const formattedResume = {
-    id: updatedData.id,
-    documentId: updatedData.document_id,
-    ...updatedData.resume_data
-  };
-
   return {
     data: {
-      data: formattedResume,
+      data: {
+        id: updatedData.id,
+        documentId: updatedData.document_id,
+        ...updatedData.resume_data
+      },
     },
   };
 };
 
-const DeleteResumeById = async (id) => {
+const DeleteResumeById = async (documentId) => {
   const { error } = await supabase
     .from('user_resumes')
     .delete()
-    .or(`id.eq.${id},document_id.eq.${id}`);
+    .eq('document_id', String(documentId));
 
   if (error) {
     console.error("Error deleting resume:", error);
     return { data: { success: false } };
   }
 
-  return {
-    data: {
-      success: true,
-    },
-  };
+  return { data: { success: true } };
 };
 
 export default {

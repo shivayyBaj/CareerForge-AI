@@ -61,15 +61,21 @@ function PersonalDetail({ enabledNext }) {
     }
 
     GlobalApi.UpdateResumeDetail(params?.resumeId, data)
-      .then(() => {
-        enabledNext(true)
-        setLoading(false)
-        toast('Details updated')
+      .then((result) => {
+        console.log('[PersonalDetail] Save result:', result);
+        if (result?.data?.data) {
+          enabledNext(true)
+          setLoading(false)
+          toast('Details updated')
+        } else {
+          setLoading(false)
+          toast.error('Save failed — Supabase returned no data. Check console for errors.')
+        }
       })
       .catch((error) => {
-        console.log(error)
+        console.error('[PersonalDetail] Save error:', error)
         setLoading(false)
-        toast('Failed to save details')
+        toast.error('Failed to save details: ' + (error.message || error))
       })
   }
 
