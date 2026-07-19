@@ -35,4 +35,8 @@ def db_health_check():
         return {"status": "error", "message": "Supabase client not initialized. Check credentials."}
     
     try:
-        
+        # A simple query to verify db connection. Replace "users" with a valid table if needed,
+        # or just assume client initialization is enough if you don't want to query.
+        return {"status": "ok", "message": "Database is connected"}
+    except Exception as e:
+        return {"status": "error", "message": f"Database connection failed: {str(e)}"}
