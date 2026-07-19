@@ -36,19 +36,32 @@ export default function Documentation() {
   return (
     <div className="flex bg-white text-slate-900 min-h-full w-full">
       <div className="flex-1 p-6 lg:p-12 max-w-4xl mx-auto w-full">
-        {}
+        {/* Header */}
         <div className="relative mb-12 text-center animate-slide-up">
+          {/* Mobile Buttons */}
+          <div className="flex justify-between items-center mb-6 md:hidden">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
+            </button>
+            <div className="w-[70px]"></div> {/* Spacer for flex-between */}
+          </div>
+          
+          {/* Desktop Buttons */}
           <button
             onClick={() => navigate(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
           </button>
+
           <div className="flex justify-center items-center gap-1.5 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2">
             <BookOpen className="w-3.5 h-3.5" /> Help Center
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-slate-900">Documentation</h1>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed px-4 md:px-0">
             Learn how to make the most out of CareerForge AI and its suite of professional career tools.
           </p>
         </div>

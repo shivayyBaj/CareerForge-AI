@@ -250,23 +250,40 @@ function CoverLetterGenerator() {
 
       {}
       <div className="flex-1 p-6 lg:p-10 max-w-7xl mx-auto w-full">
+        {/* Header */}
         <div className="relative mb-8 animate-slide-up">
-          <button onClick={() => navigate(-1)} className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group">
+          {/* Mobile Buttons */}
+          <div className="flex justify-between items-center mb-6 md:hidden">
+            <button onClick={() => navigate(-1)} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back
+            </button>
+            <button
+              onClick={() => setShowHistory(true)}
+              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-blue-600 transition-colors"
+            >
+              <History className="w-4 h-4" />
+              History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-xs px-1.5 py-0.5 rounded-full font-bold">{history.length}</span>}
+            </button>
+          </div>
+          
+          {/* Desktop Buttons */}
+          <button onClick={() => navigate(-1)} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" /> Back
           </button>
-          <div className="text-center">
-            <h1 className="text-4xl font-bold font-serif mb-3">AI Cover Letter Generator</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Generate tailored, professional cover letters from your saved resume — matched to any job and company.
-            </p>
-          </div>
           <button
             onClick={() => setShowHistory(true)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-sm text-muted-foreground hover:text-blue-600 transition-colors"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-1.5 text-sm text-muted-foreground hover:text-blue-600 transition-colors"
           >
             <History className="w-4 h-4" />
             History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-xs px-1.5 py-0.5 rounded-full font-bold">{history.length}</span>}
           </button>
+
+          <div className="text-center">
+            <h1 className="text-4xl font-bold font-serif mb-3">AI Cover Letter Generator</h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto px-4 md:px-0">
+              Generate tailored, professional cover letters from your saved resume — matched to any job and company.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in">

@@ -484,27 +484,47 @@ function MockInterview() {
       {}
       <div className="flex-1 p-6 lg:p-12 max-w-7xl mx-auto w-full">
         {}
+        {/* Header */}
         <div className="relative mb-12 text-center animate-slide-up">
+          {/* Mobile Buttons */}
+          <div className="flex justify-between items-center mb-6 md:hidden">
+            <button
+              onClick={handleBackClick}
+              className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
+            </button>
+            <button
+              onClick={() => setShowHistory(true)}
+              className="flex items-center gap-2 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
+            >
+              <History className="w-3.5 h-3.5" />
+              History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
+            </button>
+          </div>
+          
+          {/* Desktop Buttons */}
           <button
             onClick={handleBackClick}
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors group border border-slate-200 bg-slate-50 hover:bg-slate-100 px-3 py-1.5 rounded-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" /> Back
           </button>
-          <div className="flex justify-center items-center gap-1.5 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3.5 h-3.5" /> AI Career Tools
-          </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-slate-900">Mock Interview</h1>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Upload your resume, get an instant ATS score, and practice with a real-time Voice AI interviewer powered by Llama 3.
-          </p>
           <button
             onClick={() => setShowHistory(true)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-2 text-xs text-slate-500 hover:text-blue-600 border border-slate-200 hover:border-blue-100 bg-slate-50 hover:bg-slate-100 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-all"
           >
             <History className="w-3.5 h-3.5" />
             History {history.length > 0 && <span className="bg-blue-100 text-blue-600 text-[10px] font-bold px-1.5 py-0.5 rounded-full">{history.length}</span>}
           </button>
+
+          <div className="flex justify-center items-center gap-1.5 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-2">
+            <Sparkles className="w-3.5 h-3.5" /> AI Career Tools
+          </div>
+          <h1 className="text-3xl md:text-4xl font-extrabold font-serif mb-3 tracking-wide text-slate-900">Mock Interview</h1>
+          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed px-4 md:px-0">
+            Upload your resume, get an instant ATS score, and practice with a real-time Voice AI interviewer powered by Llama 3.
+          </p>
         </div>
 
         {!analysis ? (
