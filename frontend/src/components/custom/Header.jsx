@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-12">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-blue-600 shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
             <Sparkles className="w-4 h-4 text-white" />

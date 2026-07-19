@@ -27,8 +27,10 @@ function EditResume() {
     <div className='mx-auto grid max-w-7xl grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-10'>
         {}
           <FormSection/>
-        {}
-         <ResumePreview/>
+        {/* Preview Section */}
+         <div className="overflow-x-auto w-full pb-4">
+           <ResumePreview/>
+         </div>
     </div>
     </ResumeInfoContext.Provider>
   )

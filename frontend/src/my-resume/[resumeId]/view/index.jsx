@@ -56,7 +56,9 @@ function ViewResume() {
 
       <div className="mx-auto max-w-4xl px-6 pb-16 md:px-12">
         <div id="print-area">
-          <ResumePreview />
+          <div className="overflow-x-auto w-full pb-4">
+            <ResumePreview />
+          </div>
         </div>
       </div>
     </ResumeInfoContext.Provider>

@@ -111,7 +111,7 @@ function Home() {
 
           <motion.h1 
             variants={itemVariants} 
-            className="mb-6 text-5xl font-extrabold leading-tight tracking-tight md:text-7xl text-slate-900"
+            className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-7xl text-slate-900"
           >
             Accelerate your career with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">confidence</span>.
           </motion.h1>
