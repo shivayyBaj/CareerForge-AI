@@ -24,21 +24,4 @@ def mock_interview(state: AgentState):
     
     prompt = "You are an HR and Technical Interviewer. Respond to the user's latest message and ask the next interview question."
     
-    # Simple interaction for the prototype
-    response = llm.invoke([{"role": "system", "content": prompt}] + msgs)
     
-    return {"messages": [response]}
-
-def get_placement_graph():
-    workflow = StateGraph(AgentState)
-    
-    workflow.add_node("analyze_resume", analyze_resume)
-    workflow.add_node("mock_interview", mock_interview)
-    
-    # Conditional logic or simple sequence can be added here
-    # For now, it's a simple setup
-    workflow.set_entry_point("analyze_resume")
-    workflow.add_edge("analyze_resume", END)
-    
-    app = workflow.compile()
-    return app

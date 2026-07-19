@@ -260,7 +260,7 @@ function MockInterview() {
     if (!('speechSynthesis' in window) || !text) return;
     window.speechSynthesis.cancel();
     
-    // Clean text and split into sentences
+    
     const sentences = text.replace(/([.?!])\s+/g, '$1|').split('|').map(s => s.trim()).filter(Boolean);
     
     const speakQueue = (index) => {
@@ -432,7 +432,7 @@ function MockInterview() {
         onCancel={() => setBackConfirmOpen(false)}
       />
 
-      {/* History Sidebar */}
+      {}
       <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
@@ -481,9 +481,9 @@ function MockInterview() {
       </div>
       {showHistory && <div className="fixed inset-0 z-40 bg-white/40" onClick={() => setShowHistory(false)} />}
 
-      {/* Main Content */}
+      {}
       <div className="flex-1 p-6 lg:p-12 max-w-7xl mx-auto w-full">
-        {/* Header */}
+        {}
         <div className="relative mb-12 text-center animate-slide-up">
           <button
             onClick={handleBackClick}
@@ -579,7 +579,7 @@ function MockInterview() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-slide-up">
             <div className="lg:col-span-1 flex flex-col gap-6">
-              {/* ATS Score Card */}
+              {}
               <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-sm font-bold tracking-wider text-slate-500 uppercase">ATS Evaluation</h3>
@@ -612,7 +612,7 @@ function MockInterview() {
                 </div>
               </div>
 
-              {/* Roadmap */}
+              {}
               <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl flex-1">
                 <h3 className="text-sm font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-3 mb-5 uppercase">Action Roadmap</h3>
                 <div className="space-y-4">
@@ -629,7 +629,7 @@ function MockInterview() {
               </div>
             </div>
 
-            {/* Chat Panel OR Scorecard */}
+            {}
             <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden">
               {scorecard ? (
                 <div className="flex flex-col h-full overflow-hidden">
@@ -747,7 +747,7 @@ function MockInterview() {
                 </div>
               ) : (
                 <div className="flex flex-col md:flex-row h-full overflow-hidden">
-                  {/* Left Column: Virtual Interviewer View */}
+                  {}
                   <div className="w-full md:w-[38%] border-b md:border-b-0 md:border-r border-slate-200 flex flex-col bg-white">
                     <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-white flex-shrink-0">
                       <div>
@@ -855,7 +855,7 @@ function MockInterview() {
                         />
                       </div>
 
-                      {/* Speaking Subtitle Bubble */}
+                      {}
                       {isSpeaking && messages.length > 0 && (
                         <div className="absolute bottom-4 left-4 right-4 bg-white/80 border border-slate-200 rounded-xl p-3.5 backdrop-blur-md z-10 animate-fade-in shadow-xl max-h-24 overflow-y-auto">
                           <p className="text-[9px] uppercase font-bold text-blue-600 tracking-widest mb-1 flex items-center gap-1.5">
@@ -872,7 +872,7 @@ function MockInterview() {
                     </div>
                   </div>
 
-                  {/* Right Column: Chat transcript & actions */}
+                  {}
                   <div className="flex-1 flex flex-col h-full bg-white overflow-hidden">
                     <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-white flex-shrink-0">
                       <div>

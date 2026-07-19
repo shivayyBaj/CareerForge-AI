@@ -22,7 +22,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
         collapsed ? 'w-[68px]' : 'w-64'
       }`}
     >
-      {/* Header */}
+      {}
       <div className="h-16 flex items-center justify-between px-4 border-b border-slate-100 flex-shrink-0">
         {!collapsed ? (
           <Link to="/" className="flex items-center gap-2.5 group min-w-0">
@@ -50,7 +50,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
         )}
       </div>
 
-      {/* Expand button when collapsed */}
+      {}
       {collapsed && (
         <button
           onClick={onToggle}
@@ -61,7 +61,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
         </button>
       )}
 
-      {/* Nav items */}
+      {}
       <nav className="flex-1 px-3 py-3 space-y-0.5 overflow-visible">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path
@@ -89,7 +89,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
                 )}
               </Link>
 
-              {/* Tooltip — only in collapsed mode */}
+              {}
               {collapsed && (
                 <div className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-3 z-50
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
@@ -104,7 +104,7 @@ export default function Sidebar({ collapsed = false, onToggle }) {
         })}
       </nav>
 
-      {/* Footer */}
+      {}
       {!collapsed && (
         <div className="p-3 border-t border-slate-100 flex-shrink-0">
           <div className="p-3.5 bg-slate-50 rounded-xl">

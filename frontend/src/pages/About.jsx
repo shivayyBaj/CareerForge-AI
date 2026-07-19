@@ -35,7 +35,7 @@ export default function About() {
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <Header />
       
-      {/* Hero Section */}
+      {}
       <div className="max-w-5xl mx-auto px-6 pt-24 pb-16 text-center">
         <h1 className="text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
           About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">CareerForge AI</span>
@@ -45,7 +45,7 @@ export default function About() {
         </p>
       </div>
 
-      {/* Deep Dive Section */}
+      {}
       <div className="max-w-5xl mx-auto px-6">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200 mb-16">
           <h2 className="text-3xl font-bold mb-6">Our Mission</h2>

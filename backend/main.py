@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="ResumeForge AI Backend", version="2.0.0")
+app = FastAPI(title="CareerForge AI Backend", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,8 +21,18 @@ app.include_router(cover_letter.router, prefix="/api/cover-letter", tags=["Cover
 
 @app.get("/")
 def read_root():
-    return {"message": "ResumeForge AI Backend v2.0 is running!"}
+    return {"message": "CareerForge AI Backend v2.0 is running!"}
 
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.get("/db-health")
+def db_health_check():
+    from database.client import get_db
+    db = get_db()
+    if not db:
+        return {"status": "error", "message": "Supabase client not initialized. Check credentials."}
+    
+    try:
+        

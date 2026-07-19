@@ -245,7 +245,7 @@ function buildPythonHarness(userCode, question) {
     .map((tc, i) => {
       const argStr = serializeArgs(tc.args, 'python');
       const expected = pythonLiteral(tc.expected);
-      const inputStr = JSON.stringify(JSON.stringify(tc.args)); // Pass as Python string literal
+      const inputStr = JSON.stringify(JSON.stringify(tc.args)); 
       return `_run_test(${i + 1}, lambda: ${makeCall(argStr)}, ${expected}, ${inputStr})`;
     })
     .join('\n');
@@ -409,9 +409,17 @@ function buildCppHarness(userCode, question) {
 
   const cases = question.testCases
     .map((tc, i) => {
-      const argStr = serializeArgs(tc.args, 'cpp');
+      const argVals = Object.values(tc.args).map((v) => {
+        if (Array.isArray(v) && question.topic === 'Linked List') {
+          return `vecToList(${cppLiteral(v)})`;
+        }
+        return cppLiteral(v);
+      });
+      const argVars = argVals.map((val, argIdx) => `auto arg_${i}_${argIdx} = ${val};`).join(' ');
+      const argNames = argVals.map((_, argIdx) => `arg_${i}_${argIdx}`).join(', ');
+      
       const inputStr = JSON.stringify(JSON.stringify(tc.args));
-      return `    runTest(${i + 1}, solution.${method}(${argStr}), ${JSON.stringify(JSON.stringify(tc.expected))}, ${inputStr});`;
+      return `    ${argVars}\n    runTest(${i + 1}, solution.${method}(${argNames}), ${JSON.stringify(JSON.stringify(tc.expected))}, ${inputStr});`;
     })
     .join('\n');
 
@@ -439,6 +447,27 @@ function buildCppHarness(userCode, question) {
 using namespace std;
 
 ${definitions}
+
+ListNode* vecToList(const vector<int>& v) {
+    if (v.empty()) return nullptr;
+    ListNode dummy(0);
+    ListNode* ptr = &dummy;
+    for (int x : v) {
+        ptr->next = new ListNode(x);
+        ptr = ptr->next;
+    }
+    return dummy.next;
+}
+
+vector<int> listToVec(ListNode* head) {
+    vector<int> res;
+    while (head) {
+        res.push_back(head->val);
+        head = head->next;
+    }
+    return res;
+}
+
 ${normalized}
 
 string vecToStr(const vector<int>& v) {
@@ -458,6 +487,12 @@ string jsonEscape(const string& s) {
         else out += c;
     }
     return out;
+}
+
+void runTest(int num, ListNode* result, const string& expected, const string& inputStr) {
+    string actual = vecToStr(listToVec(result));
+    string status = (actual == expected) ? "PASS" : "FAIL";
+    cout << "{\\"testNum\\":" << num << ",\\"status\\":\\"" << status << "\\",\\"input\\":" << inputStr << ",\\"expected\\":\\"" << jsonEscape(expected) << "\\",\\"actual\\":\\"" << jsonEscape(actual) << "\\"}" << endl;
 }
 
 void runTest(int num, const vector<int>& result, const string& expected, const string& inputStr) {
@@ -538,7 +573,7 @@ export function parseStructuredResults(stdout) {
           actual: obj.actual,
         });
       }
-    } catch (_) { /* skip malformed lines */ }
+    } catch (_) {  }
   }
   return results;
 }

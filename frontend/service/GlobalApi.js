@@ -1,21 +1,7 @@
-const STORAGE_KEY = "resumes";
+import { supabase } from '../src/lib/supabase.js';
 
-const getResumes = () => {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-};
-
-const saveResumes = (resumes) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(resumes));
-};
-
-const CreateNewResume = (data) => {
-  const resumes = getResumes();
-
-  const newResume = {
-    id: Date.now().toString(),
-    documentId: Date.now().toString(),
-
-    // Personal Details
+const CreateNewResume = async (data) => {
+  const resumeData = {
     firstName: "",
     lastName: "",
     jobTitle: "",
@@ -26,60 +12,85 @@ const CreateNewResume = (data) => {
     githubUrl: "",
     portfolioUrl: "",
     achievements: "",
-
-    // Summary
     summery: "",
-
-    // Education
     education: [],
-
-    // Experience
     Experience: [],
-
-    // Skills
     skills: [],
-
     themeColor: "#C9A962",
-
-    // User Info
     userEmail: "",
     userName: "",
-
-    // Incoming data
     ...data.data,
   };
 
-  resumes.push(newResume);
-  saveResumes(resumes);
+  const documentId = Date.now().toString(); 
+  const userEmail = data.data.userEmail || "";
+  const userName = data.data.userName || "";
 
-  return Promise.resolve({
+  const { data: insertedData, error } = await supabase
+    .from('user_resumes')
+    .insert([
+      { 
+        document_id: documentId, 
+        user_email: userEmail,
+        user_name: userName,
+        resume_data: resumeData 
+      }
+    ])
+    .select();
+
+  if (error) {
+    console.error("Error creating resume:", error);
+    throw error;
+  }
+  
+  const createdResume = {
+    ...resumeData,
+    id: insertedData[0].id,
+    documentId: insertedData[0].document_id
+  };
+
+  return {
     data: {
-      data: newResume,
+      data: createdResume,
     },
-  });
+  };
 };
 
-const GetUserResumes = (userEmail) => {
-  const resumes = getResumes().filter(
-    (item) => item.userEmail === userEmail
-  );
+const GetUserResumes = async (userEmail) => {
+  const { data, error } = await supabase
+    .from('user_resumes')
+    .select('*')
+    .eq('user_email', userEmail);
 
-  return Promise.resolve({
+  if (error) {
+    console.error("Error fetching resumes:", error);
+    throw error;
+  }
+
+  const formattedResumes = data.map(item => ({
+    id: item.id,
+    documentId: item.document_id,
+    ...item.resume_data
+  }));
+
+  return {
     data: {
-      data: resumes,
+      data: formattedResumes,
     },
-  });
+  };
 };
 
-const GetResumeById = (id) => {
-  const resume = getResumes().find(
-    (item) => item.documentId == id || item.id == id
-  );
+const GetResumeById = async (id) => {
+  const { data, error } = await supabase
+    .from('user_resumes')
+    .select('*')
+    .or(`id.eq.${id},document_id.eq.${id}`)
+    .single();
 
-  return Promise.resolve({
-    data: {
-      data:
-        resume || {
+  if (error) {
+    return {
+      data: {
+        data: {
           firstName: "",
           lastName: "",
           jobTitle: "",
@@ -97,51 +108,76 @@ const GetResumeById = (id) => {
           userEmail: "",
           userName: "",
         },
-    },
-  });
-};
-
-const UpdateResumeDetail = (id, data) => {
-  const resumes = getResumes();
-
-  const index = resumes.findIndex(
-    (item) => item.documentId == id || item.id == id
-  );
-
-  if (index !== -1) {
-    resumes[index] = {
-      ...resumes[index],
-      ...data.data,
-    };
-
-    saveResumes(resumes);
-
-    return Promise.resolve({
-      data: {
-        data: resumes[index],
       },
-    });
+    };
   }
 
-  return Promise.resolve({
+  const formattedResume = {
+    id: data.id,
+    documentId: data.document_id,
+    ...data.resume_data
+  };
+
+  return {
     data: {
-      data: null,
+      data: formattedResume,
     },
-  });
+  };
 };
 
-const DeleteResumeById = (id) => {
-  const resumes = getResumes().filter(
-    (item) => item.documentId != id && item.id != id
-  );
+const UpdateResumeDetail = async (id, data) => {
+  const existing = await GetResumeById(id);
+  const currentData = existing?.data?.data || {};
+  
+  const { id: _id, documentId: _docId, ...resumeDataToSave } = {
+    ...currentData,
+    ...data.data
+  };
 
-  saveResumes(resumes);
+  const { data: updatedData, error } = await supabase
+    .from('user_resumes')
+    .update({ 
+        resume_data: resumeDataToSave, 
+        updated_at: new Date().toISOString() 
+    })
+    .or(`id.eq.${id},document_id.eq.${id}`)
+    .select()
+    .single();
 
-  return Promise.resolve({
+  if (error) {
+    console.error("Error updating resume:", error);
+    return { data: { data: null } };
+  }
+
+  const formattedResume = {
+    id: updatedData.id,
+    documentId: updatedData.document_id,
+    ...updatedData.resume_data
+  };
+
+  return {
+    data: {
+      data: formattedResume,
+    },
+  };
+};
+
+const DeleteResumeById = async (id) => {
+  const { error } = await supabase
+    .from('user_resumes')
+    .delete()
+    .or(`id.eq.${id},document_id.eq.${id}`);
+
+  if (error) {
+    console.error("Error deleting resume:", error);
+    return { data: { success: false } };
+  }
+
+  return {
     data: {
       success: true,
     },
-  });
+  };
 };
 
 export default {

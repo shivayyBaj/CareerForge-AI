@@ -36,7 +36,7 @@ export default function Documentation() {
   return (
     <div className="flex bg-white text-slate-900 min-h-full w-full">
       <div className="flex-1 p-6 lg:p-12 max-w-4xl mx-auto w-full">
-        {/* Header */}
+        {}
         <div className="relative mb-12 text-center animate-slide-up">
           <button
             onClick={() => navigate(-1)}

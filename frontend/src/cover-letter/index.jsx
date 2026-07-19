@@ -201,7 +201,7 @@ function CoverLetterGenerator() {
         onCancel={() => setConfirmOpen(false)}
       />
 
-      {/* History Sidebar */}
+      {}
       <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white border-r border-border flex flex-col transform transition-transform duration-300 ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold">
@@ -248,7 +248,7 @@ function CoverLetterGenerator() {
       </div>
       {showHistory && <div className="fixed inset-0 z-40 bg-white/40" onClick={() => setShowHistory(false)} />}
 
-      {/* Main */}
+      {}
       <div className="flex-1 p-6 lg:p-10 max-w-7xl mx-auto w-full">
         <div className="relative mb-8 animate-slide-up">
           <button onClick={() => navigate(-1)} className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group">
@@ -270,7 +270,7 @@ function CoverLetterGenerator() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in">
-          {/* Input Panel */}
+          {}
           <div className="premium-card p-6 space-y-5">
             <h2 className="text-lg font-semibold flex items-center gap-2">
               <Briefcase className="w-5 h-5 text-blue-600" /> Job Details
@@ -370,7 +370,7 @@ function CoverLetterGenerator() {
             </button>
           </div>
 
-          {/* Output Panel */}
+          {}
           <div className="premium-card flex flex-col overflow-hidden min-h-[500px]">
             <div className="p-4 border-b border-border flex items-center justify-between bg-white/50">
               <h2 className="font-semibold flex items-center gap-2">

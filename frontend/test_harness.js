@@ -1,14 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-// Import everything from codeRunner.js indirectly, or just evaluate it.
+
 const codeRunnerPath = path.join(process.cwd(), 'src/placement-coach/codeRunner.js');
 const questionsPath = path.join(process.cwd(), 'src/placement-coach/dsaQuestions.js');
 
 let codeRunnerCode = fs.readFileSync(codeRunnerPath, 'utf-8');
 let questionsCode = fs.readFileSync(questionsPath, 'utf-8');
 
-// We can just evaluate the files in the node context.
+
 questionsCode = questionsCode.replace('export const DSA_QUESTIONS =', 'global.DSA_QUESTIONS =');
 eval(questionsCode);
 

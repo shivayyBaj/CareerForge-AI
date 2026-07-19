@@ -3,7 +3,7 @@ import React from 'react';
 const InterviewerAvatar = ({ isSpeaking, isThinking, isListening }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full w-full p-4 relative select-none">
-      {/* Background soft ambient lighting */}
+      {}
       <div className={`absolute inset-0 rounded-2xl filter blur-3xl opacity-10 transition-all duration-700 -z-10 ${
         isThinking 
           ? 'bg-blue-600' 
@@ -14,7 +14,7 @@ const InterviewerAvatar = ({ isSpeaking, isThinking, isListening }) => {
               : 'bg-slate-50'
       }`} />
 
-      {/* Avatar Image */}
+      {}
       <div 
         className="w-48 h-48 md:w-56 md:h-56 rounded-2xl border border-slate-200 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500"
         style={{
@@ -30,7 +30,7 @@ const InterviewerAvatar = ({ isSpeaking, isThinking, isListening }) => {
         />
       </div>
 
-      {/* State Badge */}
+      {}
       <div className="mt-4 flex flex-col items-center gap-1.5 z-10">
         <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 border transition-all duration-300 ${
           isThinking 
@@ -53,7 +53,7 @@ const InterviewerAvatar = ({ isSpeaking, isThinking, isListening }) => {
           {isThinking ? 'Analyzing' : isListening ? 'Listening' : isSpeaking ? 'Speaking' : 'Ready'}
         </div>
 
-        {/* Audio Wave Visualizer while Speaking or Listening */}
+        {}
         <div className="h-6 flex items-center gap-0.5 mt-1">
           {Array.from({ length: 9 }).map((_, i) => (
             <span 

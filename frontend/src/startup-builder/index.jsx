@@ -23,7 +23,7 @@ function StartupBuilder() {
   const [results, setResults] = useState({ research: null, businessModel: null, pitchDeck: null });
   const [activeTab, setActiveTab] = useState('logs');
 
-  // History state
+  
   const [history, setHistory] = useState(loadHistory);
   const [showHistory, setShowHistory] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -94,7 +94,7 @@ function StartupBuilder() {
       };
       setResults(newResults);
 
-      // Save to history
+      
       const session = {
         id: Date.now().toString(),
         timestamp: new Date().toLocaleString(),
@@ -117,7 +117,7 @@ function StartupBuilder() {
     }
   };
 
-  // Helper to format output text with nice styled line paragraphs
+  
   const renderFormattedText = (text) => {
     if (!text) return null;
     return text.split('\n').map((line, idx) => {
@@ -155,11 +155,11 @@ function StartupBuilder() {
   return (
     <div className="flex bg-white text-slate-900 min-h-screen w-full relative overflow-hidden">
       
-      {/* Background decorations */}
+      {}
       <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      {/* Custom confirm dialog */}
+      {}
       <ConfirmDialog
         open={confirmOpen}
         title="Clear Startup History"
@@ -169,7 +169,7 @@ function StartupBuilder() {
         onCancel={() => setConfirmOpen(false)}
       />
 
-      {/* ── History Sidebar ── */}
+      {}
       <div className={`fixed inset-y-0 left-0 z-50 w-80 bg-white/90 border-r border-slate-200 flex flex-col transform transition-transform duration-300 backdrop-blur-xl ${showHistory ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold tracking-wide font-serif text-sm">
@@ -225,9 +225,9 @@ function StartupBuilder() {
       </div>
       {showHistory && <div className="fixed inset-0 z-40 bg-white/60 backdrop-blur-sm" onClick={() => setShowHistory(false)} />}
 
-      {/* ── Main Content ── */}
+      {}
       <div className="flex-1 p-6 lg:p-12 max-w-7xl mx-auto w-full">
-        {/* Header */}
+        {}
         <div className="relative mb-12 text-center animate-slide-up">
           <button 
             onClick={() => navigate(-1)} 
@@ -250,7 +250,7 @@ function StartupBuilder() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Panel */}
+          {}
           <div className="lg:col-span-1 flex flex-col gap-6 animate-fade-in">
             <div className="relative rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent p-6 shadow-xl">
               <div className="flex items-center justify-between mb-4">
@@ -283,7 +283,7 @@ function StartupBuilder() {
               </button>
             </div>
 
-            {/* Agent Status */}
+            {}
             <div className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.01] to-transparent p-6 shadow-xl flex-1">
               <h3 className="text-sm font-bold tracking-wider text-slate-500 border-b border-slate-200 pb-3 mb-4 font-serif">Crew Deployment Status</h3>
               <div className="space-y-4">
@@ -310,7 +310,7 @@ function StartupBuilder() {
                 </div>
               </div>
 
-              {/* Recent history quick access */}
+              {}
               {history.length > 0 && !isBuilding && (
                 <div className="mt-8 pt-4 border-t border-slate-200">
                   <p className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-3">Recent Blueprints</p>
@@ -331,7 +331,7 @@ function StartupBuilder() {
             </div>
           </div>
 
-          {/* Right Panel — Tabs */}
+          {}
           <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col h-[650px] shadow-xl overflow-hidden animate-slide-up">
             <div className="border-b border-slate-200 flex bg-white/80 backdrop-blur-md overflow-x-auto select-none">
               <button 

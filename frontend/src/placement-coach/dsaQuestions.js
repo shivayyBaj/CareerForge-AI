@@ -1,4 +1,4 @@
-// AUTO-GENERATED NEETCODE 150 QUESTIONS DATABASE
+
 export const DSA_QUESTIONS = [
   {
     "id": "climbing-stairs",
@@ -82,7 +82,7 @@ export const DSA_QUESTIONS = [
       "python": "def min_cost_climbing_stairs(*args):\n    # Write your solution here\n    pass",
       "javascript": "function minCostClimbingStairs(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object minCostClimbingStairs(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int minCostClimbingStairs(vector<int>& cost) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -153,7 +153,7 @@ export const DSA_QUESTIONS = [
       "python": "def coin_change(*args):\n    # Write your solution here\n    pass",
       "javascript": "function coinChange(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object coinChange(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int coinChange(vector<int>& coins, int amount) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -214,7 +214,7 @@ export const DSA_QUESTIONS = [
       "python": "def decode_ways(*args):\n    # Write your solution here\n    pass",
       "javascript": "function decodeWays(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object decodeWays(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int decodeWays(string& s) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -264,7 +264,7 @@ export const DSA_QUESTIONS = [
       "python": "def house_robber(*args):\n    # Write your solution here\n    pass",
       "javascript": "function houseRobber(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object houseRobber(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int houseRobber(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -330,7 +330,7 @@ export const DSA_QUESTIONS = [
       "python": "def house_robber_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function houseRobberIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object houseRobberIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int houseRobberIi(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -393,7 +393,7 @@ export const DSA_QUESTIONS = [
       "python": "def longest_increasing_subsequence(*args):\n    # Write your solution here\n    pass",
       "javascript": "function longestIncreasingSubsequence(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object longestIncreasingSubsequence(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int longestIncreasingSubsequence(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -465,7 +465,7 @@ export const DSA_QUESTIONS = [
       "python": "def longest_palindromic_substring(*args):\n    # Write your solution here\n    pass",
       "javascript": "function longestPalindromicSubstring(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object longestPalindromicSubstring(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    string longestPalindromicSubstring(string& s) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -516,7 +516,7 @@ export const DSA_QUESTIONS = [
       "python": "def maximum_product_subarray(*args):\n    # Write your solution here\n    pass",
       "javascript": "function maximumProductSubarray(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object maximumProductSubarray(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int maximumProductSubarray(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -579,7 +579,7 @@ export const DSA_QUESTIONS = [
       "python": "def palindromic_substrings(*args):\n    # Write your solution here\n    pass",
       "javascript": "function palindromicSubstrings(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object palindromicSubstrings(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<char> palindromicSubstrings(string& s) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -644,7 +644,7 @@ export const DSA_QUESTIONS = [
       "python": "def partition_equal_subset_sum(*args):\n    # Write your solution here\n    pass",
       "javascript": "function partitionEqualSubsetSum(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object partitionEqualSubsetSum(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool partitionEqualSubsetSum(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -709,7 +709,7 @@ export const DSA_QUESTIONS = [
       "python": "def word_break(*args):\n    # Write your solution here\n    pass",
       "javascript": "function wordBreak(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object wordBreak(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool wordBreak(string& s, vector<char>& wordDict) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -776,7 +776,7 @@ export const DSA_QUESTIONS = [
       "python": "def best_time_to_buy_and_sell_stock_with_cooldown(*args):\n    # Write your solution here\n    pass",
       "javascript": "function bestTimeToBuyAndSellStockWithCooldown(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object bestTimeToBuyAndSellStockWithCooldown(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int bestTimeToBuyAndSellStockWithCooldown(vector<int>& prices) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -840,7 +840,7 @@ export const DSA_QUESTIONS = [
       "python": "def coin_change_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function coinChangeIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object coinChangeIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int coinChangeIi(int amount, vector<int>& coins) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -901,7 +901,7 @@ export const DSA_QUESTIONS = [
       "python": "def edit_distance(*args):\n    # Write your solution here\n    pass",
       "javascript": "function editDistance(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object editDistance(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int editDistance(string& word1, string& word2) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -955,7 +955,7 @@ export const DSA_QUESTIONS = [
       "python": "def interleaving_string(*args):\n    # Write your solution here\n    pass",
       "javascript": "function interleavingString(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object interleavingString(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool interleavingString(string& s1, string& s2, string& s3) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1011,7 +1011,7 @@ export const DSA_QUESTIONS = [
       "python": "def longest_common_subsequence(*args):\n    # Write your solution here\n    pass",
       "javascript": "function longestCommonSubsequence(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object longestCommonSubsequence(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int longestCommonSubsequence(string& text1, string& text2) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1065,7 +1065,7 @@ export const DSA_QUESTIONS = [
       "python": "def target_sum(*args):\n    # Write your solution here\n    pass",
       "javascript": "function targetSum(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object targetSum(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int targetSum(vector<int>& nums, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1129,7 +1129,7 @@ export const DSA_QUESTIONS = [
       "python": "def unique_paths(*args):\n    # Write your solution here\n    pass",
       "javascript": "function uniquePaths(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object uniquePaths(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int uniquePaths(int m, int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1176,7 +1176,7 @@ export const DSA_QUESTIONS = [
       "python": "def burst_balloons(*args):\n    # Write your solution here\n    pass",
       "javascript": "function burstBalloons(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object burstBalloons(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool burstBalloons(string& s, string& p) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -1259,7 +1259,7 @@ export const DSA_QUESTIONS = [
       "python": "def regular_expression_matching(*args):\n    # Write your solution here\n    pass",
       "javascript": "function regularExpressionMatching(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object regularExpressionMatching(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool regularExpressionMatching(string& s, string& p) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1314,7 +1314,7 @@ export const DSA_QUESTIONS = [
       "python": "def cheapest_flights_within_k_stops(*args):\n    # Write your solution here\n    pass",
       "javascript": "function cheapestFlightsWithinKStops(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object cheapestFlightsWithinKStops(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int cheapestFlightsWithinKStops(int n, vector<vector<int>>& edges, int src, int dst, int k) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1425,7 +1425,7 @@ export const DSA_QUESTIONS = [
       "python": "def min_cost_to_connect_all_points(*args):\n    # Write your solution here\n    pass",
       "javascript": "function minCostToConnectAllPoints(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object minCostToConnectAllPoints(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int minCostToConnectAllPoints(vector<vector<int>>& points) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -1532,7 +1532,7 @@ export const DSA_QUESTIONS = [
       "python": "def network_delay_time(*args):\n    # Write your solution here\n    pass",
       "javascript": "function networkDelayTime(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object networkDelayTime(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int networkDelayTime(vector<vector<int>>& grid) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -1913,7 +1913,7 @@ export const DSA_QUESTIONS = [
       "python": "def encode_and_decode_strings(*args):\n    # Write your solution here\n    pass",
       "javascript": "function encodeAndDecodeStrings(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object encodeAndDecodeStrings(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<char> encodeAndDecodeStrings(vector<char>& strings) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2032,7 +2032,7 @@ export const DSA_QUESTIONS = [
       "python": "def group_anagrams(*args):\n    # Write your solution here\n    pass",
       "javascript": "function groupAnagrams(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object groupAnagrams(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<char>> groupAnagrams(vector<char>& strs) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2115,7 +2115,7 @@ export const DSA_QUESTIONS = [
       "python": "def longest_consecutive_sequence(*args):\n    # Write your solution here\n    pass",
       "javascript": "function longestConsecutiveSequence(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object longestConsecutiveSequence(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int longestConsecutiveSequence(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2184,7 +2184,7 @@ export const DSA_QUESTIONS = [
       "python": "def product_of_array_except_self(*args):\n    # Write your solution here\n    pass",
       "javascript": "function productOfArrayExceptSelf(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object productOfArrayExceptSelf(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> productOfArrayExceptSelf(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2261,7 +2261,7 @@ export const DSA_QUESTIONS = [
       "python": "def top_k_frequent_elements(*args):\n    # Write your solution here\n    pass",
       "javascript": "function topKFrequentElements(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object topKFrequentElements(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> topKFrequentElements(vector<int>& nums, int k) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2335,7 +2335,7 @@ export const DSA_QUESTIONS = [
       "python": "def valid_sudoku(*args):\n    # Write your solution here\n    pass",
       "javascript": "function validSudoku(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object validSudoku(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool validSudoku(vector<vector<char>>& board) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2687,7 +2687,7 @@ export const DSA_QUESTIONS = [
       "python": "def combination_sum(*args):\n    # Write your solution here\n    pass",
       "javascript": "function combinationSum(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object combinationSum(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2777,7 +2777,7 @@ export const DSA_QUESTIONS = [
       "python": "def combination_sum_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function combinationSumIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object combinationSumIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> combinationSumIi(vector<int>& candidates, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2878,7 +2878,7 @@ export const DSA_QUESTIONS = [
       "python": "def generate_parentheses(*args):\n    # Write your solution here\n    pass",
       "javascript": "function generateParentheses(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object generateParentheses(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<char> generateParentheses(int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -2951,7 +2951,7 @@ export const DSA_QUESTIONS = [
       "python": "def letter_combinations_of_a_phone_number(*args):\n    # Write your solution here\n    pass",
       "javascript": "function letterCombinationsOfAPhoneNumber(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object letterCombinationsOfAPhoneNumber(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<char> letterCombinationsOfAPhoneNumber(string& digits) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3015,7 +3015,7 @@ export const DSA_QUESTIONS = [
       "python": "def palindrome_partitioning(*args):\n    # Write your solution here\n    pass",
       "javascript": "function palindromePartitioning(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object palindromePartitioning(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<char>> palindromePartitioning(string& s) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3095,7 +3095,7 @@ export const DSA_QUESTIONS = [
       "python": "def permutations(*args):\n    # Write your solution here\n    pass",
       "javascript": "function permutations(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object permutations(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> permutations(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3228,7 +3228,7 @@ export const DSA_QUESTIONS = [
       "python": "def subsets(*args):\n    # Write your solution here\n    pass",
       "javascript": "function subsets(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object subsets(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> subsets(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3350,7 +3350,7 @@ export const DSA_QUESTIONS = [
       "python": "def subsets_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function subsetsIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object subsetsIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> subsetsIi(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3490,7 +3490,7 @@ export const DSA_QUESTIONS = [
       "python": "def word_search(*args):\n    # Write your solution here\n    pass",
       "javascript": "function wordSearch(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object wordSearch(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool wordSearch(vector<vector<char>>& board, string& word) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3605,7 +3605,7 @@ export const DSA_QUESTIONS = [
       "python": "def n_queens(*args):\n    # Write your solution here\n    pass",
       "javascript": "function nQueens(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object nQueens(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<char>> nQueens(int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3747,7 +3747,7 @@ export const DSA_QUESTIONS = [
       "python": "def find_minimum_in_rotated_sorted_array(*args):\n    # Write your solution here\n    pass",
       "javascript": "function findMinimumInRotatedSortedArray(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object findMinimumInRotatedSortedArray(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int findMinimumInRotatedSortedArray(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3817,7 +3817,7 @@ export const DSA_QUESTIONS = [
       "python": "def koko_eating_bananas(*args):\n    # Write your solution here\n    pass",
       "javascript": "function kokoEatingBananas(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object kokoEatingBananas(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int kokoEatingBananas(vector<int>& piles, int h) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3885,7 +3885,7 @@ export const DSA_QUESTIONS = [
       "python": "def search_in_rotated_sorted_array(*args):\n    # Write your solution here\n    pass",
       "javascript": "function searchInRotatedSortedArray(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object searchInRotatedSortedArray(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int searchInRotatedSortedArray(vector<int>& nums, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -3958,7 +3958,7 @@ export const DSA_QUESTIONS = [
       "python": "def search_a_2d_matrix(*args):\n    # Write your solution here\n    pass",
       "javascript": "function searchA2dMatrix(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object searchA2dMatrix(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> searchA2dMatrix(vector<vector<int>>& matrix, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4064,7 +4064,7 @@ export const DSA_QUESTIONS = [
       "python": "def time_based_key_value_store(*args):\n    # Write your solution here\n    pass",
       "javascript": "function timeBasedKeyValueStore(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object timeBasedKeyValueStore(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto timeBasedKeyValueStore(int key, int value, int timestamp) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4119,7 +4119,7 @@ export const DSA_QUESTIONS = [
       "python": "def median_of_two_sorted_arrays(*args):\n    # Write your solution here\n    pass",
       "javascript": "function medianOfTwoSortedArrays(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object medianOfTwoSortedArrays(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int medianOfTwoSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4189,7 +4189,7 @@ export const DSA_QUESTIONS = [
       "python": "def counting_bits(*args):\n    # Write your solution here\n    pass",
       "javascript": "function countingBits(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object countingBits(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> countingBits(int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4255,7 +4255,7 @@ export const DSA_QUESTIONS = [
       "python": "def missing_number(*args):\n    # Write your solution here\n    pass",
       "javascript": "function missingNumber(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object missingNumber(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int missingNumber(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -4399,7 +4399,7 @@ export const DSA_QUESTIONS = [
       "python": "def reverse_integer(*args):\n    # Write your solution here\n    pass",
       "javascript": "function reverseInteger(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object reverseInteger(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int reverseInteger(int x) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4449,7 +4449,7 @@ export const DSA_QUESTIONS = [
       "python": "def sum_of_two_integers(*args):\n    # Write your solution here\n    pass",
       "javascript": "function sumOfTwoIntegers(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object sumOfTwoIntegers(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int sumOfTwoIntegers(int a, int b) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4648,7 +4648,7 @@ export const DSA_QUESTIONS = [
       "python": "def course_schedule(*args):\n    # Write your solution here\n    pass",
       "javascript": "function courseSchedule(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object courseSchedule(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool courseSchedule(int numCourses, vector<vector<int>>& prerequisites) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4735,7 +4735,7 @@ export const DSA_QUESTIONS = [
       "python": "def course_schedule_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function courseScheduleIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object courseScheduleIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> courseScheduleIi(int numCourses, vector<vector<int>>& prerequisites) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4829,7 +4829,7 @@ export const DSA_QUESTIONS = [
       "python": "def graph_valid_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function graphValidTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object graphValidTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool graphValidTree(int n, vector<vector<int>>& edges) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -4934,7 +4934,7 @@ export const DSA_QUESTIONS = [
       "python": "def max_area_of_island(*args):\n    # Write your solution here\n    pass",
       "javascript": "function maxAreaOfIsland(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object maxAreaOfIsland(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int maxAreaOfIsland(vector<vector<int>>& grid) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5127,7 +5127,7 @@ export const DSA_QUESTIONS = [
       "python": "def number_of_connected_components_in_an_undirected_graph(*args):\n    # Write your solution here\n    pass",
       "javascript": "function numberOfConnectedComponentsInAnUndirectedGraph(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object numberOfConnectedComponentsInAnUndirectedGraph(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int numberOfConnectedComponentsInAnUndirectedGraph(int n, vector<vector<int>>& edges) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5224,7 +5224,7 @@ export const DSA_QUESTIONS = [
       "python": "def number_of_islands(*args):\n    # Write your solution here\n    pass",
       "javascript": "function numberOfIslands(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object numberOfIslands(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int numberOfIslands(vector<vector<char>>& grid) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5363,7 +5363,7 @@ export const DSA_QUESTIONS = [
       "python": "def pacific_atlantic_water_flow(*args):\n    # Write your solution here\n    pass",
       "javascript": "function pacificAtlanticWaterFlow(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object pacificAtlanticWaterFlow(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> pacificAtlanticWaterFlow(vector<vector<int>>& heights) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5525,7 +5525,7 @@ export const DSA_QUESTIONS = [
       "python": "def redundant_connection(*args):\n    # Write your solution here\n    pass",
       "javascript": "function redundantConnection(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object redundantConnection(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> redundantConnection(vector<vector<int>>& edges) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5629,7 +5629,7 @@ export const DSA_QUESTIONS = [
       "python": "def rotting_oranges(*args):\n    # Write your solution here\n    pass",
       "javascript": "function rottingOranges(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object rottingOranges(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int rottingOranges(string& beginWord, string& endWord, vector<char>& wordList) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -5788,7 +5788,7 @@ export const DSA_QUESTIONS = [
       "python": "def gas_station(*args):\n    # Write your solution here\n    pass",
       "javascript": "function gasStation(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object gasStation(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int gasStation(vector<int>& gas, vector<int>& cost) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5874,7 +5874,7 @@ export const DSA_QUESTIONS = [
       "python": "def hand_of_straights(*args):\n    # Write your solution here\n    pass",
       "javascript": "function handOfStraights(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object handOfStraights(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool handOfStraights(vector<int>& hand, int groupSize) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -5953,7 +5953,7 @@ export const DSA_QUESTIONS = [
       "python": "def jump_game(*args):\n    # Write your solution here\n    pass",
       "javascript": "function jumpGame(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object jumpGame(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool jumpGame(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6018,7 +6018,7 @@ export const DSA_QUESTIONS = [
       "python": "def jump_game_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function jumpGameIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object jumpGameIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int jumpGameIi(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6162,7 +6162,7 @@ export const DSA_QUESTIONS = [
       "python": "def merge_triplets_to_form_target_triplet(*args):\n    # Write your solution here\n    pass",
       "javascript": "function mergeTripletsToFormTargetTriplet(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object mergeTripletsToFormTargetTriplet(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool mergeTripletsToFormTargetTriplet(vector<vector<int>>& triplets, vector<int>& target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6269,7 +6269,7 @@ export const DSA_QUESTIONS = [
       "python": "def partition_labels(*args):\n    # Write your solution here\n    pass",
       "javascript": "function partitionLabels(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object partitionLabels(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int partitionLabels(vector<int>& stones) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -6424,7 +6424,7 @@ export const DSA_QUESTIONS = [
       "python": "def design_twitter(*args):\n    # Write your solution here\n    pass",
       "javascript": "function designTwitter(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object designTwitter(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto designTwitter(string& method, int userId, int tweetId) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6486,7 +6486,7 @@ export const DSA_QUESTIONS = [
       "python": "def k_closest_points_to_origin(*args):\n    # Write your solution here\n    pass",
       "javascript": "function kClosestPointsToOrigin(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object kClosestPointsToOrigin(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> kClosestPointsToOrigin(vector<vector<int>>& points, int k) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6603,7 +6603,7 @@ export const DSA_QUESTIONS = [
       "python": "def kth_largest_element_in_an_array(*args):\n    # Write your solution here\n    pass",
       "javascript": "function kthLargestElementInAnArray(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object kthLargestElementInAnArray(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool kthLargestElementInAnArray(vector<vector<int>>& intervals) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -6768,7 +6768,7 @@ export const DSA_QUESTIONS = [
       "python": "def insert_interval(*args):\n    # Write your solution here\n    pass",
       "javascript": "function insertInterval(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object insertInterval(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> insertInterval(vector<vector<int>>& intervals, vector<int>& newInterval) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -6888,7 +6888,7 @@ export const DSA_QUESTIONS = [
       "python": "def meeting_rooms_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function meetingRoomsIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object meetingRoomsIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int meetingRoomsIi(vector<vector<int>>& intervals) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7022,23 +7022,30 @@ export const DSA_QUESTIONS = [
     "title": "Linked List Cycle",
     "difficulty": "Easy",
     "topic": "Linked List",
-    "description": "Implement the algorithm for **Linked List Cycle**.\n\nThis is a standard DSA question from the 'Linked List' topic on NeetCode 150.",
+    "description": "Given head, the head of a linked list, determine if the linked list has a cycle in it.\n\nThere is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.\n\nReturn true if there is a cycle in the linked list. Otherwise, return false.",
     "examples": [
       {
-        "input": "input1 = ...",
-        "output": "output1 = ...",
-        "explanation": "Explain why output1 is produced."
+        "input": "head = [3,2,0,-4], pos = 1",
+        "output": "true",
+        "explanation": "There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed)."
+      },
+      {
+        "input": "head = [1,2], pos = 0",
+        "output": "true",
+        "explanation": "There is a cycle in the linked list, where the tail connects to the 0th node."
       }
     ],
     "constraints": [
-      "Standard LeetCode constraints apply."
+      "The number of the nodes in the list is in the range [0, 10^4].",
+      "-10^5 <= Node.val <= 10^5",
+      "pos is -1 or a valid index in the linked-list."
     ],
-    "functionName": "linked_list_cycle",
+    "functionName": "has_cycle",
     "starterCode": {
-      "python": "def linked_list_cycle(*args):\n    # Write your solution here\n    pass",
-      "javascript": "function linkedListCycle(...args) {\n  // Write your solution here\n}",
-      "java": "class Solution {\n    public Object linkedListCycle(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "python": "def has_cycle(head):\n    # Write your solution here\n    pass",
+      "javascript": "function hasCycle(head) {\n  // Write your solution here\n}",
+      "java": "class Solution {\n    public boolean hasCycle(ListNode head) {\n        return false;\n    }\n}",
+      "cpp": "class Solution {\npublic:\n    bool hasCycle(ListNode *head) {\n        return false;\n    }\n};"
     },
     "testCases": []
   },
@@ -7047,50 +7054,79 @@ export const DSA_QUESTIONS = [
     "title": "Merge Two Sorted Lists",
     "difficulty": "Easy",
     "topic": "Linked List",
-    "description": "Implement the algorithm for **Merge Two Sorted Lists**.\n\nThis is a standard DSA question from the 'Linked List' topic on NeetCode 150.",
+    "description": "You are given the heads of two sorted linked lists list1 and list2.\n\nMerge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.\n\nReturn the head of the merged linked list.",
     "examples": [
       {
-        "input": "input1 = ...",
-        "output": "output1 = ...",
-        "explanation": "Explain why output1 is produced."
+        "input": "list1 = [1,2,4], list2 = [1,3,4]",
+        "output": "[1,1,2,3,4,4]",
+        "explanation": "The two lists are merged in sorted order."
       }
     ],
     "constraints": [
-      "Standard LeetCode constraints apply."
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both list1 and list2 are sorted in non-decreasing order."
     ],
-    "functionName": "merge_two_sorted_lists",
+    "functionName": "merge_two_lists",
     "starterCode": {
-      "python": "def merge_two_sorted_lists(*args):\n    # Write your solution here\n    pass",
-      "javascript": "function mergeTwoSortedLists(...args) {\n  // Write your solution here\n}",
-      "java": "class Solution {\n    public Object mergeTwoSortedLists(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "python": "def merge_two_lists(list1, list2):\n    # Write your solution here\n    pass",
+      "javascript": "function mergeTwoLists(list1, list2) {\n  // Write your solution here\n}",
+      "java": "class Solution {\n    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {\n        return null;\n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {\n        return nullptr;\n    }\n};"
     },
-    "testCases": []
+    "testCases": [
+      {
+        "args": {
+          "list1": { "function_name": "ListNode", "args": [[1, 2, 4]] },
+          "list2": { "function_name": "ListNode", "args": [[1, 3, 4]] }
+        },
+        "expected": { "function_name": "ListNode", "args": [[1, 1, 2, 3, 4, 4]] }
+      }
+    ]
   },
   {
     "id": "reverse-linked-list",
     "title": "Reverse Linked List",
     "difficulty": "Easy",
     "topic": "Linked List",
-    "description": "Implement the algorithm for **Reverse Linked List**.\n\nThis is a standard DSA question from the 'Linked List' topic on NeetCode 150.",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
     "examples": [
       {
-        "input": "input1 = ...",
-        "output": "output1 = ...",
-        "explanation": "Explain why output1 is produced."
+        "input": "head = [1,2,3,4,5]",
+        "output": "[5,4,3,2,1]",
+        "explanation": "The list is reversed."
+      },
+      {
+        "input": "head = [1,2]",
+        "output": "[2,1]",
+        "explanation": "The list is reversed."
       }
     ],
     "constraints": [
-      "Standard LeetCode constraints apply."
+      "The number of nodes in the list is the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
     ],
-    "functionName": "reverse_linked_list",
+    "functionName": "reverse_list",
     "starterCode": {
-      "python": "def reverse_linked_list(*args):\n    # Write your solution here\n    pass",
-      "javascript": "function reverseLinkedList(...args) {\n  // Write your solution here\n}",
-      "java": "class Solution {\n    public Object reverseLinkedList(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "python": "def reverse_list(head):\n    # Write your solution here\n    pass",
+      "javascript": "function reverseList(head) {\n  // Write your solution here\n}",
+      "java": "class Solution {\n    public ListNode reverseList(ListNode head) {\n        return null;\n    }\n}",
+      "cpp": "class Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        return nullptr;\n    }\n};"
     },
-    "testCases": []
+    "testCases": [
+      {
+        "args": {
+          "head": { "function_name": "ListNode", "args": [[1, 2, 3, 4, 5]] }
+        },
+        "expected": { "function_name": "ListNode", "args": [[5, 4, 3, 2, 1]] }
+      },
+      {
+        "args": {
+          "head": { "function_name": "ListNode", "args": [[1, 2]] }
+        },
+        "expected": { "function_name": "ListNode", "args": [[2, 1]] }
+      }
+    ]
   },
   {
     "id": "add-two-numbers",
@@ -7417,7 +7453,7 @@ export const DSA_QUESTIONS = [
       "python": "def find_the_duplicate_number(*args):\n    # Write your solution here\n    pass",
       "javascript": "function findTheDuplicateNumber(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object findTheDuplicateNumber(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int findTheDuplicateNumber(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7484,7 +7520,7 @@ export const DSA_QUESTIONS = [
       "python": "def lru_cache(*args):\n    # Write your solution here\n    pass",
       "javascript": "function lruCache(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object lruCache(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> lruCache(int capacity, vector<vector<char>>& operations) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7689,7 +7725,7 @@ export const DSA_QUESTIONS = [
       "python": "def remove_nth_node_from_end_of_list(*args):\n    # Write your solution here\n    pass",
       "javascript": "function removeNthNodeFromEndOfList(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object removeNthNodeFromEndOfList(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> removeNthNodeFromEndOfList(vector<int>& head, int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7761,7 +7797,7 @@ export const DSA_QUESTIONS = [
       "python": "def reorder_list(*args):\n    # Write your solution here\n    pass",
       "javascript": "function reorderList(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object reorderList(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> reorderList(vector<int>& head) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7854,7 +7890,7 @@ export const DSA_QUESTIONS = [
       "python": "def merge_k_sorted_lists(*args):\n    # Write your solution here\n    pass",
       "javascript": "function mergeKSortedLists(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object mergeKSortedLists(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> mergeKSortedLists(vector<vector<int>>& lists) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -7936,7 +7972,7 @@ export const DSA_QUESTIONS = [
       "python": "def reverse_nodes_in_k_group(*args):\n    # Write your solution here\n    pass",
       "javascript": "function reverseNodesInKGroup(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object reverseNodesInKGroup(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> reverseNodesInKGroup(vector<int>& head, int k) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8030,7 +8066,7 @@ export const DSA_QUESTIONS = [
       "python": "def happy_number(*args):\n    # Write your solution here\n    pass",
       "javascript": "function happyNumber(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object happyNumber(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool happyNumber(int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8086,7 +8122,7 @@ export const DSA_QUESTIONS = [
       "python": "def plus_one(*args):\n    # Write your solution here\n    pass",
       "javascript": "function plusOne(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object plusOne(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> plusOne(vector<int>& digits) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8165,7 +8201,7 @@ export const DSA_QUESTIONS = [
       "python": "def detect_squares(*args):\n    # Write your solution here\n    pass",
       "javascript": "function detectSquares(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object detectSquares(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int detectSquares(vector<vector<int>>& points) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8324,7 +8360,7 @@ export const DSA_QUESTIONS = [
       "python": "def multiply_strings(*args):\n    # Write your solution here\n    pass",
       "javascript": "function multiplyStrings(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object multiplyStrings(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    string multiplyStrings(string& num1, string& num2) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8378,7 +8414,7 @@ export const DSA_QUESTIONS = [
       "python": "def pow(x,_n)(*args):\n    # Write your solution here\n    pass",
       "javascript": "function pow(x,N)(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object pow(x,N)(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int pow(x,N)(int x, int n) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8432,7 +8468,7 @@ export const DSA_QUESTIONS = [
       "python": "def rotate_image(*args):\n    # Write your solution here\n    pass",
       "javascript": "function rotateImage(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object rotateImage(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> rotateImage(vector<vector<int>>& matrix) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8574,7 +8610,7 @@ export const DSA_QUESTIONS = [
       "python": "def set_matrix_zeroes(*args):\n    # Write your solution here\n    pass",
       "javascript": "function setMatrixZeroes(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object setMatrixZeroes(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> setMatrixZeroes(vector<vector<int>>& matrix) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -8720,7 +8756,7 @@ export const DSA_QUESTIONS = [
       "python": "def spiral_matrix(*args):\n    # Write your solution here\n    pass",
       "javascript": "function spiralMatrix(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object spiralMatrix(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int spiralMatrix(vector<int>& prices) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -8802,7 +8838,7 @@ export const DSA_QUESTIONS = [
       "python": "def longest_repeating_character_replacement(*args):\n    # Write your solution here\n    pass",
       "javascript": "function longestRepeatingCharacterReplacement(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object longestRepeatingCharacterReplacement(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int longestRepeatingCharacterReplacement(string& s) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -8886,7 +8922,7 @@ export const DSA_QUESTIONS = [
       "python": "def permutation_in_string(*args):\n    # Write your solution here\n    pass",
       "javascript": "function permutationInString(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object permutationInString(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool permutationInString(string& s) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -9025,7 +9061,7 @@ export const DSA_QUESTIONS = [
       "python": "def car_fleet(*args):\n    # Write your solution here\n    pass",
       "javascript": "function carFleet(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object carFleet(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto carFleet(int x) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -9107,7 +9143,7 @@ export const DSA_QUESTIONS = [
       "python": "def min_stack(*args):\n    # Write your solution here\n    pass",
       "javascript": "function minStack(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object minStack(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto minStack(int x) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9158,7 +9194,7 @@ export const DSA_QUESTIONS = [
       "python": "def largest_rectangle_in_histogram(*args):\n    # Write your solution here\n    pass",
       "javascript": "function largestRectangleInHistogram(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object largestRectangleInHistogram(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int largestRectangleInHistogram(vector<int>& heights) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9221,7 +9257,7 @@ export const DSA_QUESTIONS = [
       "python": "def balanced_binary_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function balancedBinaryTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object balancedBinaryTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool balancedBinaryTree(auto root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9309,7 +9345,7 @@ export const DSA_QUESTIONS = [
       "python": "def diameter_of_binary_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function diameterOfBinaryTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object diameterOfBinaryTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int diameterOfBinaryTree(TreeNode* root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9582,7 +9618,7 @@ export const DSA_QUESTIONS = [
       "python": "def maximum_depth_of_binary_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function maximumDepthOfBinaryTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object maximumDepthOfBinaryTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int maximumDepthOfBinaryTree(TreeNode* root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9679,7 +9715,7 @@ export const DSA_QUESTIONS = [
       "python": "def same_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function sameTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object sameTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool sameTree(TreeNode* p, TreeNode* q) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9803,7 +9839,7 @@ export const DSA_QUESTIONS = [
       "python": "def subtree_of_another_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function subtreeOfAnotherTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object subtreeOfAnotherTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    bool subtreeOfAnotherTree(TreeNode* root, TreeNode* subRoot) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -9976,7 +10012,7 @@ export const DSA_QUESTIONS = [
       "python": "def binary_tree_level_order_traversal(*args):\n    # Write your solution here\n    pass",
       "javascript": "function binaryTreeLevelOrderTraversal(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object binaryTreeLevelOrderTraversal(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> binaryTreeLevelOrderTraversal(TreeNode* root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10085,7 +10121,7 @@ export const DSA_QUESTIONS = [
       "python": "def binary_tree_right_side_view(*args):\n    # Write your solution here\n    pass",
       "javascript": "function binaryTreeRightSideView(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object binaryTreeRightSideView(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> binaryTreeRightSideView(TreeNode* root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10268,7 +10304,7 @@ export const DSA_QUESTIONS = [
       "python": "def count_good_nodes_in_binary_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function countGoodNodesInBinaryTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object countGoodNodesInBinaryTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int countGoodNodesInBinaryTree(TreeNode* root) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10343,7 +10379,7 @@ export const DSA_QUESTIONS = [
       "python": "def kth_smallest_element_in_a_bst(*args):\n    # Write your solution here\n    pass",
       "javascript": "function kthSmallestElementInABst(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object kthSmallestElementInABst(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto kthSmallestElementInABst(string& word) {\n        \n    }\n};"
     },
     "testCases": []
   },
@@ -10505,7 +10541,7 @@ export const DSA_QUESTIONS = [
       "python": "def implement_trie_prefix_tree(*args):\n    # Write your solution here\n    pass",
       "javascript": "function implementTriePrefixTree(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object implementTriePrefixTree(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    auto implementTriePrefixTree(string& word) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10570,7 +10606,7 @@ export const DSA_QUESTIONS = [
       "python": "def word_search_ii(*args):\n    # Write your solution here\n    pass",
       "javascript": "function wordSearchIi(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object wordSearchIi(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<char> wordSearchIi(vector<vector<char>>& board, vector<char>& words) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10900,7 +10936,7 @@ export const DSA_QUESTIONS = [
       "python": "def 3sum(*args):\n    # Write your solution here\n    pass",
       "javascript": "function 3sum(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object 3sum(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<vector<int>> 3sum(vector<int>& nums) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -10982,7 +11018,7 @@ export const DSA_QUESTIONS = [
       "python": "def container_with_most_water(*args):\n    # Write your solution here\n    pass",
       "javascript": "function containerWithMostWater(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object containerWithMostWater(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int containerWithMostWater(vector<int>& height) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -11052,7 +11088,7 @@ export const DSA_QUESTIONS = [
       "python": "def two_sum_ii_input_array_is_sorted(*args):\n    # Write your solution here\n    pass",
       "javascript": "function twoSumIiInputArrayIsSorted(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object twoSumIiInputArrayIsSorted(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    vector<int> twoSumIiInputArrayIsSorted(vector<int>& numbers, int target) {\n        \n    }\n};"
     },
     "testCases": [
       {
@@ -11127,7 +11163,7 @@ export const DSA_QUESTIONS = [
       "python": "def trapping_rain_water(*args):\n    # Write your solution here\n    pass",
       "javascript": "function trappingRainWater(...args) {\n  // Write your solution here\n}",
       "java": "class Solution {\n    public Object trappingRainWater(Object... args) {\n        return null;\n    }\n}",
-      "cpp": "class Solution {\npublic:\n    // Implement the solution method\n};"
+      "cpp": "class Solution {\npublic:\n    int trappingRainWater(vector<int>& height) {\n        \n    }\n};"
     },
     "testCases": [
       {

@@ -13,24 +13,14 @@ const jsonPost = async (url, body) => {
   return res.json();
 };
 
-/**
- * Analyze a resume against a job title.
- * Returns { atsScore, strengths, weaknesses, roadmap }
- */
+
 export const analyzeResume = (resumeText, jobTitle) =>
   jsonPost('/api/placement-coach/analyze', {
     resume_text: resumeText,
     job_title: jobTitle,
   });
 
-/**
- * Send a chat message to the mock interviewer.
- * @param {string} message - The user's message
- * @param {Array} history - Array of {role, content} objects
- * @param {string} resumeText
- * @param {string} jobTitle
- * Returns { reply: string }
- */
+
 export const chatWithCoach = (message, history, resumeText, jobTitle) =>
   jsonPost('/api/placement-coach/chat', {
     message,
@@ -39,25 +29,15 @@ export const chatWithCoach = (message, history, resumeText, jobTitle) =>
     job_title: jobTitle,
   });
 
-/**
- * Run the multi-agent startup builder.
- * Returns { status, vision, research, businessModel, pitchDeck }
- */
+
 export const buildStartup = (idea) =>
   jsonPost('/api/startup-builder/build', { idea });
 
-/**
- * Execute code in a sandboxed environment.
- * @param {string} language - python | javascript | java | cpp
- * @param {string} code - Full source code to run
- */
+
 export const executeCode = (language, code) =>
   jsonPost('/api/placement-coach/execute-code', { language, code });
 
-/**
- * AI code review for DSA practice.
- * Returns { isCorrect, feedback, errors, explanation, hints, correctedCode }
- */
+
 export const verifyCode = (payload) =>
   jsonPost('/api/placement-coach/verify-code', {
     problem_title: payload.problemTitle,
@@ -71,10 +51,7 @@ export const verifyCode = (payload) =>
     job_title: payload.jobTitle || '',
   });
 
-/**
- * Get a full AI-generated solution for a DSA problem.
- * Returns { approach, timeComplexity, spaceComplexity, solutionCode, walkthrough, keyInsights }
- */
+
 export const getSolution = (payload) =>
   jsonPost('/api/placement-coach/get-solution', {
     problem_title: payload.problemTitle,
@@ -88,13 +65,7 @@ export const getSolution = (payload) =>
     user_code: payload.userCode || '',
   });
 
-/**
- * Analyze a completed mock interview and generate a performance scorecard.
- * @param {Array} history - Array of {role, content} chat messages
- * @param {string} resumeText - Candidate's resume text
- * @param {string} jobTitle - Target job title
- * Returns { overallScore, grade, verdict, summary, strengths, improvements, categoryScores }
- */
+
 export const analyzeInterview = (history, resumeText, jobTitle) =>
   jsonPost('/api/placement-coach/analyze-interview', {
     history,
@@ -102,10 +73,7 @@ export const analyzeInterview = (history, resumeText, jobTitle) =>
     job_title: jobTitle,
   });
 
-/**
- * Generate a tailored cover letter from resume + job details.
- * Returns { fullLetter, greeting, opening, body, closing, signature, highlights, tips }
- */
+
 export const generateCoverLetter = (payload) =>
   jsonPost('/api/cover-letter/generate', {
     resume_text: payload.resumeText,
@@ -117,10 +85,7 @@ export const generateCoverLetter = (payload) =>
     candidate_name: payload.candidateName || '',
   });
 
-/**
- * Improve an existing cover letter with AI.
- * Returns { fullLetter, changesSummary }
- */
+
 export const improveCoverLetter = (payload) =>
   jsonPost('/api/cover-letter/improve', {
     current_letter: payload.currentLetter,

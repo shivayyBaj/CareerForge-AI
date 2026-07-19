@@ -25,9 +25,9 @@ function EditResume() {
   return (
     <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}}>
     <div className='mx-auto grid max-w-7xl grid-cols-1 gap-10 p-6 md:grid-cols-2 md:p-10'>
-        {/* Form Section  */}
+        {}
           <FormSection/>
-        {/* Preview Section  */}
+        {}
          <ResumePreview/>
     </div>
     </ResumeInfoContext.Provider>

@@ -1,34 +1,25 @@
 import React from 'react';
 import { AlertTriangle, Trash2, X } from 'lucide-react';
 
-/**
- * ConfirmDialog — In-app modal confirmation dialog.
- * Props:
- *   open       {boolean}  — whether the dialog is shown
- *   title      {string}   — dialog heading
- *   message    {string}   — body text
- *   confirmLabel {string} — label for the destructive button (default: "Delete")
- *   onConfirm  {fn}       — called when user confirms
- *   onCancel   {fn}       — called when user cancels or presses Escape
- */
+
 function ConfirmDialog({ open, title = 'Are you sure?', message, confirmLabel = 'Delete', onConfirm, onCancel }) {
   if (!open) return null;
 
   return (
-    /* Backdrop */
+    
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       onClick={onCancel}
     >
-      {/* Blurred dark overlay */}
+      {}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
-      {/* Dialog card */}
+      {}
       <div
         className="relative z-10 w-full max-w-md bg-card border border-border rounded-2xl shadow-2xl shadow-black/50 animate-slide-up"
         onClick={e => e.stopPropagation()}
       >
-        {/* Header */}
+        {}
         <div className="p-6 border-b border-border flex items-start gap-4">
           <div className="w-10 h-10 rounded-full bg-red-500/15 flex items-center justify-center flex-shrink-0">
             <AlertTriangle className="w-5 h-5 text-red-400" />
@@ -47,7 +38,7 @@ function ConfirmDialog({ open, title = 'Are you sure?', message, confirmLabel = 
           </button>
         </div>
 
-        {/* Actions */}
+        {}
         <div className="p-4 flex items-center justify-end gap-3">
           <button
             onClick={onCancel}

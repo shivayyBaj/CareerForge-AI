@@ -30,7 +30,7 @@ function Dashboard() {
   return (
     <div className="w-full max-w-6xl mx-auto space-y-8">
       
-      {/* Header section */}
+      {}
       <div>
         <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Overview</h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -38,7 +38,7 @@ function Dashboard() {
         </p>
       </div>
 
-      {/* Stats Overview */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat, i) => (
           <div key={i} className="bg-white rounded-2xl border border-slate-200 p-6 flex items-center gap-4 shadow-sm">
@@ -53,7 +53,7 @@ function Dashboard() {
         ))}
       </div>
 
-      {/* Resumes Section */}
+      {}
       <div>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-slate-900">Recent Resumes</h2>

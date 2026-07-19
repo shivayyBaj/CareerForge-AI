@@ -96,11 +96,11 @@ function Home() {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 overflow-hidden">
       <Header />
 
-      {/* Background gradients */}
+      {}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-blue-400/20 to-indigo-400/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
       <div className="absolute top-[40%] right-[-10%] w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-10 pointer-events-none" />
 
-      {/* Hero Section */}
+      {}
       <section className="relative px-6 py-24 md:py-32 lg:px-12 flex flex-col items-center">
         <motion.div 
           className="mx-auto max-w-4xl text-center"
@@ -138,7 +138,7 @@ function Home() {
         </motion.div>
       </section>
 
-      {/* Features Section (Bento Box) */}
+      {}
       <section className="px-6 py-20 lg:px-12 bg-white border-t border-slate-200">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
@@ -184,7 +184,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {}
       <footer className="border-t border-slate-200 bg-white py-12 px-6 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center">

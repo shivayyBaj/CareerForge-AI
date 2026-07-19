@@ -24,7 +24,7 @@ function ResumeCardItem({ resume, refreshData }) {
   const navigation = useNavigate()
   const [openAlert, setOpenAlert] = useState(false)
   const [loading, setLoading] = useState(false)
-  const accent = resume?.themeColor || '#F59E0B' // Default amber/gold
+  const accent = resume?.themeColor || '#F59E0B' 
 
   const onDelete = () => {
     setLoading(true)
@@ -43,7 +43,7 @@ function ResumeCardItem({ resume, refreshData }) {
 
   return (
     <div className="group relative flex flex-col justify-between h-[280px] rounded-2xl border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:bg-slate-50 hover:bg-slate-100 transition-all duration-300 hover:scale-[1.02] hover:border-slate-200 shadow-lg overflow-hidden">
-      {/* Decorative colored glow band at top */}
+      {}
       <div 
         className="absolute top-0 left-0 right-0 h-1.5 transition-all duration-300"
         style={{ backgroundColor: accent, opacity: 0.8 }}

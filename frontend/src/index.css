@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Resume Preview Sizing & Print styles */
+
 .resume-preview-container {
   width: 100%;
   max-width: 210mm;
@@ -160,7 +160,7 @@ ol, ul, menu {
   }
 }
 
-/* Animations */
+
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }

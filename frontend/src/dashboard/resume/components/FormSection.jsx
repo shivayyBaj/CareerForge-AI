@@ -35,7 +35,7 @@ function FormSection() {
             <ArrowRight/> </Button>
           </div>
         </div>
-        {/* Personal Detail  */}
+        {}
         {activeFormIndex==1?  
         <PersonalDetail enabledNext={(v)=>setEnableNext(v)} />
         :activeFormIndex==2?
@@ -53,11 +53,11 @@ function FormSection() {
           }
         
 
-      {/* Experience  */}
+      {}
 
-      {/* Educational Detail  */}
+      {}
 
-      {/* Skills  */}
+      {}
 
     </div>
   )

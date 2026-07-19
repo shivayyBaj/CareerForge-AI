@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  Play, RotateCcw, Sparkles, Terminal, Code2, ChevronDown, ChevronRight, CheckCircle2, XCircle, Loader2, Lightbulb, Check, Search, Trophy, BookOpen, X, Clock, MemoryStick, Zap, Upload
+  Play, RotateCcw, Sparkles, Terminal, Code2, ChevronDown, ChevronRight, CheckCircle2, XCircle, Loader2, Lightbulb, Check, Search, Trophy, BookOpen, X, Clock, MemoryStick, Zap, Upload, Copy
 } from 'lucide-react';
 import { DSA_QUESTIONS, LANGUAGES, DIFFICULTY_COLORS } from '../dsaQuestions';
 import { buildRunnableCode, parseTestResults, formatExecutionOutput, parseStructuredResults, executionHasErrors } from '../codeRunner';
@@ -128,7 +128,14 @@ function DsaPractice({ jobTitle = '' }) {
   const [structuredResults, setStructuredResults] = useState([]);
   const [activeTestTab, setActiveTestTab] = useState(0);
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [copied, setCopied] = useState(false);
   
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const [solvedIds, setSolvedIds] = useState(loadSolved);
   const [expandedTopics, setExpandedTopics] = useState(new Set([DSA_QUESTIONS[0]?.topic || 'Arrays & Hashing']));
   const terminalRef = useRef(null);
@@ -324,7 +331,7 @@ function DsaPractice({ jobTitle = '' }) {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto xl:h-[calc(100vh-160px)] min-h-0 animate-slide-up text-slate-900 select-none pb-6 xl:pb-0">
       
-      {/* ── Question List ── */}
+      {}
       <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
         
         <div className="p-4 border-b border-slate-200 bg-slate-50 hover:bg-slate-100">
@@ -448,7 +455,7 @@ function DsaPractice({ jobTitle = '' }) {
         </div>
       </div>
 
-      {/* ── Problem Statement ── */}
+      {}
       <div className="xl:col-span-3 h-[400px] xl:h-full rounded-2xl border border-slate-200 bg-gradient-to-b from-white/[0.02] to-transparent flex flex-col overflow-hidden shadow-xl">
         <div className="p-4 border-b border-slate-200 bg-slate-50 hover:bg-slate-100">
           <div className="flex items-center justify-between mb-1.5">
@@ -486,10 +493,10 @@ function DsaPractice({ jobTitle = '' }) {
         </div>
       </div>
 
-      {/* ── Code Editor + Terminal ── */}
+      {}
       <div className="xl:col-span-6 flex flex-col gap-4 min-h-[700px] xl:min-h-0 xl:h-full">
         
-        {/* Toolbar */}
+        {}
         <div className="rounded-2xl border border-slate-200 bg-gradient-to-r from-white/[0.02] to-transparent px-4 py-2.5 flex items-center justify-between gap-3 flex-wrap shadow-xl">
           <div className="relative">
             <button
@@ -540,7 +547,7 @@ function DsaPractice({ jobTitle = '' }) {
               Run
             </button>
 
-            {/* ── AI Solution Button ── */}
+            {}
             <button
               onClick={handleGetSolution}
               disabled={solutionLoading}
@@ -553,11 +560,17 @@ function DsaPractice({ jobTitle = '' }) {
           </div>
         </div>
 
-        {/* Code Editor */}
+        {}
         <div className="rounded-2xl border border-slate-200 bg-white flex-1 min-h-[220px] flex flex-col overflow-hidden shadow-xl" onDragOver={handleDragOver} onDrop={handleDrop}>
           <div className="px-4 py-2 bg-white border-b border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-mono">
             <span className="flex items-center gap-1.5 uppercase font-bold"><Code2 className="w-3.5 h-3.5" /> solution.{language === 'python' ? 'py' : language === 'javascript' ? 'js' : language === 'java' ? 'java' : 'cpp'}</span>
-            <span>Tab size: 2 spaces</span>
+            <div className="flex items-center gap-4">
+              <span>Tab size: 2 spaces</span>
+              <button onClick={handleCopyCode} className="flex items-center gap-1 hover:text-slate-800 transition-colors" title="Copy code">
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <span className="text-emerald-500">Copied!</span> : <span>Copy</span>}
+              </button>
+            </div>
           </div>
           
           <div className="flex-1 flex overflow-hidden font-mono text-[13px] leading-relaxed relative">
@@ -611,9 +624,9 @@ function DsaPractice({ jobTitle = '' }) {
           </div>
         </div>
 
-        {/* Bottom Panels Container */}
+        {}
         <div className={`flex flex-col xl:flex-row gap-4 shrink-0 ${showSolutionPanel ? 'xl:max-h-[350px]' : ''}`}>
-          {/* LeetCode-Style Testcase Terminal */}
+          {}
           <div className="rounded-2xl border border-slate-200 bg-white flex flex-col overflow-hidden shadow-xl flex-1" style={{ minHeight: '180px' }}>
           <div className="px-4 py-2 border-b border-slate-200 flex items-center justify-between text-[10px] font-mono bg-white">
             <span className="flex items-center gap-1.5 uppercase font-bold text-slate-500">
@@ -632,7 +645,7 @@ function DsaPractice({ jobTitle = '' }) {
 
           {structuredResults.length > 0 ? (
             <div className="flex flex-col flex-1 overflow-hidden">
-              {/* Tab bar */}
+              {}
               <div className="flex items-center gap-1 px-3 pt-2 border-b border-slate-200 overflow-x-auto scrollbar-none">
                 {structuredResults.map((r, i) => (
                   <button
@@ -654,7 +667,7 @@ function DsaPractice({ jobTitle = '' }) {
                 ))}
               </div>
 
-              {/* Active test case detail */}
+              {}
               {(() => {
                 const r = structuredResults[activeTestTab];
                 if (!r) return null;
@@ -683,7 +696,7 @@ function DsaPractice({ jobTitle = '' }) {
               })()}
             </div>
           ) : (
-            /* Fallback: raw terminal output (compile errors etc) */
+            
             <pre
               ref={terminalRef}
               className="flex-1 overflow-y-auto p-4 text-[11px] text-emerald-400 bg-white leading-relaxed font-mono whitespace-pre-wrap select-text"
@@ -695,7 +708,7 @@ function DsaPractice({ jobTitle = '' }) {
 
 
 
-        {/* ── AI Solution Panel ── */}
+        {}
         <AnimatePresence>
           {showSolutionPanel && (
             <motion.div
@@ -704,7 +717,7 @@ function DsaPractice({ jobTitle = '' }) {
               exit={{ opacity: 0, y: 20 }}
               className="flex-1 flex flex-col rounded-2xl border border-violet-500/20 bg-gradient-to-b from-violet-500/[0.04] to-transparent shadow-2xl overflow-hidden xl:max-h-[350px]"
             >
-              {/* Panel header */}
+              {}
               <div className="flex items-center justify-between px-5 py-3.5 bg-violet-500/[0.05] border-b border-violet-500/10">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
@@ -733,7 +746,7 @@ function DsaPractice({ jobTitle = '' }) {
                 </div>
               </div>
 
-              {/* Panel body */}
+              {}
               <div className="p-5 space-y-5 overflow-y-auto flex-1">
                 {solutionLoading ? (
                   <div className="flex flex-col items-center justify-center py-10 gap-3">
@@ -745,7 +758,7 @@ function DsaPractice({ jobTitle = '' }) {
                   </div>
                 ) : aiSolution ? (
                   <>
-                    {/* Code Review Section */}
+                    {}
                     {aiSolution.codeReview && (
                       <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-4 mb-4">
                         <div className="flex items-center justify-between">
@@ -781,7 +794,7 @@ function DsaPractice({ jobTitle = '' }) {
                       </div>
                     )}
 
-                    {/* Complexity badges */}
+                    {}
                     <div className="flex flex-wrap gap-2">
                       {aiSolution.timeComplexity && (
                         <div className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-xl">
@@ -799,7 +812,7 @@ function DsaPractice({ jobTitle = '' }) {
                       )}
                     </div>
 
-                    {/* Approach */}
+                    {}
                     {aiSolution.approach && (
                       <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2">
                         <p className="text-xs font-bold text-violet-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -809,7 +822,7 @@ function DsaPractice({ jobTitle = '' }) {
                       </div>
                     )}
 
-                    {/* Key Insights */}
+                    {}
                     {aiSolution.keyInsights?.length > 0 && (
                       <div className="space-y-2">
                         <p className="text-xs font-bold text-blue-600 uppercase tracking-wider flex items-center gap-1.5">
@@ -826,7 +839,7 @@ function DsaPractice({ jobTitle = '' }) {
                       </div>
                     )}
 
-                    {/* Solution Code */}
+                    {}
                     {aiSolution.solutionCode && (
                       <div className="space-y-2">
                         <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -846,7 +859,7 @@ function DsaPractice({ jobTitle = '' }) {
                       </div>
                     )}
 
-                    {/* Step-by-step walkthrough */}
+                    {}
                     {aiSolution.walkthrough && (
                       <div className="bg-white border border-slate-200 rounded-xl p-4 space-y-2">
                         <p className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
