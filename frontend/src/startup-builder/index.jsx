@@ -111,7 +111,7 @@ function StartupBuilder() {
       setActiveTab('research');
     } catch (error) {
       console.error(error);
-      addLog('ERROR: Agent build system timed out. Please ensure the backend server is running on port 8000.');
+      addLog(`ERROR: Agent build system failed. Could not connect to the backend server. Make sure it is running and accessible.`);
     } finally {
       setIsBuilding(false);
     }
@@ -155,9 +155,9 @@ function StartupBuilder() {
   return (
     <div className="flex bg-white text-slate-900 min-h-screen w-full relative overflow-hidden">
       
-      {}
-      <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none -z-10" />
+      {/* Background blurs */}
+      <div className="absolute top-[10%] left-[-10%] w-full max-w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-[10%] right-[-10%] w-full max-w-[500px] h-[500px] bg-blue-100 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {}
       <ConfirmDialog
