@@ -40,17 +40,6 @@ const features = [
     iconBg: 'bg-indigo-100'
   },
   {
-    icon: Code2,
-    title: 'DSA Practice',
-    description: 'Practice 150+ DSA problems in a sandboxed compiler.',
-    link: '/dashboard/dsa-practice',
-    buttonText: 'Start Coding',
-    colSpan: 'col-span-1',
-    bgClass: 'bg-emerald-50/50',
-    iconColor: 'text-emerald-600',
-    iconBg: 'bg-emerald-100'
-  },
-  {
     icon: Rocket,
     title: 'Startup Builder',
     description: 'Deploy an autonomous AI team to conduct market research and build a pitch deck.',

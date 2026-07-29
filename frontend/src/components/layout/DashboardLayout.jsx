@@ -7,7 +7,6 @@ import { LayoutDashboard, Mic, Code2, Rocket, FileSignature } from 'lucide-react
 const navItems = [
   { name: 'Resume',  path: '/dashboard',                 icon: LayoutDashboard },
   { name: 'Interview',  path: '/dashboard/mock-interview',  icon: Mic },
-  { name: 'DSA',    path: '/dashboard/dsa-practice',    icon: Code2 },
   { name: 'Startup', path: '/dashboard/startup-builder', icon: Rocket },
   { name: 'Cover',    path: '/dashboard/cover-letter',    icon: FileSignature },
 ]

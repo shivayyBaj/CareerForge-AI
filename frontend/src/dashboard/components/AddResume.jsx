@@ -40,6 +40,8 @@ function AddResume() {
             }
         }, (error) => {
             setLoading(false);
+            console.error("CreateNewResume failed:", error);
+            alert("Error creating resume. See console for details. " + (error?.message || error));
         })
     }
 

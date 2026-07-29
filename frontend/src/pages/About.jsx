@@ -14,11 +14,7 @@ export default function About() {
       desc: 'Experience realistic interviews with a humanized AI avatar that features lip-sync animations. Answer questions using your voice, get real-time feedback, and receive a comprehensive scorecard after your session.',
       icon: <BrainCircuit className="w-6 h-6 text-indigo-600" />
     },
-    {
-      title: 'DSA Practice Arena',
-      desc: 'Sharpen your coding skills with 150+ curated DSA problems. Write and execute code in Python, JavaScript, Java, or C++ directly in your browser. Get instant AI code reviews and optimal solutions when you are stuck.',
-      icon: <Code2 className="w-6 h-6 text-emerald-600" />
-    },
+
     {
       title: 'Startup Builder',
       desc: 'Turn your raw ideas into investor-ready blueprints. Our multi-agent AI system conducts market research, designs your business model, and generates a slide-by-slide pitch deck.',

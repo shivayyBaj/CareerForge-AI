@@ -16,11 +16,7 @@ export default function Documentation() {
       icon: Mic,
       content: 'Upload your resume and enter a target job title. The AI will first score your resume against the role and give you ATS feedback. Then, you can engage in a real-time voice interview with our humanized AI avatar. Make sure your microphone is enabled. You will receive a detailed scorecard at the end.',
     },
-    {
-      title: 'DSA Practice',
-      icon: Code2,
-      content: 'Hone your algorithm skills in our in-browser code editor. Select a problem, choose your preferred language (Python, JavaScript, Java, C++), and write your solution. You can run test cases and get AI code reviews or step-by-step optimal solutions.',
-    },
+
     {
       title: 'Cover Letter',
       icon: FileSignature,

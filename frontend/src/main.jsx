@@ -12,7 +12,6 @@ import SignInPage from './auth/sign-in/index.jsx'
 import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx'
 import ViewResume from './my-resume/[resumeId]/view/index.jsx'
 import MockInterview from './mock-interview/index.jsx'
-import DsaPracticePage from './dsa-practice/index.jsx'
 import StartupBuilder from './startup-builder/index.jsx'
 import CoverLetterGenerator from './cover-letter/index.jsx'
 import Documentation from './documentation/index.jsx'
@@ -56,10 +55,6 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/mock-interview',
         element: <MockInterview />
-      },
-      {
-        path: '/dashboard/dsa-practice',
-        element: <DsaPracticePage />
       },
       {
         path: '/dashboard/startup-builder',

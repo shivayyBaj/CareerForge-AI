@@ -23,7 +23,6 @@ function Dashboard() {
   const stats = [
     { label: 'Total Resumes', value: resumeList.length, icon: FileText, color: 'text-blue-600', bg: 'bg-blue-100' },
     { label: 'Interviews Practiced', value: '0', icon: Trophy, color: 'text-emerald-600', bg: 'bg-emerald-100' },
-    { label: 'DSA Solved', value: '0', icon: Code2, color: 'text-indigo-600', bg: 'bg-indigo-100' },
     { label: 'Startups Built', value: '0', icon: Users, color: 'text-violet-600', bg: 'bg-violet-100' }
   ]
 

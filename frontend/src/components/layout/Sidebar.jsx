@@ -8,7 +8,6 @@ import {
 const navItems = [
   { name: 'Resume Builder',  path: '/dashboard',                 icon: LayoutDashboard },
   { name: 'Mock Interview',  path: '/dashboard/mock-interview',  icon: Mic },
-  { name: 'DSA Practice',    path: '/dashboard/dsa-practice',    icon: Code2 },
   { name: 'Startup Builder', path: '/dashboard/startup-builder', icon: Rocket },
   { name: 'Cover Letter',    path: '/dashboard/cover-letter',    icon: FileSignature },
 ]

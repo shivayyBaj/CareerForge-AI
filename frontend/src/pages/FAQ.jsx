@@ -6,16 +6,13 @@ export default function FAQ() {
   const faqs = [
     {
       q: "What is CareerForge AI?",
-      a: "CareerForge AI is a premium, all-in-one platform for job seekers and entrepreneurs. It features an ATS-optimized resume builder, a humanized AI mock interviewer, a DSA practice arena with a real code compiler, an AI cover letter generator, and an AI startup builder."
+      a: "CareerForge AI is a premium, all-in-one platform for job seekers and entrepreneurs. It features an ATS-optimized resume builder, a humanized AI mock interviewer, an AI cover letter generator, and an AI startup builder."
     },
     {
       q: "How does the AI Mock Interview work?",
       a: "Our Mock Interview module uses a realistic human avatar that lips-syncs to an AI-generated voice. You can speak your answers naturally using your microphone. The AI acts as the interviewer, grading you on technical, communication, and problem-solving skills, generating a comprehensive scorecard at the end."
     },
-    {
-      q: "Can I actually run code in the browser for DSA Practice?",
-      a: "Yes! Our DSA Practice Arena features a real in-browser code editor. You can write and execute code in Python, JavaScript, Java, and C++. It automatically runs against hidden test cases (including complex structures like Trees and Linked Lists) to verify your logic."
-    },
+
     {
       q: "Will my resumes pass Applicant Tracking Systems (ATS)?",
       a: "Absolutely. Our resume templates are specifically designed without complex tables or background images that confuse ATS parsers. We even provide a 'Use Black Font' toggle to ensure maximum readability for automated systems and human recruiters."
