@@ -45,15 +45,6 @@
 * 🛑 **Safe Exit with Confirmation**: Pressing the back button or ending the interview prompts a confirmation dialog. The voice immediately stops when you confirm.
 * 📈 **Interview Scorecard**: Receive a detailed AI-powered scorecard after the interview — with overall score, grade, verdict (Hire/No Hire), and category breakdowns (communication, technical, problem-solving, culture fit).
 
-### 💻 3. DSA Practice Arena
-* 📚 **Curated Problem Set**: Practice handpicked DSA problems spanning Arrays, Strings, Trees, Graphs, Dynamic Programming, and more.
-* 🖥️ **In-Browser Code Editor**: Write and run code in Python, JavaScript, Java, or C++ directly in the browser with syntax highlighting.
-* ✅ **Test Case Runner**: Run your solution against provided test cases and see pass/fail results instantly.
-* 🌳 **Tree & Linked List Support**: Test cases with `TreeNode` and `ListNode` inputs are now correctly serialized and injected into all four language runtimes — no more runtime errors on tree or linked list problems.
-* 🔍 **AI Code Review**: Get AI-powered feedback on correctness, bugs, time/space complexity, and a corrected solution if needed.
-* 💡 **AI Solution Generator**: Stuck? Request a complete, fully-explained optimal solution with approach, key insights, and a step-by-step walkthrough.
-* ⚠️ **Helpful Runtime Errors**: If a language compiler (Node.js, Java, g++) is not installed on your system, a clear message explains what to install instead of a cryptic error.
-
 ### 📝 4. AI Cover Letter Generator
 * 📋 **Context-Aware Generation**: Paste your resume and target job description to generate a tailored, professional cover letter in seconds.
 * ✏️ **Editable Output**: Fine-tune the generated letter directly in the editor before exporting.
