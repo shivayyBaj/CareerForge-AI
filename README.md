@@ -1,8 +1,7 @@
 <div align="center">
 
 # CareerForge AI — Career & Startup Suite
-
-**Elevate your future with CareerForge AI. Craft professional ATS-optimized resumes, practice mock interviews with a humanized AI interviewer, sharpen DSA skills with an in-browser code editor, generate cover letters, and build complete startup blueprints — all powered by advanced AI agent workflows.**
+, generate cover letters, and build complete startup blueprints — all powered by advanced AI agent workflows.**
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat&logo=vite)](https://vitejs.dev/)
